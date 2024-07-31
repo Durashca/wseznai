@@ -21,7 +21,7 @@ include 'src/php/addMenu.php';
 
         <div id="htmlContent">
         <?php
-        include 'src/lesson/lesson1.html';
+        include 'src/new_to_PC/the_memo.html';
         ?>
         </div>   
          <!-- content -->
