@@ -1,11 +1,11 @@
 <?php
 include 'basic.php';
 ?>
-<!-- lesson1.php -->
+<!-- the_memo.php -->
 <!DOCTYPE html>
 <html>
 <head>
-  <title>lesson1</title>
+  <title>the_memo</title>
 </head>
 <body class="container-fluid">
   
@@ -21,17 +21,18 @@ include 'src/php/addMenu.php';
 
         <div id="htmlContent">
         <?php
-        include 'src/new_to_PC/the_memo.html';
+        include 'src/new_to_PC/the_memo.html'; 
         ?>
         </div>   
          <!-- content -->
+          
         <!-- Форма для комментариев -->
-         <!--lesson1.php -->
+         
         <div style="text-align: start;">
             <h4>Комментарии</h4>
             <form id="commentForm" method="post">
                 <textarea name="commentText" rows="4" cols="25" placeholder="Текст"></textarea>
-                <input type="hidden" id="id_comment" name="id_comment" value="lesson1">
+                <input type="hidden" id="id_comment" name="id_comment" value="the_memo"> 
                 <br>
                 <input type="submit" value="Добавить комментарий">
             </form>
@@ -43,7 +44,7 @@ include 'src/php/addMenu.php';
          
         <?php
         include 'src/php/process_comment_takingInTable.php';      
-        $id_comment = 'lesson1';
+        $id_comment = 'the_memo'; 
         echo process_comment_takingInTable($id_comment);
         
         ?>

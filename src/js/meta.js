@@ -45,7 +45,10 @@
   myCss.setAttribute('href', 'src/css/css.css');
   myCss.setAttribute('rel', 'stylesheet');
 
-
+  // footer 
+  const footer = document.createElement('script');
+  footer.setAttribute('src', 'src/js/footer.js')
+  head.appendChild(footer);
   
   // добавка всего
   head.appendChild(metaCharset);
