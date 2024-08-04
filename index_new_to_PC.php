@@ -6,9 +6,7 @@
    
 </head>
 <body>
-<?php
-include 'src/php/addMenu.php';
-?>
+
 <!--меню-->
 <section>
     <div class="container-xxl">

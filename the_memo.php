@@ -1,17 +1,11 @@
-<?php
-include 'basic.php';
-?>
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <title>Логин и авторизация</title>
 
 </head>
 <body>
-<?php
-include 'src/php/addMenu.php';
-?>
+
 <div class="container-xxl">
     <div class="container text-left text">
         <div class="row">
@@ -104,23 +98,13 @@ include 'src/php/addMenu.php';
         </button>
     </div>
         <!-- коментарии пользователей -->
-    <div style="text-align: start;">
-            <h4>Комментарии</h4>
-            <form id="commentForm" method="post">
-                <textarea name="commentText" rows="4" cols="25" placeholder="Текст"></textarea>
-                <input type="hidden" id="id_comment" name="id_comment" value="the_memo">
-                <br>
-                <input type="submit" value="Добавить комментарий">
-            </form>
-        </div>         
-
         
         <?php
-        include 'src/php/process_comment_takingInTable.php';      
-        $id_comment = 'the_memo';
-        echo process_comment_takingInTable($id_comment);
-        
+        include 'process_comment.php';
         ?>
+
+        
+        
 
 <!-- Конец формы для комментариев -->
 
