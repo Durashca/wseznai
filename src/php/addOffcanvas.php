@@ -28,35 +28,59 @@
     <!-- content right offcanvas -->
     <div class="offcanvas-body">
          <!-- Login form -->
-          <div id="divLogin">
-         <form method="POST">
-            <input name="login" type="text" placeholder="Login" required autocomplete="off">
-            <input name="password" type="password" placeholder="Password" required autocomplete="off">
-            <input type="submit" value="Login" required autocomplete="off">
+         <div id="divLogin">
+        <?php
+        session_start();
+        ?>
+         <form action="login.php" method="POST">
+            <input name="login" type="text" placeholder="Login" required readonly onfocus="this.removeAttribute('readonly');">
+            <input name="password" type="password" placeholder="Password" required readonly onfocus="this.removeAttribute('readonly');">
+            <input type="submit" value="Login" required readonly onfocus="this.removeAttribute('readonly');">
          </form>
           </div>
         <br>
         <!-- Registration form -->
         <div id="divRegistration">
-        <form method="POST">
-            <input name="reg_name" type="text" placeholder="Name" required autocomplete="off">
-            <input name="reg_login" type="text" placeholder="Login" required autocomplete="off">
-            <input name="reg_password" type="password" placeholder="Password" required autocomplete="off">
+        <?php
+        session_start();
+        ?>
+        <form action="registration.php" method="POST">
+            <input name="reg_name" type="text" placeholder="Name" required readonly onfocus="this.removeAttribute('readonly');">
+            <input name="reg_login" type="text" placeholder="Login" required readonly onfocus="this.removeAttribute('readonly');">
+            <input name="reg_password" type="password" placeholder="Password" required readonly onfocus="this.removeAttribute('readonly');">
             <input type="submit" value="Register">
         </form>
         </div>
         <!-- Profile -->
-          <div id="divProfile">
-       <p>ID: </p><p id="id"><?php if (isset($_SESSION['user_id'])) echo $_SESSION['user_id']; ?></p>
-       <p>Name: </p><p id="name"><?php if (isset($_SESSION['username'])) echo $_SESSION['username']; ?></p>
-       <p>Login: </p><p id="login"><?php if (isset($_SESSION['user_login'])) echo $_SESSION['user_login']; ?></p>
+        <div class="form-profile row g-3 hide" id="divProfile">
+        <div class="col-md-8">
+            <p>ID: </p>
+            <?php
+        session_start();
+        ?>
+            <p id="id">
+              <?php if (isset($_SESSION['user_id'])) echo $_SESSION['user_id']; ?>
+            </p>
           </div>
+          <div class="col-md-8">
+            <p>Name: </p>
+            <p id="name">
+              <?php if (isset($_SESSION['user_name'])) echo $_SESSION['user_name']; ?>
+            </p>
+          </div>
+          <div class="col-md-8">
+            <p>mail: </p>
+            <p id="mail">
+              <?php if (isset($_SESSION['user_mail'])) echo $_SESSION['user_mail']; ?>
+            </p>
+          </div>
+        </div>
         <!-- End of profile -->
-  
     <!-- content right offcanvas -->
-    </div>
+  </div>
     <!-- right offcanvas -->
      <script>
       divProfile = document.getElementById('divProfile');
       divProfile.style.display = 'flex';
      </script>
+     

@@ -23,7 +23,7 @@ function process_comment_takingInTable($id_comment) {
 
     // Вывод комментариев
     if ($result->num_rows > 0) {
-        $output = "<div id='" . $id_koment . "' class='commentsContainer'>";
+        $output = "<div id='" . $id_comment . "' class='commentsContainer'>";
         while ($row = $result->fetch_assoc()) {
             $output .= "<div class='container'>";
             $output .= "<div class='comment'>";

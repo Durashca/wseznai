@@ -1,16 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
     <title>ВсеЗнай</title>
-    <!--подключение Бутстрапа-->
-    
-    <link rel="stylesheet" href="src/css/indentation.css">
-    <link rel="stylesheet" href="src/css/bootstrap.css">
-    <link rel="stylesheet" href="src/css/material.css">
+   
 </head>
-<body class="theme">
+<body>
+<?php
+include 'src/php/addMenu.php';
+?>
 <!--меню-->
 <section>
     <div class="container-xxl">
@@ -40,35 +38,15 @@
         <div style="display: flex; justify-content: center; margin: 1% 0;">
             <button id="createPageButton" type="button"
                     class="btn btn-outline-success">
-                <a class="nav-link active" href="the_memo.html">Начнем обучение</a>
+                <a class="nav-link active" href="the_memo.php">Начнем обучение</a>
             </button>
         </div>
     </div>
 </section>
-<script src="src/js/navbar_creator.js"></script>
-<script src="src/js/material.js"></script>
-<script src="src/js/material_settings.js"></script>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        let lesson_arr = document.querySelectorAll('a.btn.btn-primary.lesson');
-        const userProgress = JSON.parse(localStorage.getItem('userProgress')) || Array(10).fill(false);
-        const progressPercent = userProgress.length > 0 ? `${(userProgress.filter(value => value).length * 10)}%` : '0%';
-        let i = 0
-        for (let elem of userProgress) {
-            if (elem) {
-                console.log(elem)
-                lesson_arr[i].classList.remove('disabled');
-                lesson_arr[i].disabled = false;
-                i++;
-
-            }
-
-        }
-
-        progress_bar.style.width = `${progressPercent}`
-    })
-</script>
+<?php
+include 'src/php/additionally.php';
+?>
 
 </body>
 </html>

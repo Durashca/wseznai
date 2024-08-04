@@ -20,7 +20,7 @@ include 'src/php/addMenu.php';
     <div class="row">
         <h1>Выберите раздел</h1>
         <div id="content">
-        <a href="lesson1.php">#1</a>
+        <a href="index_new_to_PC.php">Урок для начинающих</a>
         <a>#2</a>
         <a>#3</a>
         </div>                  

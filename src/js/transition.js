@@ -1,4 +1,3 @@
-
 /* кнопка перехода */
 let btn_move_to_next = document.getElementById('createPageButton');
 /* варианты ответов*/
@@ -30,7 +29,7 @@ function func_tg_add() {
 }
 
 /* функция для добавления класса disabled */
-func_tg_add()
+func_tg_add();
 
 
 

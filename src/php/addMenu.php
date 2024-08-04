@@ -10,7 +10,8 @@
                 <a class="nav-link active" aria-current="page" href="index.php">Главная</a>
               </li>
               <li class="nav-item">
-                <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Включить прокрутку и фон</button>
+              <a class="nav-link" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
+              aria-controls="offcanvasExample">Материал</a>
               </li>
               <li class="nav-item dropdown">
                 <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Переключатель справа offcanvas</button>
@@ -23,3 +24,7 @@
           </div>
       </nav>
       </div>
+
+
+
+      

@@ -41,5 +41,5 @@ function addLinkLesson(...args) {
 }
 
 
-addLinkLesson('С ПК на ВЫ', ['ссылка1', 'the_memo.php', 'ссылка2', ''], '2урок', ['ссылка3', 'lesson3', 'ссылка4', 'html4']);
+addLinkLesson('С ПК на ВЫ', ['ссылка1', 'lesson1.php', 'ссылка2', 'lesson2.html'], '2урок', ['ссылка3', 'lesson3', 'ссылка4', 'html4']);
 
