@@ -94,15 +94,11 @@
     <div style="display: flex; justify-content: center; margin: 1% 0;">
         <button id="createPageButton" type="button"
                 class="btn btn-outline-success">
-            <a  class="nav-link active" href="hotkeys.html">Сл. страница</a>
+            <a  class="nav-link active" href="hotkeys.php">Сл. страница</a>
         </button>
     </div>
         <!-- коментарии пользователей -->
         
-        <?php
-        include 'process_comment.php';
-        ?>
-
         
         
 
@@ -113,6 +109,7 @@
 <?php
 include 'src/php/additionally.php';
 ?>
+
 <script>
     buttonTransition = document.getElementById('createPageButton');
     buttonTransition.disabled = true;

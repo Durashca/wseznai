@@ -17,6 +17,9 @@
         crossorigin="anonymous"></script>
 <script src="src/js/menu.js"></script>
 <?php
+include 'process_comment.php';
+?>
+<?php
 include 'src/php/addOffcanvas.php';
 ?>
 <script src="src/js/material.js"></script>

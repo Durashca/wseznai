@@ -70,12 +70,14 @@
     <div style="display: flex; justify-content: center; margin: 1% 0;">
         <button id="createPageButton" type="button"
                 class="btn btn-outline-success">
-            <a class="nav-link active" href="transferring_files.html">Сл. страница</a>
+            <a class="nav-link active" href="transferring_files.php">Сл. страница</a>
         </button>
     </div>
 </div>
 
-
+<?php
+include 'src/php/additionally.php';
+?>
 <script>
     // Определить ширину экрана
     const screenWidth = window.innerWidth;

@@ -1,18 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Ошибки со звуком</title>
-    <!--подключение Бутстрапа-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="src/css/indentation.css">
-    <link rel="stylesheet" href="src/css/bootstrap.css">
-    <link rel="stylesheet" href="src/css/material.css">
-    <link rel="stylesheet" href="src/css/material/style.css">
-    <link rel="stylesheet" href="src/css/material/hotkeys/alignment.css">
-    <link rel="stylesheet" href="src/css/material/transferring_files/alignment.css">
 </head>
 <body>
 <div class="container-xxl">
@@ -108,19 +97,14 @@
     <div style="display: flex; justify-content: center; margin: 1% 0;">
         <button id="createPageButton" type="button"
                 class="btn btn-outline-success">
-            <a class="nav-link active" href="device_password.html">Сл. страница</a>
+            <a class="nav-link active" href="device_password.php">Сл. страница</a>
         </button>
     </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
-<script src="src/js/navbar_creator.js"></script>
-<script src="src/js/material.js"></script>
-<script src="src/js/material_settings.js"></script>
-<script src="src/js/transition.js"></script>
-<script src="src/js/footer.js"></script>
+<?php
+include 'src/php/additionally.php';
+?>
 
 <script>
     const videoElement = document.createElement('video');
