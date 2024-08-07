@@ -1,10 +1,7 @@
 <!-- В delete_comment.php -->
 <?php
 
-$host = 'localhost';
-$user = 'root';
-$pass = 'root';
-$dbname = 'db_users';
+include 'config.php';
 
 // Проверка аутентификации или другие проверки безопасности
 

@@ -16,7 +16,8 @@ let menu =
               aria-controls="offcanvasExample">Материал</a>
               </li>
               <li class="nav-item dropdown">
-                <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Переключатель справа offcanvas</button>
+              <a class="nav-link" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+              aria-controls="offcanvasRight">Профиль</a>
               </li>
             </ul>
             <form class="d-flex" role="search">

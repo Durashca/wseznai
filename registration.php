@@ -52,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // нажатие на кнопку
         // Авторизация
         $_SESSION['user_id'] = $userId;
         $_SESSION['user_name'] = $name;
-        $_SESSION['user_login'] = $login;
+        $_SESSION['user_mail'] = $login;
 
         header("Location: index_new_to_PC.php");
         exit; // Важно завершить выполнение скрипта после перенаправления

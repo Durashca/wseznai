@@ -110,16 +110,22 @@
 include 'src/php/additionally.php';
 ?>
 
-<script>
-    buttonTransition = document.getElementById('createPageButton');
-    buttonTransition.disabled = true;
-    // ждем, пока страница загрузится полностью
-    document.addEventListener("DOMContentLoaded", function(event) {
-        if (document.getElementById('name').textContent != '' && document.getElementById('mail').textContent != '' )
-        buttonTransition.disabled = false;
-        console.log(document.getElementById('name').textContent + '!');
-    });
+<?php
+if (isset($_SESSION['user_mail']) && isset($_SESSION['user_name']) && isset($_SESSION['user_id'])) {
+    $buttonDisabled = false;
+} else {
+    $buttonDisabled = true;
+}
+?>
 
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var createPageButton = document.getElementById('createPageButton');
+        if (createPageButton) {
+            createPageButton.disabled = <?= $buttonDisabled ? 'true' : 'false'?>;
+        }
+    });
 </script>
+
 </body>
 </html>
