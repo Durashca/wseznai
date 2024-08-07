@@ -12,13 +12,6 @@ let h4 = document.querySelector('.dashed > h4');
 
 let lesson_arr = document.querySelectorAll('a.btn.btn-primary.lesson');
 
-// сообщение для телефонов
-let pre_emptive_letter = document.getElementById('pre_emptive_letter');
-if (pre_emptive_letter){
-    //добавляем текст в див
-    pre_emptive_letter.textContent = 'Если вы проходите уроки с телефона, то кнопка перехода на следующую страницу будет для вас разблокирована'
-}
-
 
 /* функция для добавления класса disabled(вызов по умолчанию) */
 function func_tg_add() {

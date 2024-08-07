@@ -12,8 +12,8 @@ let menu =
                 <a class="nav-link active" aria-current="page" href="index.php">Главная</a>
               </li>
               <li class="nav-item">
-              <a class="nav-link" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
-              aria-controls="offcanvasExample">Материал</a>
+                <a class="nav-link" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
+                           aria-controls="offcanvasExample">Материал</a>
               </li>
               <li class="nav-item dropdown">
               <a class="nav-link" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"

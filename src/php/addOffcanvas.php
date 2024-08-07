@@ -1,83 +1,76 @@
-    <!-- left offcanvas -->
-  <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
-    <div class="offcanvas-header">
-      <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Фон с прокруткой</h5>
-      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Закрыть"></button>
-    </div>
-   <!-- content left offcanvas -->
-  
-    <div class="offcanvas-body">
-    <div id="lessonContent">
-      
+<script>
+let menu = 
+`
+<div class="container-fluid">
+      <nav style="margin: 0 0 4% 0;" id="menu" class="navbar navbar-expand-lg bg-body-tertiary">
+          <img  id="idIcoMenu" src="src/ico/icon.png">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Переключатель навигации">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.php">Главная</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Материал</a>
+              </li>
+              <li class="nav-item ">
+               <a class="nav-link active" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Профиль</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Поиск" aria-label="Поиск">
+              <button class="btn btn-outline-success" type="submit">Поиск</button>
+            </form>
+          </div>
+      </nav>
       </div>
-  
-    </div>
-   <!-- content left offcanvas -->
-  
-  
-  </div>
-    </div>
+`;
+document.body.insertAdjacentHTML('afterbegin', menu);
+</script>
+
+
+<!-- left offcanvas -->
+<!--material-->
+<div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Материал</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Закрыть"></button>
+          </div>
+          <div class="offcanvas-body" style="overflow: hidden;">
+            <!--прогресбар-->
+            <div>
+                <h6 class="text-center">Прогресс по материалу:</h6>
+                <div class="progress" role="progressbar" aria-label="Пример информации"
+                    aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="height: 1.4em">
+                    <div id="progress_bar" class="progress-bar-animated progress-bar-striped bg-dark"
+                        style="width: 0">
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="material-body-scroll">
+                <div class="list-lessons">
+
+                </div>
+            </div>
+</div>
+            <!---->
     <!-- left offcanvas -->
   
     <!-- right offcanvas -->
-  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" style="right: 0; left: auto;">
     <div class="offcanvas-header">
       <h5 class="offcanvas-title" id="offcanvasRightLabel">Offcanvas справа</h5>
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Закрыть"></button>
     </div>
     <!-- content right offcanvas -->
     <div class="offcanvas-body">
-         <!-- Login form -->
-         <div id="divLogin">
-        <?php
-        session_start();
-        ?>
-         <form action="login.php" method="POST">
-            <input name="login" type="text" placeholder="Login" required readonly onfocus="this.removeAttribute('readonly');">
-            <input name="password" type="password" placeholder="Password" required readonly onfocus="this.removeAttribute('readonly');">
-            <input type="submit" value="Login" required readonly onfocus="this.removeAttribute('readonly');">
-         </form>
-          </div>
-        <br>
-        <!-- Registration form -->
-        <div id="divRegistration">
-        <?php
-        session_start();
-        ?>
-        <form action="registration.php" method="POST">
-            <input name="reg_name" type="text" placeholder="Name" required readonly onfocus="this.removeAttribute('readonly');">
-            <input name="reg_login" type="text" placeholder="Login" required readonly onfocus="this.removeAttribute('readonly');">
-            <input name="reg_password" type="password" placeholder="Password" required readonly onfocus="this.removeAttribute('readonly');">
-            <input type="submit" value="Register">
-        </form>
-        </div>
-        <!-- Profile -->
-        <div class="form-profile row g-3 hide" id="divProfile">
-        <div class="col-md-8">
-            <p>ID: </p>
-            <?php
-        session_start();
-        ?>
-            <p id="id">
-              <?php if (isset($_SESSION['user_id'])) echo $_SESSION['user_id']; ?>
-            </p>
-          </div>
-          <div class="col-md-8">
-            <p>Name: </p>
-            <p id="name">
-              <?php if (isset($_SESSION['user_name'])) echo $_SESSION['user_name']; ?>
-            </p>
-          </div>
-          <div class="col-md-8">
-            <p>mail: </p>
-            <p id="mail">
-              <?php if (isset($_SESSION['user_mail'])) echo $_SESSION['user_mail']; ?>
-            </p>
-          </div>
-        </div>
+     
         <!-- End of profile -->
     <!-- content right offcanvas -->
-  </div>
+</div>
     <!-- right offcanvas -->
      <script>
       divProfile = document.getElementById('divProfile');
