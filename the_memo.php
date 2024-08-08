@@ -113,6 +113,9 @@ include 'src/php/additionally.php';
 <?php
 if (isset($_SESSION['user_mail']) && isset($_SESSION['user_name']) && isset($_SESSION['user_id'])) {
     $buttonDisabled = false;
+
+    include 'progress.php';
+    new_to_PC(10);
 } else {
     $buttonDisabled = true;
 }
@@ -123,6 +126,8 @@ if (isset($_SESSION['user_mail']) && isset($_SESSION['user_name']) && isset($_SE
         var createPageButton = document.getElementById('createPageButton');
         if (createPageButton) {
             createPageButton.disabled = <?= $buttonDisabled ? 'true' : 'false'?>;
+            
+
         }
     });
 </script>

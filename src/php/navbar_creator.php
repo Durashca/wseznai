@@ -42,7 +42,7 @@ document.body.insertAdjacentHTML('afterbegin', menu);
          id="offcanvasRight"
          aria-labelledby="offcanvasRightLabel">
         <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasRightLabel">Зарегистрироваться</h5>
+            <h5 class="offcanvas-title" id="offcanvasRightLabel"></h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
                     aria-label="Закрыть"></button>
         </div>
@@ -95,7 +95,18 @@ document.body.insertAdjacentHTML('afterbegin', menu);
               <?php if (isset($_SESSION['user_mail'])) echo $_SESSION['user_mail']; ?>
             </p>
         </div>
-      </div>  
+        <div class="col-md-8">
+            <p>progress: </p>
+            <p id="progress">
+              <?php if (isset($_SESSION['user_progress'])) echo $_SESSION['user_progress']; ?>
+            </p>
+        </div>
+      </div> 
+      <button id="changingformsToLogin">Войти</button>
+      <button id="changingformsToRegister">Зарегистрироваться</button>
+      <?php if (isset($_SESSION['user_id'])) echo '<button id="changingformsToProfile">Профиль</button>'; ?>
+    </div>  
+      
 
             <!---->
         </div>
@@ -121,6 +132,39 @@ document.body.insertAdjacentHTML('afterbegin', menu);
                 <div class="list-lessons">
 
                 </div>
-            </div><!---->
+    </div><!---->
+
+<script>
+changingformsToLogin = document.getElementById('changingformsToLogin');
+changingformsToRegister = document.getElementById('changingformsToRegister');
+changingformsToProfile = document.getElementById('changingformsToProfile');
+
+changingformsToLogin.addEventListener('click', function() {
+    document.getElementById('divRegistration').style.display = 'none';
+    document.getElementById('divLogin').style.display = 'block';
+    document.getElementById('divProfile').style.display = 'none';
+    changingformsToLogin.style.display = 'none';
+    changingformsToRegister.style.display = 'block';
+    changingformsToProfile.display = 'block';
+});
+
+changingformsToRegister.addEventListener('click', function() {
+    document.getElementById('divLogin').style.display = 'none';
+    document.getElementById('divRegistration').style.display = 'block';
+    document.getElementById('divProfile').style.display = 'none';
+    changingformsToRegister.style.display = 'none';
+    changingformsToLogin.style.display = 'block';
+    changingformsToProfile.style.display = 'block';
+});
+
+changingformsToProfile.addEventListener('click', function() {
+    document.getElementById('divLogin').style.display = 'none';
+    document.getElementById('divRegistration').style.display = 'none';
+    document.getElementById('divProfile').style.display = 'block';
+    changingformsToProfile.style.display = 'none';
+    changingformsToLogin.style.display = 'block';
+    changingformsToRegister.style.display = 'block';
+});
+</script>
 
 
