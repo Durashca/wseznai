@@ -34,7 +34,7 @@
             </div>
         </div>
         <div style="display: flex; justify-content: center; margin: 1% 0;">
-            <button id="createPageButton" type="button"
+            <button  type="button"
                     class="btn btn-outline-success">
                 <a class="nav-link active" href="the_memo.php">Начнем обучение</a>
             </button>

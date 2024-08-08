@@ -1,27 +1,35 @@
 <?php
-function new_to_PC ($num) {
-include 'config.php';
-session_start();
+function new_to_PC($num) {
+    include 'config.php';
+    session_start();
 
-// Создание соединения с базой данных
-$conn = new mysqli($host, $user, $pass, $dbname);
+    $conn = new mysqli($host, $user, $pass, $dbname);
 
-// Проверка соединения
-if ($conn->connect_error) {
-    die("Ошибка подключения: ". $conn->connect_error);
-}
+    if ($conn->connect_error) {
+        die("Ошибка подключения: " . $conn->connect_error);
+    }
 
- $user_id = $_SESSION['user_id'];
+    $user_id = $_SESSION['user_id'];
 
- $_SESSION['user_progress'] = $num;
+    // Получаем текущий прогресс пользователя
+    $stmt = $conn->prepare("SELECT new_to_PC FROM progress WHERE id = ?");
+    $stmt->bind_param("i", $user_id);
+    $stmt->execute();
+    $stmt->bind_result($current_progress);
+    $stmt->fetch();
+    $stmt->close();
 
- // Подготовленный запрос для безопасной выборки данных
- $stmt = $conn->prepare("INSERT INTO progress (id, new_to_PC) VALUES ( ?, ?)");
- $stmt->bind_param("ii",  $user_id, $num);
- $stmt->execute();
- 
+    // Проверяем, не является ли новое значение прогресса меньшим, чем текущее или прогресс еще не задан
+    if ($current_progress === null || $num > $current_progress) {
+        $_SESSION['user_progress'] = $num;
 
+        // Обновляем или вставляем новое значение прогресса
+        $stmt = $conn->prepare("INSERT INTO progress (id, new_to_PC) VALUES (?, ?) ON DUPLICATE KEY UPDATE new_to_PC = ?");
+        $stmt->bind_param("iii", $user_id, $num, $num);
+        $stmt->execute();
+        $stmt->close();
+    }
 
-
+    $conn->close();
 }
 ?>

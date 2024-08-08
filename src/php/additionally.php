@@ -26,6 +26,6 @@ include 'src/php/navbar_creator.php';
 <script src="src/js/material.js"></script>
 <script src="src/js/material_settings.js"></script>
 <script src="src/js/message_for_phones.js"></script>
-<!-- <script src="src/js/transition.js"></script>
-<script src="src/js/transition2.js"></script> -->
+<script src="src/js/transition.js"></script>
+<!-- <script src="src/js/transition2.js"></script>  -->
 <script src="src/js/footer.js"></script>

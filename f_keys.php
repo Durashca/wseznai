@@ -57,13 +57,14 @@ include 'src/php/additionally.php';
 <script>
     let inp_fn = document.getElementById('inputFN');
 
-    // Определить ширину экрана
-    const screenWidth = window.innerWidth;
     // Определить тип устройства на основе ширины
-    if (screenWidth < 768) {
+    if (window.innerWidth < 768) {
         func_tg_dis();
         func_tg_vcr();
-        updateProgress(3);
+        <?php
+        include 'progress.php';
+        new_to_PC(30);
+        ?>
     }else {
 
 
@@ -73,7 +74,10 @@ include 'src/php/additionally.php';
             if (inputValue === 'FN') {
                 func_tg_dis();
                 func_tg_vcr();
-                updateProgress(3);
+                <?php
+                include 'progress.php';
+                new_to_PC(30);
+                ?>
             } else {
                 func_tg_wrong();
             }

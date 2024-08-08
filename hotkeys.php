@@ -132,6 +132,8 @@
 </div>
 <?php
 include 'src/php/additionally.php';
+include 'progress.php';
+    new_to_PC(20);
 ?>
 <script>
     if (window.innerWidth < 768) {

@@ -23,7 +23,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="new_to_PC/index.html">Главная</a>
+                        <a class="nav-link active" aria-current="page" href="index_new_to_PC.php">Главная</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
@@ -123,8 +123,9 @@ document.body.insertAdjacentHTML('afterbegin', menu);
                 <h6 class="text-center">Прогресс по материалу:</h6>
                 <div class="progress" role="progressbar" aria-label="Пример информации"
                     aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="height: 1.4em">
-                    <div id="progress_bar" class="progress-bar-animated progress-bar-striped bg-dark"
-                        style="width: 0"></div>
+                   <div class="progress-bar-animated progress-bar-striped bg-dark"
+                    style="width: <?php session_start(); if (isset($_SESSION['user_progress'])) echo $_SESSION['user_progress']. '%';?>">
+                   </div>
                 </div>
             </div>
             <hr>
@@ -134,6 +135,7 @@ document.body.insertAdjacentHTML('afterbegin', menu);
                 </div>
     </div><!---->
 
+<!-- переключение форм -->
 <script>
 changingformsToLogin = document.getElementById('changingformsToLogin');
 changingformsToRegister = document.getElementById('changingformsToRegister');
@@ -166,5 +168,8 @@ changingformsToProfile.addEventListener('click', function() {
     changingformsToRegister.style.display = 'block';
 });
 </script>
+<!--  -->
+
+
 
 

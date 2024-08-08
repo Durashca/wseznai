@@ -77,6 +77,8 @@
 
 <?php
 include 'src/php/additionally.php';
+include 'progress.php';
+new_to_PC(40);
 ?>
 <script>
     // Определить ширину экрана
@@ -85,7 +87,10 @@ include 'src/php/additionally.php';
     if (screenWidth < 768) {
         /*телефон*/
         func_tg_dis()
-        updateProgress(4);
+        <?php
+        include 'progress.php';
+        new_to_PC(40);
+        ?>
     } else if (screenWidth >= 768) {
         /*пк*/
         const editableDiv = document.getElementById('editableDiv');
@@ -141,7 +146,10 @@ include 'src/php/additionally.php';
             if (imagePasted) {
                 func_tg_dis()
                 func_tg_vcr()
-                updateProgress(4);
+                <?php
+                include 'progress.php';
+                new_to_PC(40);
+                ?>
             }else {
                 func_tg_wrong()
             }
