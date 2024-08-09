@@ -53,6 +53,8 @@
 
 <?php
 include 'src/php/additionally.php';
+include 'progress.php';
+new_to_PC(30);
 ?>
 <script>
     let inp_fn = document.getElementById('inputFN');
@@ -61,10 +63,7 @@ include 'src/php/additionally.php';
     if (window.innerWidth < 768) {
         func_tg_dis();
         func_tg_vcr();
-        <?php
-        include 'progress.php';
-        new_to_PC(30);
-        ?>
+        
     }else {
 
 
@@ -74,10 +73,6 @@ include 'src/php/additionally.php';
             if (inputValue === 'FN') {
                 func_tg_dis();
                 func_tg_vcr();
-                <?php
-                include 'progress.php';
-                new_to_PC(30);
-                ?>
             } else {
                 func_tg_wrong();
             }

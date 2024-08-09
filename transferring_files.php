@@ -191,6 +191,8 @@
 </div>
 <?php
 include 'src/php/additionally.php';
+include 'progress.php';
+new_to_PC(50);
 ?>
 <script>
     // Определить ширину экрана

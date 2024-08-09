@@ -25,6 +25,9 @@ include 'src/php/navbar_creator.php';
 
 <script src="src/js/material.js"></script>
 <script src="src/js/material_settings.js"></script>
+<?php
+ include "src/php/unblocking_lesson.php";
+?>
 <script src="src/js/message_for_phones.js"></script>
 <script src="src/js/transition.js"></script>
 <!-- <script src="src/js/transition2.js"></script>  -->

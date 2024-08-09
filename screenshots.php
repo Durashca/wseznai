@@ -87,10 +87,7 @@ new_to_PC(40);
     if (screenWidth < 768) {
         /*телефон*/
         func_tg_dis()
-        <?php
-        include 'progress.php';
-        new_to_PC(40);
-        ?>
+        
     } else if (screenWidth >= 768) {
         /*пк*/
         const editableDiv = document.getElementById('editableDiv');

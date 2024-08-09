@@ -104,6 +104,8 @@
 
 <?php
 include 'src/php/additionally.php';
+include 'progress.php';
+new_to_PC(90);
 ?>
 
 <script>

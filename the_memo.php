@@ -108,28 +108,15 @@
 
 <?php
 include 'src/php/additionally.php';
-?>
-
-<?php
-if (isset($_SESSION['user_mail']) && isset($_SESSION['user_name']) && isset($_SESSION['user_id'])) {
-    $buttonDisabled = false;
-
-    include 'progress.php';
+include 'progress.php';
     new_to_PC(10);
-} else {
-    $buttonDisabled = true;
-}
 ?>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        var createPageButton = document.getElementById('createPageButton');
-        if (createPageButton) {
-            createPageButton.disabled = <?= $buttonDisabled ? 'true' : 'false'?>;
-            
-
-        }
-    });
+    if (document.getElementById('name').textContent != '' && document.getElementById('mail').textContent != '' && document.getElementById('id').textContent != '' ){
+        func_tg_dis();
+        func_tg_vcr();
+    }
 </script>
 
 </body>
