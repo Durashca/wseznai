@@ -6,6 +6,7 @@ include 'error.php';
 <html>
 <head>
   <title>lesson1</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="ico/icon.png">
 </head>
 <body class="container-fluid">
   

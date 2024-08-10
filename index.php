@@ -1,18 +1,20 @@
-<?php
-include 'basic.php';
-?>
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
   <title>Theme Switcher</title>
+
 </head>
 <body class="container-fluid">
   
-<!-- menu -->
-<?php
-include 'src/php/addMenu.php';
-?>
-<!-- menu -->
+
+
+ <!--  -->
+<div id="loader" class="loader">
+  <div class="spinner"></div>
+</div>
+<!-- ы -->
+
 
     <!-- content -->
     <div id="htmlContent">
@@ -21,8 +23,8 @@ include 'src/php/addMenu.php';
         <h1>Выберите раздел</h1>
         <div id="content">
         <a href="index_new_to_PC.php">Урок для начинающих</a>
-        <a>#2</a>
-        <a>#3</a>
+        <a href="index_pro_to_PC.php">Шаблон для програмистов</a>
+        
         </div>                  
     </div>
     </div>
@@ -31,10 +33,10 @@ include 'src/php/addMenu.php';
 
 <!-- offcanvas -->
 <?php
-  include 'src/php/addOffcanvas.php';
+  include 'src/php/additionally.php';
 ?>
 <!-- offcanvas -->
-<script src="src/js//meta.js"></script>
+<script src="src/js/meta.js"></script>
 <script src=src/js/addlinkLesson.js></script>
 </body>
 </html>

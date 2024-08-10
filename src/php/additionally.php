@@ -1,6 +1,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" href="src/ico/icon.png">
+
+
+<link rel="stylesheet" href="src/css/loading_the_wheel.css"> 
+
+<!-- <meta name="msapplication-TileColor" content="#ffffff" />
+<meta name="msapplication-TileImage" content="src/ico/icon.png" />
+<meta name="theme-color" content="#ffffff" /> -->
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -30,5 +36,5 @@ include 'src/php/navbar_creator.php';
 ?>
 <script src="src/js/message_for_phones.js"></script>
 <script src="src/js/transition.js"></script>
-<!-- <script src="src/js/transition2.js"></script>  -->
 <script src="src/js/footer.js"></script>
+<script src="src/js/loading_the_wheel.js"></script>

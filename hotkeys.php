@@ -107,13 +107,6 @@
                             <i style="display: inline">"Выделите весь этот текст, без кавычек"</i> -> <input maxlength="37" id="ctrlV">
                         </div>
 
-                        <div id="div_sec" class="keyboard-shortcut-block dashed">
-                            <h4 id="h4_sec">Вырежьте весь текст( <b>Ctrl</b> + <b>X</b>) из поля и отмените последние
-                                действие с помощью( <b>Ctrl</b> + <b>Z</b>)</h4>
-                            <input maxlength="7" id="inp_sec" value="ВсеЗнай">
-
-                        </div>
-
 
                         <div id="pre_emptive_letter" class="bd-callout bd-callout-warning"></div>
 
@@ -124,7 +117,7 @@
         </div>
     </div>
     <div style="display: flex; justify-content: center; margin: 1% 0;">
-        <button id="createPageButton" type="button"
+        <button id="nextButton" type="button"
                 class="btn btn-outline-success">
             <a class="nav-link active" href="f_keys.php">Сл. страница</a>
         </button>
@@ -136,124 +129,71 @@ include 'progress.php';
     new_to_PC(20);
 ?>
 <script>
-    if (window.innerWidth < 768) {
-        full_execution()
-    }
-    /*счетчик*/
-    let pressing_two_keys = [false, false, false];
-    let tot = 0;
-    let flag_v = true;
-    let func, func2;
-
+window.addEventListener('DOMContentLoaded', function() {
+    
     let inpCtrlV = document.querySelector('#ctrlV');
+    let nextButton = document.querySelector('#nextButton');
 
-    inpCtrlV.addEventListener('keydown', function (e) {
-        if (e.ctrlKey && (e.key === 'v' || e.key === 'м')) {
-            func = setTimeout(() => {
-                if (inpCtrlV.value === 'Выделите весь этот текст, без кавычек') {
-                    inpCtrlV.classList.add('disabled');
+    nextButton.disabled = true; // блокируем кнопку
 
-                    if (flag_v) {
-                        pressing_two_keys[0] = true;
-                        flag_v = false;
-                    }
+    let correctAttempt = false;
 
-                    func_tg_vcr();
+inpCtrlV.addEventListener('keydown', function (e) {
+    if (e.ctrlKey && (e.key === 'v' || e.key === 'м')) {
+        setTimeout(() => {
+            if (inpCtrlV.value === 'Выделите весь этот текст, без кавычек') {
+                inpCtrlV.classList.add('disabled');
+                inpCtrlV.readOnly = true;
+                nextButton.disabled = false;
+                func_tg_vcr();
+                correctAttempt = true;
+            } else {
+                func_tg_wrong();
+            }
+        }, 100);
+    }
+});
 
-                    tot = pressing_two_keys.filter(elem => elem).length;
-
-                    if (tot === 3) {
-                    full_execution()
-                    }
-                } else {
-                    func_tg_wrong();
-                }
-            }, 100);
-        }
-    });
-
-    let flag_x = true;
-    let flag_z = true;
-
-    let inpCtrlXZ = document.querySelector('#inp_sec');
-    inpCtrlXZ.addEventListener('keydown', function (e) {
-        if (e.ctrlKey && (e.key === 'x' || e.key === 'ч')) {
-            func2 = setTimeout(() => {
-                if (inpCtrlXZ.value === '') {
-                    if (flag_x) {
-                        pressing_two_keys[1] = true;
-                        flag_x = false;
-                    }
-                }
-            }, 100);
-        }
-
-        if (e.ctrlKey && (e.key === 'z' || e.key === 'я')) {
-            func2 = setTimeout(() => {
-                if (flag_z) {
-                    pressing_two_keys[2] = true;
-                    flag_z = false;
-
-                    tot = pressing_two_keys.filter(elem => elem).length;
-
-                    if (pressing_two_keys[1] === true && pressing_two_keys[2] === true){
-                        func_tg_vcr_sec();
-                        inpCtrlXZ.classList.add('disabled');
-                    } else {
-                        func_tg_wrong_sec()
-                    }
-
-                    if (tot === 3) {
-                        full_execution()
-                    }
-
-                }
-            }, 100);
-        }
-    });
-
-
+inpCtrlV.addEventListener('blur', function (e) {
+    if (!correctAttempt) {
+        inpCtrlV.value = '';
+    }
+});
+    
+    
     //делаем все что надо по странице
     function full_execution() {
-        if (typeof func_tg_dis === 'function') {
-            func_tg_dis();
+
+        const nextButton = document.getElementById('nextButton');
+
+        if (nextButton) {
+            nextButton.disabled = false;
         }
 
-        if (typeof func_tg_vcr_sec === 'function') {
-            func_tg_vcr_sec();
-        }
-
-        if (typeof func_tg_vcr === 'function') {
-            func_tg_vcr();
-        }
-
-        if (typeof func === 'number') {
-            clearTimeout(func);
-        }
-
-        if (typeof func2 === 'number') {
-            clearTimeout(func2);
-        }
+        
+        func_tg_vcr();
+        
 
         const inpCtrlV = document.getElementById('ctrlV');
-        const inpCtrlXZ = document.getElementById('inp_sec');
 
         if (inpCtrlV) {
             inpCtrlV.value = 'Выделите весь этот текст, без кавычек';
             inpCtrlV.classList.add('disabled');
+            inpCtrlV.readOnly = true;
         }
 
-        if (inpCtrlXZ) {
-            inpCtrlXZ.classList.add('disabled');
-        }
+        
 
-        updateProgress(2);
+        
     }
 
-    if (userProgress[2]){
-        full_execution()
+    <?php
+    session_start();
+    if ($_SESSION['user_progress'] > 20){
+        echo "full_execution();";
     }
-
+   ?>
+});
 </script>
 </body>
 </html>
