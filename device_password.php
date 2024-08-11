@@ -87,6 +87,7 @@ new_to_PC(100);
 ?>
 
 <script>
+    
     document.addEventListener('DOMContentLoaded', function () {
         let labels = document.querySelectorAll('.form-check-label');
         let correct1 = document.getElementById('correct1');
@@ -117,14 +118,18 @@ new_to_PC(100);
             label.addEventListener('click', labelClickHandler);
         });
 
-        if (userProgress[0]) {
-            labels[4].classList.toggle('strikethrough');
-            labels.forEach(function(label) {
-                label.removeEventListener('click', labelClickHandler);
-            });
-            func_tg_dis();
-            func_tg_vcr();
-        }
+
+        <?php
+    session_start();
+    if($_SESSION['user_progress'] > 100){
+        echo "labels[4].classList.toggle('strikethrough');";
+        echo "labels.forEach(function(label) {";
+        echo " label.removeEventListener('click', labelClickHandler);";
+        echo "});";
+        echo "func_tg_dis();";
+        echo "func_tg_vcr();";
+    }    
+    ?>
     });
 </script>
 </body>

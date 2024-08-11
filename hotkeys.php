@@ -119,14 +119,16 @@
     <div style="display: flex; justify-content: center; margin: 1% 0;">
         <button id="nextButton" type="button"
                 class="btn btn-outline-success">
-            <a class="nav-link active" href="f_keys.php">Сл. страница</a>
+            <a class="nav-link active" href="basic_keys.php">Сл. страница</a>
         </button>
     </div>
 </div>
 <?php
 include 'src/php/additionally.php';
+if ($_SESSION['user_progress'] < 20){
 include 'progress.php';
     new_to_PC(20);
+}
 ?>
 <script>
 window.addEventListener('DOMContentLoaded', function() {

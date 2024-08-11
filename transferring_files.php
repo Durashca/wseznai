@@ -185,16 +185,21 @@
     <div style="display: flex; justify-content: center; margin: 1% 0;" >
         <button id="createPageButton" type="button"
                 class="btn btn-outline-success" >
-            <a class="nav-link active" href="basic_keys.php">Сл. страница</a>
+            <a class="nav-link active" href="download_the_application.php">Сл. страница</a>
         </button>
     </div>
 </div>
 <?php
 include 'src/php/additionally.php';
 include 'progress.php';
-new_to_PC(50);
+new_to_PC(60);
 ?>
+<!--для перетаскивания дивов-->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
 <script>
+        window.addEventListener('DOMContentLoaded', function() {
     // Определить ширину экрана
     const screenWidth = window.innerWidth;
     // Определить тип устройства на основе ширины
@@ -202,7 +207,7 @@ new_to_PC(50);
         /*телефон*/
         func_tg_dis()
         func_tg_vcr()
-        updateProgress(5);
+        
 
     } else if (screenWidth >= 768) {
         /*пк*/
@@ -247,7 +252,7 @@ new_to_PC(50);
             if (containsPicturesScreenshots) {
                 func_tg_vcr();
                 func_tg_dis();
-                updateProgress(5)
+               
                 // Выполнить нужные действия здесь
             } else {
                 func_tg_wrong();
@@ -257,26 +262,31 @@ new_to_PC(50);
     }
 
     // авто выполнение
-    if (userProgress[5]){
+    
+    <?php
+    session_start();
+    if($_SESSION['user_progress'] > 60){
         // Автоматическое перетаскивание блоков на свои места
-        const div1Content = document.getElementById('div1').innerHTML;
-        const div2Content = document.getElementById('div2').innerHTML;
-        const div3Content = document.getElementById('div3').innerHTML;
+       echo "const div1Content = document.getElementById('div1').innerHTML;";
+       echo "const div2Content = document.getElementById('div2').innerHTML;";
+       echo "const div3Content = document.getElementById('div3').innerHTML;";
 
-        document.getElementById('div1').innerHTML = div2Content;
-        document.getElementById('div2').innerHTML = div3Content;
-        document.getElementById('div3').innerHTML = div1Content;
+        echo "document.getElementById('div1').innerHTML = div2Content;";
+        echo "document.getElementById('div2').innerHTML = div3Content;";
+        echo "document.getElementById('div3').innerHTML = div1Content;";
 
         // Заблокировать блоки после автоматического перетаскивания
-        document.getElementById('div1').classList.add('disabled');
-        document.getElementById('div2').classList.add('disabled');
-        document.getElementById('div3').classList.add('disabled');
+        echo "document.getElementById('div1').classList.add('disabled');";
+        echo "document.getElementById('div2').classList.add('disabled');";
+        echo "document.getElementById('div3').classList.add('disabled');";
 
         // Вызов функций для нужного состояния блоков
-        func_tg_dis();
-        func_tg_vcr();
+        echo "func_tg_dis();";
+        echo "func_tg_vcr();";
     }
+    ?>
 
+        });
 </script>
 </body>
 </html>

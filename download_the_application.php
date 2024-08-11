@@ -105,7 +105,7 @@ new_to_PC(70);
         if (screenWidth < 768) {
             // Действия для экрана меньше 768px
             func_tg_dis();
-            updateProgress(7);
+            
         } else {
             const link = document.querySelector('a[href="https://apps.microsoft.com/detail/9nztwsqntd0s?hl=ru-ru&gl=RU"]');
 
@@ -113,19 +113,22 @@ new_to_PC(70);
                 event.preventDefault();
                 func_tg_dis();
                 func_tg_vcr()
-                updateProgress(7);
+                
                 setTimeout(function() {
                     window.open(link.getAttribute('href'), '_blank');
                 }, 1300); // Переход через 1.3 секунды (можете изменить задержку по вашему усмотрению)
             });
         }
 
-        const userProgress = JSON.parse(localStorage.getItem('userProgress')) || Array(10).fill(false);
-        if (userProgress[7] === true) {
-            func_tg_dis();
-            func_tg_vcr()
-            updateProgress(7);
-        }
+        
+    <?php
+    session_start();
+    if($_SESSION['user_progress'] > 70){
+       echo "func_tg_dis();";
+        echo "func_tg_vcr();";
+    }    
+    ?>
+
     });
 </script>
 

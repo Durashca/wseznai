@@ -78,9 +78,10 @@
 <?php
 include 'src/php/additionally.php';
 include 'progress.php';
-new_to_PC(40);
+new_to_PC(50);
 ?>
 <script>
+    window.addEventListener('DOMContentLoaded', function() {
     // Определить ширину экрана
     const screenWidth = window.innerWidth;
     // Определить тип устройства на основе ширины
@@ -143,26 +144,20 @@ new_to_PC(40);
             if (imagePasted) {
                 func_tg_dis()
                 func_tg_vcr()
-                <?php
-                include 'progress.php';
-                new_to_PC(40);
-                ?>
             }else {
                 func_tg_wrong()
             }
         });
     }
 
-
-
-
-    // авто выполнение
-    if (userProgress[4]){
-        func_tg_dis()
-        func_tg_vcr()
-        //здесь должнен быть скриншот
+    <?php
+    session_start();
+    if($_SESSION['user_progress'] > 50){
+        echo "func_tg_dis();";
+        echo "func_tg_vcr();";
     }
-
+    ?>
+});
 </script>
 </body>
 </html>

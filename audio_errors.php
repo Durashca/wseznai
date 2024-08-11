@@ -109,6 +109,7 @@ new_to_PC(90);
 ?>
 
 <script>
+     document.addEventListener('DOMContentLoaded', function() {
     const videoElement = document.createElement('video');
     videoElement.src = 'src/video/video_audio.mp4';
     videoElement.controls = true;
@@ -131,12 +132,16 @@ new_to_PC(90);
     const keyboardShortcutBlock = document.querySelector('.keyboard-shortcut-block.dashed');
     keyboardShortcutBlock.appendChild(videoElement);
 
-    if (userProgress[9]){
-        func_tg_dis();
-        func_tg_vcr();
-        videoElement.muted = false
-    }
 
+    <?php
+    session_start();
+    if($_SESSION['user_progress'] > 90){
+        echo "func_tg_dis();";
+        echo "func_tg_vcr();";
+        echo "videoElement.muted = false;";
+    }    
+    ?>
+     });
 </script>
 </body>
 </html>

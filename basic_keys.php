@@ -113,17 +113,18 @@
     <div style="display: flex; justify-content: center; margin: 1% 0;">
         <button id="createPageButton" type="button"
                 class="btn btn-outline-success">
-            <a class="nav-link active" href="download_the_application.php">Сл. страница</a>
+            <a class="nav-link active" href="f_keys.php">Сл. страница</a>
         </button>
     </div>
 </div>
 <?php
 include 'src/php/additionally.php';
 include 'progress.php';
-new_to_PC(60);
+new_to_PC(30);
 ?>
 
 <script>
+ window.addEventListener('DOMContentLoaded', function() {
     const userChInput = document.getElementById('userChInput');
     // Определить ширину экрана
     const screenWidth = window.innerWidth;
@@ -158,12 +159,16 @@ new_to_PC(60);
     });
 
     // авто выполнение
-    if (userProgress[6]){
+    <?php
+    session_start();
+    if($_SESSION['user_progress'] > 30){
 
-        userChInput.disabled = true
-        func_tg_dis();
-        func_tg_vcr();
+        echo "userChInput.disabled = true";
+        echo "func_tg_dis();";
+        echo "func_tg_vcr();";
     }
+    ?>
+});
 </script>
 </body>
 </html>

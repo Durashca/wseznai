@@ -90,9 +90,11 @@
 include 'src/php/additionally.php';
 include 'progress.php';
 new_to_PC(80);
+
 ?>
 
 <script>
+    document.addEventListener('DOMContentLoaded', function() {
     let radio = document.getElementById('flexRadioDefault1')
     btn_task_check.addEventListener('click', function (){
         if (radio.checked){
@@ -115,6 +117,16 @@ new_to_PC(80);
             elem.classList.add('disabled')
         }
     }
+
+
+    <?php
+    session_start();
+    if($_SESSION['user_progress'] > 80){
+       echo "func_tg_dis();";
+       echo "func_tg_vcr()";
+    }    
+    ?>
+});
 </script>
 </body>
 </html>
