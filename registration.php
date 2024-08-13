@@ -49,12 +49,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // нажатие на кнопку
         // Получение id нового пользователя
         $userId = mysqli_insert_id($link);
 
+        // Добавление записи в таблицу progress
+        $query = "INSERT INTO progress (id, new_to_PC) VALUES (?, 0)";
+        $stmt = mysqli_prepare($link, $query);
+        mysqli_stmt_bind_param($stmt, "i", $userId);
+        mysqli_stmt_execute($stmt);
+
         // Авторизация
         $_SESSION['user_id'] = $userId;
         $_SESSION['user_name'] = $name;
         $_SESSION['user_mail'] = $login;
+        $_SESSION['user_progress'] = 0; // добавьте эту строку
+        
 
-        header("Location: index_new_to_PC.php");
+        header("Location: the_memo.php");
         exit; // Важно завершить выполнение скрипта после перенаправления
     }
 }

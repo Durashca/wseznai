@@ -108,10 +108,8 @@
 
 <?php
 include 'src/php/additionally.php';
-if ($_SESSION['user_progress'] < 10){
 include 'progress.php';
 new_to_PC(10);
-}
 ?>
 
 <script>
