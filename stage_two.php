@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Шаблон для програмистов</title>
-    <link rel="icon" type="image/png" sizes="32x32" href="src/ico/icon.png">
+    <title>#2</title>
 </head>
 <body>
 <div class="container-xxl">
@@ -15,16 +13,12 @@
 
                 <!---->
                 <content>
-                <h1 class="title text-center">Работа с php</h1>
-                <a href="stage_one.php">#1</a>
-                <a href="stage_two.php">#2</a>
-                <a href="stage_three.php">#3</a>
+                <h1 class="title text-center">Регистрация на php</h1>
+                
                 </content>
             </div>
         </div>
     </div>
 </div>
-    
-
 </body>
 </html>

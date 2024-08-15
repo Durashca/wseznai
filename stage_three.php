@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Шаблон для програмистов</title>
-    <link rel="icon" type="image/png" sizes="32x32" href="src/ico/icon.png">
+    <title>#3</title>
 </head>
 <body>
 <div class="container-xxl">
@@ -24,7 +22,5 @@
         </div>
     </div>
 </div>
-    
-
 </body>
 </html>
