@@ -59,7 +59,7 @@
                 <p>Всавьте код и нажмите ctrl s.</p>
                 <p>Теперь перейдите в браузер и в поисковой строке напишите http://localhost/ , далее прописываем путь к index.php
                      (можно его и не прописывать так как браузер автоматически находит файлы с именем index).</p>
-                <p>В итоге: http://localhost/WseZnai/index.php или http://localhost/WseZnai/ .</p>
+                <p>В итоге: http://localhost/index.php или http://localhost/ . Эти ссылки отобразят наш php.</p>
                 <p>Можно создать папку или папки и в них уже разместить файл (пример): http://localhost/WseZnai/test/index.php .</p>
 
                 <div style="display: flex; justify-content: center; margin: 1% 0;">
