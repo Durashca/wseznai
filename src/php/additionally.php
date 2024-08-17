@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="src/css/material/hotkeys/alignment.css">
     <link rel="stylesheet" href="src/css/material/screenshots/alignment.css">
     <link rel="stylesheet" href="src/css/comment.css">
+    <link rel="stylesheet" href="src/css/img.css">
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"

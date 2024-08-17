@@ -72,6 +72,10 @@
   </div>
   <button id="save-button">Сохранить</button>
 
+  <?php
+  include 'src/php/additionally.php';
+  include 'src/php/canceling_the_button.php';
+  ?>
   <script>
     const folderList = document.getElementById('folder-list-ul');
     const createFolderInput = document.getElementById('create-folder-input');

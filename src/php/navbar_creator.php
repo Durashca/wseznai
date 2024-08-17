@@ -26,7 +26,7 @@
                         <a class="nav-link active" aria-current="page" href="index_new_to_PC.php">Главная</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
+                        <a id="btnMaterial" class="nav-link" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
                            aria-controls="offcanvasExample">Материал</a>
                     </li>
                 </ul>
@@ -35,7 +35,13 @@
     </nav>
 </header>
 `;
+
 document.body.insertAdjacentHTML('afterbegin', menu);
+let btnMaterial =  document.getElementById('btnMaterial');
+console.log(btnMaterial);
+
+
+
 </script>
     <!--панель справа-->
     <div class="offcanvas offcanvas-end" style="background-color: #F5F5F5" tabindex="-1"

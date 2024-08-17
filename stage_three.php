@@ -22,5 +22,6 @@
         </div>
     </div>
 </div>
+<script src="src/js/stage.js"></script> 
 </body>
 </html>
