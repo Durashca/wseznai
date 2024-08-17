@@ -183,7 +183,7 @@
 </div>
 <?php
 include 'src/php/additionally.php';
-include 'src/php/canceling_the_button.php';
+include 'src/php/changing_the_section.php';
 ?>
 >
  <style>

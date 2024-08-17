@@ -23,7 +23,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index_new_to_PC.php">Главная</a>
+                        <a id="btnMain" class="nav-link active" aria-current="page" href="index_new_to_PC.php">Главная</a>
                     </li>
                     <li class="nav-item">
                         <a id="btnMaterial" class="nav-link" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
@@ -38,6 +38,7 @@
 
 document.body.insertAdjacentHTML('afterbegin', menu);
 let btnMaterial =  document.getElementById('btnMaterial');
+let btnMain = document.getElementById('btnMain');
 console.log(btnMaterial);
 
 
