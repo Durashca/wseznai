@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -13,7 +16,7 @@
             <div class="container-material">
                 <content>
                     <h1 class="title text-center">Безопасное скачивание приложения</h1>
-                    <p>Вместо того, чтобы рассказывать, для чего нужно скачивать какие-то приложения, я покажу минусы и
+                    <p>Вместо того чтобы рассказывать, для чего нужно скачивать какие-то приложения, я покажу минусы и
                         плюсы:</p>
                     <div class="bd-callout bd-callout-green">
                         <h5>Плюсы скачивания приложений:</h5>
@@ -122,7 +125,7 @@ new_to_PC(70);
 
         
     <?php
-    session_start();
+
     if($_SESSION['user_progress'] > 70){
        echo "func_tg_dis();";
         echo "func_tg_vcr();";

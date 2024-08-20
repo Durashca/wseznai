@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -151,7 +154,6 @@ new_to_PC(50);
     }
 
     <?php
-    session_start();
     if($_SESSION['user_progress'] > 50){
         echo "func_tg_dis();";
         echo "func_tg_vcr();";

@@ -7,10 +7,11 @@ $fileName = basename($path, '.php');
 // Устанавливаем значение в переменную
 $id_comment = $fileName;
 
-session_start();
+
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['comment_text'])) {
+        session_start();
         $comment = $_POST['comment_text'];
         $id_user = $_SESSION['user_id'];
         $name_user = $_SESSION['user_name'];
@@ -122,9 +123,6 @@ function process_comment_addInTable($id_comment, $comment, $id_user, $name_user)
     $stmt->close();
     $conn->close();
 }
-
-
-
 ?>
 
 <div style="text-align: start;">

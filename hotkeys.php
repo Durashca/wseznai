@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -188,13 +191,14 @@ inpCtrlV.addEventListener('blur', function (e) {
 
         
     }
-
     <?php
-    session_start();
-    if ($_SESSION['user_progress'] > 20){
+    if ($_SESSION['user_progress'] > 20) {
         echo "full_execution();";
     }
-   ?>
+    ?>
+
+}
+
 });
 </script>
 </body>

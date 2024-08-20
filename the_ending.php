@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -52,7 +55,7 @@
                         <button id="downloadCertificateButton" class="btn btn-outline-success"
                                 onclick="downloadCertificate()">Скачать
                         </button>
-                        <button id="edit_button">Редактировать данные</button>
+<!--                        <button id="edit_button">Редактировать данные</button>-->
                     </div>
                 </content>
             </div>

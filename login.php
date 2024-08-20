@@ -1,15 +1,11 @@
 <?php
-include 'error.php';
-
+session_start();
 include 'config.php';
 
 // Подключение к базе данных
 $link = mysqli_connect($host, $user, $pass, $dbname);
 
-// Проверка наличия сессии
-if (!isset($_SESSION)) {
-    session_start();
-}
+
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Обработка формы входа
@@ -34,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             
            
-            header("Location: index_new_to_PC.php");
+            header("Location: the_memo.php");
             exit; // Важно завершить выполнение скрипта после перенаправления
         } else {
              echo "Пользователь не найден.";
@@ -42,4 +38,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 }
-?>

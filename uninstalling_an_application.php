@@ -1,5 +1,8 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <title>Удаление приложений</title>
 
@@ -100,7 +103,7 @@ new_to_PC(80);
         if (radio.checked){
             func_tg_dis()
             func_tg_vcr()
-            updateProgress(8);
+
             for (let elem of radio_arr){
                 elem.classList.add('disabled')
             }
@@ -109,18 +112,10 @@ new_to_PC(80);
         }
     })
 
-    if (userProgress[8]){
-        func_tg_dis()
-        func_tg_vcr()
-        radio.checked = true
-        for (let elem of radio_arr){
-            elem.classList.add('disabled')
-        }
-    }
+
 
 
     <?php
-    session_start();
     if($_SESSION['user_progress'] > 80){
        echo "func_tg_dis();";
        echo "func_tg_vcr()";

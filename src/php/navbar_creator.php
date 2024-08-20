@@ -1,5 +1,4 @@
-<!-- src\php\navbar_creator.php -->
- <script>
+<script>
     menu = `
 <header id="h-space" class="text-center">
     <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top" style="--bs-navbar-padding-y: 0rem; z-index: 10">
@@ -57,9 +56,6 @@ console.log(btnMaterial);
             <!---->
                 <!-- Login form -->
         <div id="divLogin" <?php if (isset($_SESSION['user_id'])) echo 'style="display: none;"';?>>
-        <?php
-        session_start();
-        ?>
          <form action="login.php" method="POST">
             <input name="login" type="text" placeholder="Login" required readonly onfocus="this.removeAttribute('readonly');">
             <input name="password" type="password" placeholder="Password" required readonly onfocus="this.removeAttribute('readonly');">
@@ -69,9 +65,7 @@ console.log(btnMaterial);
         <br>
         <!-- Registration form -->
         <div id="divRegistration" <?php if (isset($_SESSION['user_id'])) echo 'style="display: none;"';?>>
-        <?php
-        session_start();
-        ?>
+
         <form action="registration.php" method="POST">
             <input name="reg_name" type="text" placeholder="Name" required readonly onfocus="this.removeAttribute('readonly');">
             <input name="reg_login" type="text" placeholder="Login" required readonly onfocus="this.removeAttribute('readonly');">
@@ -80,14 +74,12 @@ console.log(btnMaterial);
         </form>
       </div>
         <!-- Profile -->
-        <div class="form-profile row g-3" id="divProfile" <?php if (!isset($_SESSION['user_id'])) echo 'style="display: none; "';?>>
+        <div class="form-profile row g-3" id="divProfile" <?php  if (!isset($_SESSION['user_id'])) echo 'style="display: none; "';?>>
         <div class="col-md-8">
             <p>ID: </p>
-            <?php
-        session_start();
-        ?>
+
             <p id="id">
-              <?php if (isset($_SESSION['user_id'])) echo $_SESSION['user_id']; ?>
+              <?php  if (isset($_SESSION['user_id'])) echo $_SESSION['user_id']; ?>
             </p>
         </div>
         <div class="col-md-8">
@@ -131,7 +123,7 @@ console.log(btnMaterial);
                 <div class="progress" role="progressbar" aria-label="Пример информации"
                     aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="height: 1.4em">
                    <div class="progress-bar-animated progress-bar-striped bg-dark"
-                    style="width: <?php session_start(); if (isset($_SESSION['user_progress'])) echo $_SESSION['user_progress']. '%';?>">
+                    style="width: <?php if (isset($_SESSION['user_progress'])) echo $_SESSION['user_progress']. '%';?>">
                    </div>
                 </div>
             </div>
@@ -175,7 +167,7 @@ changingformsToProfile.addEventListener('click', function() {
     changingformsToRegister.style.display = 'block';
 });
 </script>
-<!--  -->
+
 
 
 

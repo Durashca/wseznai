@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -110,6 +113,8 @@
 include 'src/php/additionally.php';
 include 'progress.php';
 new_to_PC(10);
+
+
 ?>
 
 <script>

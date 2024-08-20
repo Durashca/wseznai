@@ -1,6 +1,3 @@
-<?php
-include 'basic.php';
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,5 +7,8 @@ include 'basic.php';
 </head>
 <body class="container-fluid">
     <P>test lesson 2</P>
+    <?php
+    include 'src/php/navbar_creator.php';
+    ?>
 </body>
 </html>

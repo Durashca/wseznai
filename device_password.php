@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -104,7 +107,7 @@ new_to_PC(100);
                 !correct5.classList.contains('strikethrough')) {
                 func_tg_dis();
                 func_tg_vcr();
-                updateProgress(0);
+
 
                 labels.forEach(function(label) {
                     label.removeEventListener('click', labelClickHandler);
@@ -120,7 +123,6 @@ new_to_PC(100);
 
 
         <?php
-    session_start();
     if($_SESSION['user_progress'] > 100){
         echo "labels[4].classList.toggle('strikethrough');";
         echo "labels.forEach(function(label) {";

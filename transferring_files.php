@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -264,7 +267,7 @@ new_to_PC(60);
     // авто выполнение
     
     <?php
-    session_start();
+
     if($_SESSION['user_progress'] > 60){
         // Автоматическое перетаскивание блоков на свои места
        echo "const div1Content = document.getElementById('div1').innerHTML;";

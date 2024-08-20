@@ -1,9 +1,5 @@
 <?php
 $host = 'localhost';
 $user = 'root';
-$pass = 'root';
+$pass = '';
 $dbname = 'db_users';
-?>
-<!-- 
- DESCRIBE users_comment 
- -->

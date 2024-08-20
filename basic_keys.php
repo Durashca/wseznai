@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -119,8 +122,9 @@
 </div>
 <?php
 include 'src/php/additionally.php';
-include 'progress.php';
-new_to_PC(30);
+    include 'progress.php';
+    new_to_PC(30);
+
 ?>
 
 <script>
@@ -132,7 +136,7 @@ new_to_PC(30);
     if (screenWidth < 768) {
         /*телефон*/
         func_tg_dis()
-        updateProgress(6);
+
     }else {
         userChInput.value = "Пример текста для проверки курсора";
         userChInput.addEventListener('keydown', function checkCursor() {
@@ -142,7 +146,7 @@ new_to_PC(30);
             if (cursorPosition === 0 || cursorPosition === userChInput.value.length) {
                 func_tg_dis();
                 func_tg_vcr();
-                updateProgress(6);
+
             } else {
                 func_tg_wrong()
             }
@@ -160,7 +164,6 @@ new_to_PC(30);
 
     // авто выполнение
     <?php
-    session_start();
     if($_SESSION['user_progress'] > 30){
 
         echo "userChInput.disabled = true";

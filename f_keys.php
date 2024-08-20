@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -86,7 +89,6 @@ new_to_PC(40);
     }
     // авто выполнение
     <?php
-    session_start();
     if($_SESSION['user_progress'] > 40){
         echo "inp_fn.value = 'Fn'";
         echo "inp_fn.disabled = true";

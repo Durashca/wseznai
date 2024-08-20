@@ -1,7 +1,7 @@
 <?php
 function new_to_PC($num) {
     include 'config.php';
-    session_start();
+
 
     $conn = new mysqli($host, $user, $pass, $dbname);
 
@@ -32,4 +32,3 @@ function new_to_PC($num) {
 
     $conn->close();
 }
-?>
