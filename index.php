@@ -1,4 +1,6 @@
-
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -20,9 +22,10 @@
     <div id="htmlContent">
     <div class="container text-center">
     <div class="row">
-        <h1>Выберите раздел</h1>
+        <h1 style="text-align: center;">Выберите раздел</h1>
         <div id="content">
         <a href="index_new_to_PC.php">Урок для начинающих</a>
+        <br>
         <a href="index_pro_to_PC.php">Шаблон для програмистов</a>
         
         </div>                  
