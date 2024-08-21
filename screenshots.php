@@ -87,17 +87,27 @@ new_to_PC(50);
     window.addEventListener('DOMContentLoaded', function() {
     // Определить ширину экрана
     const screenWidth = window.innerWidth;
+    // инпут задания
+    const editableDiv = document.getElementById('editableDiv');
     // Определить тип устройства на основе ширины
     if (screenWidth < 768) {
         /*телефон*/
-        func_tg_dis()
+        func_tg_dis();
+        func_tg_vcr();
         
-    } else if (screenWidth >= 768) {
+    } else {
         /*пк*/
-        const editableDiv = document.getElementById('editableDiv');
+
         let imagePasted = false;
 
-        editableDiv.addEventListener('paste', function(e) {
+        // Проверяем, есть ли сохраненное изображение при загрузке страницы
+        const savedImage = localStorage.getItem("userImage");
+        if (savedImage) {
+            editableDiv.innerHTML = `<img src="${savedImage}" alt="saved-image">`;
+            imagePasted = true;
+        }
+
+        editableDiv.addEventListener('paste', function (e) {
             if (imagePasted) {
                 e.preventDefault();
                 return;
@@ -113,9 +123,11 @@ new_to_PC(50);
                     const file = items[i].getAsFile(); // Получаем файл изображения
                     const reader = new FileReader();
 
-                    reader.onload = function(e) {
+                    reader.onload = function (e) {
                         const imageSrc = e.target.result;
                         localStorage.setItem("userImage", imageSrc); // Сохраняем изображение в localStorage
+                        editableDiv.innerHTML = `<img src="${imageSrc}" alt="pasted-image">`; // Вставляем изображение
+                        imagePasted = true;
                     };
 
                     reader.readAsDataURL(file); // Читаем изображение как Data URL
@@ -125,40 +137,28 @@ new_to_PC(50);
 
             if (!containsImage) {
                 e.preventDefault();
-            } else {
-                editableDiv.innerHTML = ''; // Очищаем содержимое
-                imagePasted = true;
-            }
-        });
-
-        // Проверяем, есть ли сохраненное изображение при обновлении страницы
-        window.addEventListener('DOMContentLoaded', function() {
-            const savedImage = localStorage.getItem("userImage");
-
-            if (savedImage) {
-                editableDiv.innerHTML = `<img src="${savedImage}" alt="saved-image">`;
-                imagePasted = true;
             }
         });
 
         const btnTaskCheck = document.getElementById('btn-task-check');
-
-        btnTaskCheck.addEventListener('click', function() {
+        btnTaskCheck.addEventListener('click', function () {
             if (imagePasted) {
-                func_tg_dis()
-                func_tg_vcr()
-            }else {
-                func_tg_wrong()
+                func_tg_dis();
+                func_tg_vcr();
+
+            } else {
+                func_tg_wrong();
             }
         });
-    }
 
-    <?php
-    if($_SESSION['user_progress'] > 50){
-        echo "func_tg_dis();";
-        echo "func_tg_vcr();";
+        <?php
+        if ($_SESSION['user_progress'] >= 60) {
+            echo "func_tg_dis();";
+            echo "func_tg_vcr();";
+
+        }
+        ?>
     }
-    ?>
 });
 </script>
 </body>

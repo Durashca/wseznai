@@ -31,8 +31,8 @@ session_start();
 </head>
 <body>
 <!--  -->
-<div class='modal' id='modal'>
-    <div class='modal-content'>
+<div class='Modal' id='Modal'>
+    <div class='modalContent'>
     <h2>Введите имя и фамилию</h2>
     <form id='form'>
     <input type='text' id='name' placeholder='Имя'>

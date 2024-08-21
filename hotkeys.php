@@ -130,16 +130,26 @@ session_start();
 include 'src/php/additionally.php';
 if ($_SESSION['user_progress'] < 20){
 include 'progress.php';
-    new_to_PC(20);
+new_to_PC(20);
 }
 ?>
 <script>
 window.addEventListener('DOMContentLoaded', function() {
+    // Определить ширину экрана
+    const screenWidth = window.innerWidth;
+    // Определить тип устройства на основе ширины
+    if (screenWidth < 768) {
+        /*телефон*/
+        func_tg_dis();
+        full_execution();
+
+    }else {
     
     let inpCtrlV = document.querySelector('#ctrlV');
     let nextButton = document.querySelector('#nextButton');
 
     nextButton.disabled = true; // блокируем кнопку
+
 
     let correctAttempt = false;
 
@@ -192,7 +202,7 @@ inpCtrlV.addEventListener('blur', function (e) {
         
     }
     <?php
-    if ($_SESSION['user_progress'] > 20) {
+    if ($_SESSION['user_progress'] >= 30) {
         echo "full_execution();";
     }
     ?>

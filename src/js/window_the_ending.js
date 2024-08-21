@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const modal = document.getElementById("modal");
+    const modal = document.getElementById("Modal");
     const userName = localStorage.getItem("userName");
     const userSurname = localStorage.getItem("userSurname");
     const expires = localStorage.getItem("expires");

@@ -106,7 +106,7 @@ session_start();
                     </div>
                     <div class="keyboard-shortcut-block dashed">
                         <h4>Поставьте курсор сначала в середину, а потом нажмите поочередно, на клавиши <b>Home</b> и <b>End</b>(если поставили цифру, значит у вас включен <b>NumLk</b>)</h4>
-                        <input style="width: 100%" type="text" id="userChInput">
+                        <input style="width: 100%" type="text" id="userChInput" value="Пример текста для проверки курсора">
                     </div>
                     <div id="pre_emptive_letter" class="bd-callout bd-callout-warning"></div>
                 </content>
@@ -135,10 +135,13 @@ include 'src/php/additionally.php';
     // Определить тип устройства на основе ширины
     if (screenWidth < 768) {
         /*телефон*/
-        func_tg_dis()
+        func_tg_dis();
+        func_tg_vcr();
+        userChInput.disabled = true;
 
-    }else {
-        userChInput.value = "Пример текста для проверки курсора";
+
+    }else{
+        /*пк*/
         userChInput.addEventListener('keydown', function checkCursor() {
             userChInput.focus();
             const cursorPosition = userChInput.selectionStart;
@@ -151,7 +154,7 @@ include 'src/php/additionally.php';
                 func_tg_wrong()
             }
         })
-    }
+
     let previousValue = userChInput.value;
 
     userChInput.addEventListener('input', function(event) {
@@ -162,15 +165,18 @@ include 'src/php/additionally.php';
         }
     });
 
-    // авто выполнение
-    <?php
-    if($_SESSION['user_progress'] > 30){
+        // авто выполнение
+        <?php
+        if ($_SESSION['user_progress'] >= 40) {
+            echo "userChInput.disabled = true;";
+            echo "func_tg_dis();";
+            echo "func_tg_vcr();";
+        }
+        ?>
 
-        echo "userChInput.disabled = true";
-        echo "func_tg_dis();";
-        echo "func_tg_vcr();";
+
     }
-    ?>
+
 });
 </script>
 </body>

@@ -98,6 +98,8 @@ new_to_PC(80);
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
+
+
     let radio = document.getElementById('flexRadioDefault1')
     btn_task_check.addEventListener('click', function (){
         if (radio.checked){
@@ -105,7 +107,7 @@ new_to_PC(80);
             func_tg_vcr()
 
             for (let elem of radio_arr){
-                elem.classList.add('disabled')
+                elem.classList.add('disabled');
             }
         }else {
             func_tg_wrong()
@@ -116,9 +118,15 @@ new_to_PC(80);
 
 
     <?php
-    if($_SESSION['user_progress'] > 80){
+    if($_SESSION['user_progress'] >= 90){
        echo "func_tg_dis();";
-       echo "func_tg_vcr()";
+       echo "func_tg_vcr();";
+       echo "for (let elem of radio_arr){";
+       echo "elem.classList.add('disabled');";
+       echo "};";
+       echo "radio_arr[0].checked = true;";
+
+
     }    
     ?>
 });

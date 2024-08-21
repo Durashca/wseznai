@@ -72,6 +72,7 @@ new_to_PC(40);
     if (window.innerWidth < 768) {
         func_tg_dis();
         func_tg_vcr();
+        inp_fn.value = 'Fn';
         
     }else {
 
@@ -90,8 +91,8 @@ new_to_PC(40);
     // авто выполнение
     <?php
     if($_SESSION['user_progress'] > 40){
-        echo "inp_fn.value = 'Fn'";
-        echo "inp_fn.disabled = true";
+        echo "inp_fn.value = 'Fn';";
+        echo "inp_fn.disabled = true;";
         echo "func_tg_dis();";
         echo "func_tg_vcr();";
     }

@@ -85,12 +85,13 @@ session_start();
 </div>
 <?php
 include 'src/php/additionally.php';
+
 include 'progress.php';
 new_to_PC(100);
-?>
 
+?>
 <script>
-    
+
     document.addEventListener('DOMContentLoaded', function () {
         let labels = document.querySelectorAll('.form-check-label');
         let correct1 = document.getElementById('correct1');
@@ -105,8 +106,11 @@ new_to_PC(100);
             if (correct1.classList.contains('strikethrough') && !correct2.classList.contains('strikethrough') &&
                 !correct3.classList.contains('strikethrough') && !correct4.classList.contains('strikethrough') &&
                 !correct5.classList.contains('strikethrough')) {
+
                 func_tg_dis();
                 func_tg_vcr();
+                localStorage.setItem("userProgress", "100");
+
 
 
                 labels.forEach(function(label) {
@@ -122,16 +126,16 @@ new_to_PC(100);
         });
 
 
-        <?php
-    if($_SESSION['user_progress'] > 100){
-        echo "labels[4].classList.toggle('strikethrough');";
-        echo "labels.forEach(function(label) {";
-        echo " label.removeEventListener('click', labelClickHandler);";
-        echo "});";
-        echo "func_tg_dis();";
-        echo "func_tg_vcr();";
-    }    
-    ?>
+
+    if(localStorage.getItem("userProgress") === "100"){
+        labels[4].classList.toggle('strikethrough');
+        labels.forEach(function(label) {
+         label.removeEventListener('click', labelClickHandler);
+        });
+        func_tg_dis();
+        func_tg_vcr();
+    }
+
     });
 </script>
 </body>
