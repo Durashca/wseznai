@@ -7,8 +7,7 @@ session_start();
   <title>Theme Switcher</title>
 
 </head>
-<body class="container-fluid">
-  
+<body>
 
 
  <!--  -->
