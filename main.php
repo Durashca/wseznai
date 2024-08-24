@@ -2,9 +2,10 @@
 session_start();
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Описание вашего сайта с ключевыми словами">
     <meta name="keywords" content="wseznai, всезнай, сайт всезнай">
     <title>Title</title>
@@ -15,16 +16,13 @@ session_start();
         body {
             margin: 0; /* Удалите или измените это свойство для разрешения прокрутки */
         }
-         p.MainMenu, a.MainMenu {
+        .MainMenuContent {
             color: #ffffff;
-            font: 20px bold, "Montserrat", sans-serif;
-        }
-        p.MainMenu {
+            font-family:  "Montserrat", sans-serif;
             display: inline;
-        }
-        a.MainMenu {
             text-decoration: none;
         }
+
         .image-container {
             position: relative;
             width: 100%;
@@ -52,7 +50,7 @@ session_start();
             width: 100%;
             z-index: 1; /* Убедитесь, что текст находится над изображением */
         }
-        #content p, #content a {
+        .MainMenuContent {
             opacity: 0; /* Начальное состояние невидимо */
             transform: translateY(-20px); /* Сдвигаем элементы вверх */
             animation: fadeInUp 1s ease-out forwards; /* Анимация */
@@ -80,7 +78,7 @@ session_start();
                 transform: translateY(0);
             }
         }
-        video {
+        #MainVideo {
             width: 100%;
             height: 100%;
         }
@@ -102,12 +100,47 @@ session_start();
             margin-bottom: -70px;
 
         }
+        .container-xxl {
+            margin-left:0 ;
+        }
+
+        .navbar-collapse {
+            display: flex; /* Используйте Flexbox */
+            justify-content: center; /* Центрирование элементов по горизонтали */
+            align-items: center; /* Центрирование элементов по вертикали */
+            gap: 15px; /* Расстояние между элементами, можно настроить по необходимости */
+        }
+
+        .navbar-collapse a {
+            color: #ffffff; /* Цвет текста */
+            text-decoration: none; /* Убирает подчеркивание у ссылок */
+        }
+
+        /* Опционально: можно добавить стили для активных ссылок */
+        .navbar-collapse a.active {
+            font-weight: bold; /* Например, выделить активную ссылку */
+        }
+        .navbar-collapse a:hover, #content > a.MainMenuContent:hover {
+            text-decoration: underline;
+        }
+        .navbar-toggler-icon {
+            background-image: url("src/images/MenuButton/buttonMenu.png");
+        }
+        .navbar-toggler, .navbar-toggler:focus {
+            outline: none ; /* Убирает стандартный контур при фокусе */
+            box-shadow: none ; /* Убирает тень вокруг кнопки */
+            border: none ; /* Убирает возможную рамку */
+        }
+
+
+
+
 
     </style>
 </head>
 <body>
 <!-- Image and text -->
-<nav class="navbar navbar-light">
+<nav class="navbar navbar-expand-lg ">
     <div class="container-xxl theme little-dark">
 
         <a class=" MainMenu navbar-brand" href="#">
@@ -128,9 +161,7 @@ session_start();
            aria-controls="offcanvasExample">Материал</a>
             <!--профиль-->
             <a  class=" MainMenu nav-link position-relative profile" type="button" data-bs-toggle="offcanvas"
-                    data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-            Профиль
-            </a>
+                    data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Профиль</a>
         </div>
     </div>
 
@@ -140,15 +171,15 @@ session_start();
     <div class="image-container">
     <img id="imgBackground" src="src/images/jpeg/neon-motherboard-background.jpg" alt="Background Image">
     <div id="content" style="display: grid; justify-content: center; align-content: center;">
-        <p class="MainMenu">Не хотите пройти курс?</p>
-        <a class="MainMenu" href="index_new_to_PC.php">Курс для новичков</a>
-        <a class="MainMenu" href="index_pro_to_PC.php">Курс web-разработчикам</a>
-        <a class="MainMenu" href="#">Курс по Godot</a>
+        <h3 class="MainMenuContent">Не хотите пройти курс?</h3>
+        <a class="MainMenuContent" href="index_new_to_PC.php">Курс для новичков</a>
+        <a class="MainMenuContent" href="index_pro_to_PC.php">Курс web-разработчикам</a>
+        <a class="MainMenuContent" href="#">Курс по Godot</a>
     </div>
 </div>
 <div>
     <div>
-    <video src="src/video/1107906_1080p_4k_1920x1080%20(online-video-cutter.com).mp4" autoplay muted loop></video>
+    <video id="MainVideo" src="src/video/1107906_1080p_4k_1920x1080%20(online-video-cutter.com).mp4" autoplay muted loop></video>
     <p id="pVideo">text video</p>
     </div>
 </div>
