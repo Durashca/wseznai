@@ -8,7 +8,7 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Шаблон для програмистов</title>
-
+    <link rel="icon" type="image/png" sizes="32x32" href="src/ico/icon.png">
 </head>
 <body>
 <div class="container-xxl">
@@ -27,11 +27,7 @@ session_start();
         </div>
     </div>
 </div>
+    
 
-<?php
-
-include 'src/php/additionally.php';
-?>
-?>
 </body>
 </html>
