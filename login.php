@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             exit; // Важно завершить выполнение скрипта после перенаправления
         } else {
              echo "Пользователь не найден.";
-             echo "<a href='index_new_to_PC.php'> вернуться обратно</a>";
+             echo "<a href='index.php'> вернуться обратно</a>";
         }
     }
 }

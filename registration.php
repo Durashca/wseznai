@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // нажатие на кнопку
         if (!filter_var($login, FILTER_VALIDATE_EMAIL)) {
             echo "Некорректный формат email";
             echo '<br>';
-            echo "<a href='index_new_to_PC.php'>вернуться на главную</a>";
+            echo "<a href='index.php'>вернуться на главную</a>";
             exit;
         }
 
@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // нажатие на кнопку
         if (strlen($password) < 3) {
             echo "Пароль слишком короткий";
             echo '<br>';
-            echo "<a href='index_new_to_PC.php'>вернуться на главную</a>";
+            echo "<a href='index.php'>вернуться на главную</a>";
             exit;
         }
 
@@ -66,4 +66,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // нажатие на кнопку
         exit; // Важно завершить выполнение скрипта после перенаправления
     }
 }
-?>
