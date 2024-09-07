@@ -6,7 +6,7 @@ session_start();
 <head>
    
     <title>ВсеЗнай</title>
-   
+    <meta name="keywords" content="Wseznai, всезнай, все знай">
 </head>
 <body>
 
