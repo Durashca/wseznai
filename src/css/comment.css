@@ -3,7 +3,7 @@
    max-width: 5%;
    min-width: 1%;
  }
- .commentsContainer > .container { /* блок с коментом */
+ .commentsContainer  { /* блок с коментом */
     border: 1px solid darkgrey;
     border-radius: 3px 3px 10px 3px;
     margin: 3% 0;

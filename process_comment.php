@@ -52,32 +52,37 @@ function process_comment_takingInTable($id_comment) {
     // Вывод комментариев
     $output = "";
     if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
+        // Переворачиваем массив результатов
+        $rows = array_reverse($result->fetch_all(MYSQLI_ASSOC));
+
+        foreach ($rows as $row) {
             // Здесь проверяем каждую строку на соответствие id_comment
             if ($id_comment == $row['id_comment']) {
-                $output.= "<div id='". $id_comment. "' class='commentsContainer'>";
-                $output.= "<div class='container'>";
-                $output.= "<div class='comment'>";
-                $output.= "<div class='comment-header'>";
+                $output .= "<div id='" . $id_comment . "' class='commentsContainer'>";
+                $output .= "<div class='container'>";
+                $output .= "<div class='comment'>";
+                $output .= "<div class='comment-header'>";
                 if (isset($_SESSION['user_id']) && $_SESSION['user_id'] == $row['id_user']) {
-                    $output.= "<form id='commentDelete' action='delete_comment.php' method='post'>";
-                    $output.= "<input type='hidden' name='id_request' value='". $row['id_request']. "'>";
-                    $output.= "<input type='submit' class='delete-button' name='delete' value='Delete'>";
-                    $output.= "</form>";
+                    $output .= "<form id='commentDelete' action='delete_comment.php' method='post'>";
+                    $output .= "<input type='hidden' name='id_request' value='" . $row['id_request'] . "'>";
+                    $output .= "<input type='submit' class='delete-button' name='delete' value='Delete'>";
+                    $output .= "</form>";
                 }
-                $output.= "<h4 class='comment-author'>". (($row['name_user'] == null || $row['name_user'] == '')? 'Пользователь' : $row['name_user']). "</h4>";
-                $output.= "<span class='comment-date'>". $row['data_comment']. "</span>";
-                $output.= "</div>"; // Закрытие.comment-header
-                $output.= "<div class='comment-body'>";
-                $output.= "<p class='comment-text'>". $row['comment']. "</p>";
-                $output.= "</div>"; // Закрытие.comment-body
-                $output.= "</div>"; // Закрытие.comment
-                $output.= "</div>"; // Закрытие.container
-                $output.= "</div>"; // Закрытие.commentsContainer
+                $output .= "<h4 class='comment-author'>" . (($row['name_user'] == null || $row['name_user'] == '') ? 'Пользователь' : $row['name_user']) . "</h4>";
+                $output .= "<span class='comment-date'>" . date("d m Y", strtotime($row['data_comment'])) . "</span>";
+                $output .= "</div>"; // Закрытие.comment-header
+                $output .= "<div class='comment-body'>";
+                $comment_with_a_capital_letter = $row['comment'];
+                $comment_with_a_capital_letter = ucfirst($comment_with_a_capital_letter);
+                $output .= "<p class='comment-text'>" . $comment_with_a_capital_letter . "</p>";
+                $output .= "</div>"; // Закрытие.comment-body
+                $output .= "</div>"; // Закрытие.comment
+                $output .= "</div>"; // Закрытие.container
+                $output .= "</div>"; // Закрытие.commentsContainer
             }
         }
     } else {
-        $output = "Нет комментариев для данного id_comment.";
+        $output = "Пока нет комментариев. Станете первым кто выложит комментарий.";
     }
 
     // Закрытие запроса и соединения
@@ -131,7 +136,7 @@ function process_comment_addInTable($id_comment, $comment, $id_user, $name_user)
         <textarea name="comment_text" rows="4" cols="25" placeholder="Текст"></textarea>
         <input type="hidden" id="id_comment" name="id_comment" value="<?php echo $id_comment;?>">
         <br>
-        <input type="submit" value="Добавить комментарий">
+        <input id="sending_comment_button" class="btn btn-outline-success" type="submit" value="Добавить комментарий">
     </form>
     <!-- отправляем в value input['id_comment'] имя подключаемого файла  -->
 

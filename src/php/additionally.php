@@ -63,3 +63,13 @@ foreach ($jsFiles as $jsFile) {
     }
 }
 
+
+if (!isset($_SESSION['user_id']) && !isset($_SESSION['user_name']) && !isset($_SESSION['user_email'])) {
+
+    echo "<script>
+
+    let blocking_the_comment_button = document.getElementById('sending_comment_button');
+    blocking_the_comment_button.classList.add('disabled');
+    </script>";
+}
+
