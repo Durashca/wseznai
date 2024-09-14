@@ -6,6 +6,6 @@ if (!iconLink) {
     link.rel = 'icon';
     link.type = 'image/png';
     link.sizes = '32x32';
-    link.href = 'icon.png';  // Путь к вашей иконке
+    link.href = 'https://raw.githubusercontent.com/Durashca/wseznai/refs/heads/main/src/ico/icon.png';  // Путь к вашей иконке
     document.head.appendChild(link);
 }

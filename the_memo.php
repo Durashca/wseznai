@@ -5,7 +5,9 @@ session_start();
 <html lang="ru">
 <head>
     <title>Логин и авторизация</title>
-
+    <meta name="keywords" content="Wseznai, всезнай, все знай, сайт для чайников, как решить те или иные проблемы на пк, wsepropc, регистрация, пароль">
+    <meta name="description"
+          content="Разбираемся с понятиями: регистрация, логин, пароль...">
 </head>
 <body>
 
