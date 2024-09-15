@@ -5,7 +5,9 @@ video {
     height: auto;
 }
 
-
+.offcanvas-body > button:last-child {
+    order: 1;
+}
 header {
     margin-bottom: 10px !important;
 }

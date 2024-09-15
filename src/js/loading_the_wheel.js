@@ -1,9 +1,17 @@
 window.addEventListener('DOMContentLoaded', function() {
     const loader = document.getElementById('loader');
-    loader.style.display = 'flex';
-  });
-  
-  window.addEventListener('load', function() {
+    if (loader) {
+        loader.style.display = 'flex';
+    } else {
+        console.log("Элемент с id 'loader' не найден");
+    }
+});
+
+window.addEventListener('load', function() {
     const loader = document.getElementById('loader');
-    loader.style.display = 'none';
-  });
+    if (loader) {
+        loader.style.display = 'none';
+    } else {
+        console.log("Элемент с id 'loader' не найден");
+    }
+});

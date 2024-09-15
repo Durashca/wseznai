@@ -59,15 +59,12 @@ function process_comment_takingInTable($id_comment) {
             // Здесь проверяем каждую строку на соответствие id_comment
             if ($id_comment == $row['id_comment']) {
                 $output .= "<div id='" . $id_comment . "' class='commentsContainer'>";
-                $output .= "<div class='container'>";
+
+                $output .= "<div style='margin-left: 0;' class='container'>";
+
                 $output .= "<div class='comment'>";
                 $output .= "<div class='comment-header'>";
-                if (isset($_SESSION['user_id']) && $_SESSION['user_id'] == $row['id_user']) {
-                    $output .= "<form id='commentDelete' action='delete_comment.php' method='post'>";
-                    $output .= "<input type='hidden' name='id_request' value='" . $row['id_request'] . "'>";
-                    $output .= "<input type='submit' class='delete-button' name='delete' value='Delete'>";
-                    $output .= "</form>";
-                }
+
                 $output .= "<h4 class='comment-author'>" . (($row['name_user'] == null || $row['name_user'] == '') ? 'Пользователь' : $row['name_user']) . "</h4>";
                 $output .= "<span class='comment-date'>" . date("d m Y", strtotime($row['data_comment'])) . "</span>";
                 $output .= "</div>"; // Закрытие.comment-header
@@ -78,6 +75,12 @@ function process_comment_takingInTable($id_comment) {
                 $output .= "</div>"; // Закрытие.comment-body
                 $output .= "</div>"; // Закрытие.comment
                 $output .= "</div>"; // Закрытие.container
+                if (isset($_SESSION['user_id']) && $_SESSION['user_id'] == $row['id_user']) {
+                    $output .= "<form id='commentDelete' action='delete_comment.php' method='post'>";
+                    $output .= "<input type='hidden' name='id_request' value='" . $row['id_request'] . "'>";
+                    $output .= "<input type='submit'   class='btn btn-outline-success delete-button' name='delete' value='Удалить свой коммент'>";
+                    $output .= "</form>";
+                }
                 $output .= "</div>"; // Закрытие.commentsContainer
             }
         }
