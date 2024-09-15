@@ -39,14 +39,14 @@
   /*        document.getElementById('certificateContainer').style.display = 'block';*/
       };
 
-      img.src = 'src/images/garbage/scr.png'; // Путь к фоновому изображению
+      img.src = 'src/images/garbage/certificate1.png'; // Путь к фоновому изображению
   });
 
   function downloadCertificate() {
       const canvas = document.getElementById('canvas');
       const a = document.createElement('a');
       a.href = canvas.toDataURL('image/png');
-      a.download = 'certificate.png';
+      a.download = 'certificate1.png';
       a.click();
   }
 
