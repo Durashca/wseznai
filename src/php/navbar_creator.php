@@ -63,15 +63,17 @@
         <!-- Login form -->
         <div id="divLogin" style="display: none;">
             <form action="login.php" method="POST">
-                <div style="display: flex" class="container text-left">
-                    <div class="col-8">
-                        <div>
-                            <input style="width: 100%; border-radius: 0; border: 0.5px solid gray" name="login" type="email" placeholder="Введите почту" required readonly onfocus="this.removeAttribute('readonly');" id="loginInput">
-                            <input style="width: 100%; border-radius: 0; border: 0.5px solid gray" name="password" type="password" placeholder="Введите пароль" required readonly onfocus="this.removeAttribute('readonly');">
+                <div class=" inputs container text-left">
+                    <div class="col">
+                        <div >
+                            <label for="regName" class="form-label">Введите свое имя</label>
+                            <input  name="login" type="email" placeholder="Введите почту" required readonly onfocus="this.removeAttribute('readonly');" id="loginInput">
+                            <label for="regName" class="form-label">Введите свое имя</label>
+                            <input id="PasswordLogin" name="password" type="password" placeholder="Введите пароль" required readonly onfocus="this.removeAttribute('readonly');">
                         </div>
                     </div>
-                    <div class="col">
-                    <input style="height: 100%; width: 100%; border-radius: 0 2px 2px 0; border: 0px" class="btn btn-outline-success" type="submit" placeholder="Войти" required readonly onfocus="this.removeAttribute('readonly');" id="loginButton" disabled>
+                    <div class="bottom_form col">
+                    <input  class="btn btn-outline-success" type="submit" value="Войти" required readonly onfocus="this.removeAttribute('readonly');" id="loginButton" disabled>
                     </div>
                 </div>
                 <script>
@@ -93,23 +95,27 @@
         <div id="divRegistration" style="display: none;">
 
             <form action="registration.php" method="POST">
-                <div style="display: flex" class="container text-left">
-                    <div class="col-8">
+                <div style="" class=" inputs container text-left">
+                    <div class="col">
                         <div>
-                        <input style="width: 100%; border-radius: 0; border: 0.5px solid gray" id="regName" name="reg_name" type="text" placeholder=" Введите имя" required readonly onfocus="this.removeAttribute('readonly');">
+                        <label for="regName" class="form-label">Введите свое имя</label>
+                        <input style="" id="regName" name="reg_name" type="text" placeholder=" Введите имя" required readonly onfocus="this.removeAttribute('readonly');">
 
-                        <input style="width: 100%; border-radius: 0; border: 0.5px solid gray" id="regInput" name="reg_login" type="email" placeholder=" Придумайте почту" required readonly onfocus="this.removeAttribute('readonly');">
+                        <label for="regInput" class="form-label">Придумайте свою почту</label>
+                        <input  id="regInput" name="reg_login" type="email" placeholder=" Придумайте почту" required readonly onfocus="this.removeAttribute('readonly');">
 
-                        <input style="width: 100%; border-radius: 0; border: 0.5px solid gray" id="regPassword" name="reg_password" type="password" placeholder="Придумайте пароль" required readonly onfocus="this.removeAttribute('readonly');">
+                        <label for="regPassword" class="form-label">Придумайте свой пароль</label>
+                        <input  id="regPassword" name="reg_password" type="password" placeholder="Придумайте пароль" required readonly onfocus="this.removeAttribute('readonly');">
 
-                        <input style="width: 100%; border-radius: 0; border: 0.5px solid gray" type="date" id="data" name="data" value="2008-07-22" min="1903-12-31" max="2020-12-31" >
+                        <label for="reg_age" class="form-label">Введите свой год рождения</label>
+                        <input  type="date" id="reg_age" name="reg_age" min="1903-12-31" max="2020-12-31" >
 
 
                     </div>
                  </div>
-                 <div class="col">
+                 <div class="bottom_form col">
                      <input style="height: 100%; width: 100%; border-radius: 0 2px 2px 0; border: 0px"  id="regButton"  class="btn btn-outline-success" type="submit"
-                            value="Создать" disabled>
+                            value="Создать аккаунт" disabled>
                  </div>
               </div>
 
@@ -171,14 +177,14 @@
             </div>
         </div>
 
-        <div style="display: grid ">
-            <button style="margin-bottom: 4%;" class="btn btn-outline-success" id="changingformsToLogin">Войти</button>
-            <button class="btn btn-outline-success" id="changingformsToRegister">Зарегистрироваться</button>
+        <div style="display: grid; margin-top: 2% ">
+            <button style="margin-bottom: 4%;" class="btn btn-outline-success" id="changingformsToLogin">Уже были здесь (войти)</button>
+            <button class="btn btn-outline-success" id="changingformsToRegister">Первый раз на сайте (зарегистрироваться)</button>
         </div>
 
 
 
-        <button style=" margin-top: 90%;" class="btn btn-outline-success" id="changingformsToProfile">Профиль</button>
+        <button style="" class="btn btn-outline-success" id="changingformsToProfile">Профиль</button>
     </div>
 
 

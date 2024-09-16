@@ -18,7 +18,8 @@ $cssFiles = array(
     'src/css/material/hotkeys/alignment.css',
     'src/css/material/screenshots/alignment.css',
     'src/css/comment.css',
-    'src/css/img.css'
+    'src/css/img.css',
+    'src/css/menu.css'
 );
 
 foreach ($cssFiles as $cssFile) {

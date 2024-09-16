@@ -11,6 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // нажатие на кнопку
         $name = $_POST['reg_name'];
         $login = $_POST['reg_login'];
         $password = $_POST['reg_password'];
+        $age = $_POST['reg_age'];
 
         // Проверка формата email
         if (!filter_var($login, FILTER_VALIDATE_EMAIL)) {
@@ -50,9 +51,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // нажатие на кнопку
         $userId = mysqli_insert_id($link);
 
         // Добавление записи в таблицу progress
-        $query = "INSERT INTO progress (id, new_to_PC) VALUES (?, 0)";
+        $query = "INSERT INTO progress (id, new_to_PC, age) VALUES (?, 0, ?)";
         $stmt = mysqli_prepare($link, $query);
-        mysqli_stmt_bind_param($stmt, "i", $userId);
+        mysqli_stmt_bind_param($stmt, "is", $userId, $age);
         mysqli_stmt_execute($stmt);
 
         // Авторизация

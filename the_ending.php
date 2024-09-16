@@ -37,7 +37,7 @@ session_start();
     <form id='form'>
     <input type='text' id='name' placeholder='Имя'>
     <input type='text' id='surname' placeholder='Фамилия'>
-    <button id='continue'>Продолжить</button>
+    <button class="btn btn-outline-success" id='continue'>Продолжить</button>
     </form>
     </div>
     </div>

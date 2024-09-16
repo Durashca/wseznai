@@ -9,7 +9,7 @@ session_start();
     <meta name="keywords" content="Wseznai, всезнай, все знай, сайт для чайников, как решить те или иные проблемы на пк, wsepropc, регистрация, пароль">
     <meta name="description"
           content="Сайт Все Знай отличный помощник для тех кто решил изучить такую сложную технику как ПК.">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://raw.githubusercontent.com/Durashca/wseznai/refs/heads/main/src/ico/icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
     <link rel="canonical" href="http://t99662dp.beget.tech/index.php">
 
 </head>

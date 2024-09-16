@@ -44,7 +44,7 @@ session_start();
                         </ol>
                     </div>
                     <div class="keyboard-shortcut-block dashed">
-                        <h4>Зачеркните способ входа, которого не существует</h4>
+                        <h4>Нажмите на способ входа, которого не существует</h4>
                             <!--правильный-->
                             <div class="form-check">
                                 <label class="form-check-label" id="correct5" >
