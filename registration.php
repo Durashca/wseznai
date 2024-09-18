@@ -42,6 +42,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // нажатие на кнопку
 
 
         // Регистрация нового пользователя
+        // Хеширование пароля
+        $password = password_hash($password, PASSWORD_DEFAULT);
+
         $query = "INSERT INTO users (name, login, pass) VALUES (?,?,?)";
         $stmt = mysqli_prepare($link, $query);
         mysqli_stmt_bind_param($stmt, "sss", $name, $login, $password);

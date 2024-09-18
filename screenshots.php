@@ -16,56 +16,37 @@ session_start();
             <div class="container-material">
                 <content>
                     <h1 class="title text-center">Скриншоты</h1>
-                    <p>Если коротко, то скриншот - это снимок экрана. Бывает такие моменты когда надо показать экран
-                        телефона или ПК, и не все знают как правильно сделать.</p>
+                    <p>Если коротко, то скриншот - это снимок экрана. Бывает такие моменты когда надо показать экран телефона или ПК, и не все знают как правильно сделать.</p>
                     <div class="keyboard-shortcut-block">
                         <h4>Сравните два примера ниже. Какая выглядит привлекательней?</h4>
                         <ol>
-                            <li>Скриншот с ноутбука(ПК)</li>
-                            <img src="src/images/screenshots-material/screenshot_from_computer.png" class="show-img"alt="скриншот-с-пк">
+                            <li>Скриншот с ноутбука (ПК)</li>
+                            <img src="src/images/screenshots-material/screenshot_from_computer.png" class="show-img" alt="скриншот-с-пк">
                             <li>Скриншот с телефона</li>
-                            <img src="src/images/screenshots-material/photo_from_phone.jpg" class="show-img"
-                                 alt="фото-с-телефона">
+                            <img src="src/images/screenshots-material/photo_from_phone.jpg" class="show-img" alt="фото-с-телефона">
                         </ol>
-
-
-                        <!--выбор-->
                         <p>Выберите какая картинка лучше -> <select id="answer_to_screen">
-                            <option> картинка №1</option>
-                            <option selected>картинка №2</option>
-                        </select></p>
-
+                                <option>Картинка №1</option>
+                                <option selected>Картинка №2</option>
+                            </select></p>
                     </div>
-
-                    <!--скрин на пк-->
                     <div class="keyboard-shortcut-block">
                         <h4>Для того чтобы сделать скриншот на ПК, следуйте следующей инструкции:</h4>
-
                         <ol>
-                            <li>В правой верхней части клавиатуры найдите и нажмите 1 раз кнопку <b>Prt Src</b> (или <b>Prt
-                                Sc</b>)
-                            </li>
-                            <div class="bd-callout bd-callout-info"> Если у вас <b>Prt Src</b>, находится на F клавише, то зажмите <b>Fn</b> и нажмите на клавишу с текстом <b>Prt Src</b>.</div>
-                            <li>Чтобы посмотреть картинку, вы можете вставить его куда-нибудь, например в <b>Word</b>
-                                или <b>Paint</b>.
-                            </li>
+                            <li>В правой верхней части клавиатуры найдите и нажмите 1 раз кнопку <b>Prt Src</b> (или <b>Prt Sc</b>)</li>
+                            <div class="bd-callout bd-callout-info">Если у вас <b>Prt Src</b> находится на F клавише, то зажмите <b>Fn</b> и нажмите на клавишу с текстом <b>Prt Src</b>.</div>
+                            <li>Чтобы посмотреть картинку, вы можете вставить ее куда-нибудь, например в <b>Word</b> или <b>Paint</b>.</li>
                         </ol>
                     </div>
                     <div class="keyboard-shortcut-block dashed">
-                        <h4>Сделайте скриншот нажав определенную кнопку и вставьте в поле ниже картинку с помощью <b>Ctrl</b> + <b>V</b> или правой кнопкой мыши,
-                            <b>вставить</b>:
-                        </h4>
+                        <h4>Сделайте скриншот нажав определенную кнопку и вставьте в поле ниже картинку с помощью <b>Ctrl</b> + <b>V</b> или правой кнопкой мыши, <b>вставить</b>:</h4>
                         <ol>
                             <div class="keyboard-shortcut-block" contenteditable="true" id="editableDiv"></div>
                         </ol>
                         <button id="btn-task-check" class="btn btn-outline-success">Ответить</button>
-
                     </div>
-                    <div class="bd-callout bd-callout-info">Можете попробовать вставить <b>скриншот</b> в <b>Word</b> </div>
+                    <div class="bd-callout bd-callout-info">Можете попробовать вставить <b>скриншот</b> в <b>Word</b></div>
                     <div id="pre_emptive_letter" class="bd-callout bd-callout-warning"></div>
-
-
-
                 </content>
             </div>
         </div>

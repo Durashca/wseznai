@@ -14,7 +14,7 @@ $cssFiles = array(
     'src/css/indentation.css',
     'src/css/bootstrap.css',
     'src/css/material.css',
-    'src/css/material/style.css',
+    'src/css/material/container_material.css',
     'src/css/material/hotkeys/alignment.css',
     'src/css/material/screenshots/alignment.css',
     'src/css/comment.css',

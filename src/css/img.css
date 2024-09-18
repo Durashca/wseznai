@@ -1,5 +1,5 @@
 img, svg {
-    max-width: 870px;
+    /*max-width: 100%;*/
     border: 2px solid slategrey;
     border-radius: 10px;
 }

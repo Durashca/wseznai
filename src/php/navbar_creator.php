@@ -1,8 +1,8 @@
 <script>
     menu = `
 <header id="h-space" class="text-center">
-    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top" style="--bs-navbar-padding-y: 0rem; z-index: 10">
-        <div class="container-xxl theme little-dark" style="min-height: 50px; box-shadow: 1px 2px 10px grey; text-align: justify">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top" style="--bs-navbar-padding-y: 0rem; z-index: 10; box-shadow: 1px 2px 10px grey;">
+        <div class="container-xxl theme little-dark" style="min-height: 50px;  text-align: justify">
             <a class="navbar-brand" href="#">ВсеЗнай</a>
             <!--тайная кнопка-->
             <div>
@@ -139,7 +139,6 @@
                         if (name === '' || !emailRegex.test(email) || password === '') {
                             document.getElementById('regButton').disabled = true;
                         } else if (!passwordRegex.test(password)) {
-                            alert('Пароль должен содержать не менее 6 символов');
                             document.getElementById('regButton').disabled = true;
                         } else {
                             document.getElementById('regButton').disabled = false;
@@ -214,6 +213,9 @@
 
             </div>
         </div><!---->
+    </div>
+</div>
+
 
         <!-- переключение форм -->
         <script>
@@ -247,9 +249,21 @@
                 document.getElementById('changingformsToLogin').style.display = 'block';
                 document.getElementById('changingformsToRegister').style.display = 'block';
             });
+
+
+            // default
+            if ( document.getElementById('id').textContent.trim()!== "" ) {
+                document.getElementById('divLogin').style.display = 'none';
+                document.getElementById('divRegistration').style.display = 'none';
+                document.getElementById('divProfile').style.display = 'block';
+                 document.getElementById('changingformsToProfile').style.display = 'none';
+                document.getElementById('changingformsToLogin').style.display = 'block';
+                 document.getElementById('changingformsToRegister').style.display = 'block';
+                // console.log("ya")
+
+            }else {
+                // console.log("!!")
+            }
+
         </script>
-
-
-
-
 
