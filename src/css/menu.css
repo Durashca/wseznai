@@ -19,3 +19,11 @@ div.inputs {
 div.bottom_form {
     margin-top: 6%;
 }
+
+ul.navbar-nav li.nav-item {
+    margin: 0 auto;
+}
+
+li.nav-item a:hover {
+    text-decoration: underline;
+}

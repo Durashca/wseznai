@@ -12,11 +12,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <!--профиль-->
-                <button class="btn position-relative profile" type="button" data-bs-toggle="offcanvas"
-                        data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-                    <img class="profile" src="src/images/garbage/user_profile.png"  alt="профиль">
 
-                </button>
                 <!---->
             </div>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -28,6 +24,13 @@
                         <a id="btnMaterial" class="nav-link" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
                            aria-controls="offcanvasExample">Материал</a>
                     </li>
+                    <!--                       -->
+                    <li class="nav-item">
+                        <a data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"
+                        class="nav-link active" aria-current="page" href="#">Профиль</a>
+                    </li>
+                    <!---->
                 </ul>
             </div>
         </div>

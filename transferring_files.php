@@ -35,6 +35,8 @@ session_start();
             touch-action: none; /* Устанавливаем обработку событий касания */
         }
     </style>
+
+
 </head>
 <body>
 <div class="container-xxl">
@@ -57,7 +59,7 @@ session_start();
                                 <li>Провод от зарядки</li>
 
                             </ol>
-                            <img class="rounded d-block phone"
+                            <img class="rounded d-block phone magnify"
                                  src="src/images/transferring_files/IMG_20240124_210255.jpg"
                                  alt="телефон-пк-вверх-сообщи">
                         </div>
@@ -109,13 +111,13 @@ session_start();
                                 <li>Осталось только, узнать путь к вашей фотографии.</li>
                             </ol>
                             <!--карточка-->
-                            <div class=" bd-callout bd-callout-info " style="width: 100%;">
-                                <div class="card-body">
-                                    <h6 style="color: white">Путь - это маршрут. Он имеет остановки, которые в нашем
+                            <div class="bd-callout bd-callout-info">
+
+                                    <h6 >Путь - это маршрут. Он имеет остановки, которые в нашем
                                         случае, называются
                                         папками. На телефонах и пк все лежит в папочках, поэтому найти нужную фотку
                                         будет не просто.</h6>
-                                </div>
+
                             </div>
                         </div>
                         <h4>Перейдем ненадолго к телефону:</h4>
@@ -291,5 +293,6 @@ new_to_PC(60);
 
         });
 </script>
+
 </body>
 </html>
