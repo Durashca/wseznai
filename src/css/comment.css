@@ -29,6 +29,14 @@ textarea {
   font-weight: bold;
 }
 
+#commentForm {
+    margin: 0 10px;
+}
+#comments_users {
+    margin: 10px;
+}
+
+
 .commentsContainer  div.container {
 
 }

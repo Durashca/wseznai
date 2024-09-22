@@ -135,7 +135,7 @@ function process_comment_addInTable($id_comment, $comment, $id_user, $name_user)
 
 <div style="text-align: start;">
     <h4>Комментарии</h4>
-    <form action="process_comment.php" id="commentForm" method="post">
+    <form style="" action="process_comment.php" id="commentForm" method="post">
         <textarea name="comment_text" rows="4" cols="25" placeholder="Текст"></textarea>
         <input type="hidden" id="id_comment" name="id_comment" value="<?php echo $id_comment;?>">
         <br>
@@ -143,7 +143,7 @@ function process_comment_addInTable($id_comment, $comment, $id_user, $name_user)
     </form>
     <!-- отправляем в value input['id_comment'] имя подключаемого файла  -->
 
-    <div id="coments_users">
+    <div id="comments_users">
         <?php
         if (isset($id_comment)) {
             echo process_comment_takingInTable($id_comment);

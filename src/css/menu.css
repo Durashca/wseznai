@@ -9,21 +9,32 @@
 }
 
 #changingformsToProfile {
-    margin-top: 40%;
+    margin-top: auto;
 }
 
 div.inputs {
     width: 100%; padding: 0;
 }
 
+ul.navbar-nav {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+}
+
 div.bottom_form {
     margin-top: 6%;
+    margin-bottom: 1rem;
 }
 
 ul.navbar-nav li.nav-item {
-    margin: 0 auto;
+    margin: 0 10px;
+    text-decoration: none;
 }
 
-li.nav-item a:hover {
-    text-decoration: underline;
+
+
+ul.navbar-nav li.nav-item a:hover {
+    text-decoration: underline; /* Или другой стиль подчеркивания */
 }

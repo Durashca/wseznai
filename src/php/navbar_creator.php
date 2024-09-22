@@ -3,8 +3,9 @@
 <header id="h-space" class="text-center">
     <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top" style="--bs-navbar-padding-y: 0rem; z-index: 10; box-shadow: 1px 2px 10px grey;">
         <div class="container-xxl theme little-dark" style="min-height: 50px;  text-align: justify">
-            <a class="navbar-brand" href="#">ВсеЗнай</a>
+            <h3  style="font-family: 'Montserrat', sans-serif;font-weight: bold;margin-bottom:0"><span >ВсеЗнай</span></h3>
             <!--тайная кнопка-->
+
             <div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -15,13 +16,14 @@
 
                 <!---->
             </div>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div style="flex-grow: 0; " class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+<!--<div style="border: 1px solid red; display: flex">-->
                     <li class="nav-item">
                         <a id="btnMain" class="nav-link active" aria-current="page" href="index.php">Главная</a>
                     </li>
                     <li class="nav-item">
-                        <a id="btnMaterial" class="nav-link" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
+                        <a id="btnMaterial" class="nav-link active" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
                            aria-controls="offcanvasExample">Материал</a>
                     </li>
                     <!--                       -->
@@ -30,12 +32,17 @@
                         data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"
                         class="nav-link active" aria-current="page" href="#">Профиль</a>
                     </li>
+<!--</div>-->
                     <!---->
                 </ul>
             </div>
         </div>
     </nav>
 </header>
+
+
+
+
 `;
 
     document.body.insertAdjacentHTML('afterbegin', menu);
@@ -69,10 +76,10 @@
                 <div class=" inputs container text-left">
                     <div class="col">
                         <div >
-                            <label for="regName" class="form-label">Введите свое имя</label>
-                            <input  name="login" type="email" placeholder="Введите почту" required readonly onfocus="this.removeAttribute('readonly');" id="loginInput">
-                            <label for="regName" class="form-label">Введите свое имя</label>
-                            <input id="PasswordLogin" name="password" type="password" placeholder="Введите пароль" required readonly onfocus="this.removeAttribute('readonly');">
+                            <label for="regName" class="form-label">Введите свою почту</label>
+                            <input  name="login" type="email" placeholder="Введите почту" autocomplete="email"  required readonly onfocus="this.removeAttribute('readonly');" id="loginInput">
+                            <label for="regName" class="form-label">Введите свой пароль</label>
+                            <input id="PasswordLogin" name="password" type="password" placeholder="Введите пароль" autocomplete="current-password" required readonly onfocus="this.removeAttribute('readonly');">
                         </div>
                     </div>
                     <div class="bottom_form col">
@@ -117,7 +124,7 @@
                     </div>
                  </div>
                  <div class="bottom_form col">
-                     <input style="height: 100%; width: 100%; border-radius: 0 2px 2px 0; border: 0px"  id="regButton"  class="btn btn-outline-success" type="submit"
+                     <input   id="regButton"  class="btn btn-outline-success" type="submit"
                             value="Создать аккаунт" disabled>
                  </div>
               </div>
@@ -127,24 +134,61 @@
 
 
                 <script>
+                    let nameInputReg = document.getElementById('regName');
                     document.getElementById('regName').addEventListener('input', validateForm);
                     document.getElementById('regInput').addEventListener('input', validateForm);
                     document.getElementById('regPassword').addEventListener('input', validateForm);
+
+                    nameInputReg.addEventListener('blur', function () {
+
+                            // почта по умолчанию
+                            const input = document.getElementById('regInput');
+                            input.value = nameInputReg.value + '.' + generateRandomString(10) + (getRandom5050() ? '@yandex.ru' : '@mail.ru');
+
+                            // пароль по умолчанию
+                            document.getElementById('regPassword').value = generateRandomString(10)
+
+
+                    });
+
+                    // генератор 50/50
+                    function getRandom5050() {
+                        return Math.round(Math.random());
+                    }
+                    // генератор 50/50
+
+                    //генератор пароля
+
+                    function generateRandomString(length = 16) {
+                        const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+                        const randomArray = new Uint8Array(length);
+
+                        window.crypto.getRandomValues(randomArray);
+
+                        return Array.from(randomArray, (char) => chars[char % chars.length]).join('');
+                    }
+                    //генератор пароля
+
+                    document.getElementById('reg_age').addEventListener('input', validateForm);
+
+
 
                     function validateForm() {
                         const name = document.getElementById('regName').value.trim();
                         const email = document.getElementById('regInput').value.trim();
                         const password = document.getElementById('regPassword').value;
+                        const age = document.getElementById('reg_age');
 
                         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
                         const passwordRegex = /^[A-Za-z0-9]{6,}$/; // Пароль должен содержать хотя бы 6 символов
 
-                        if (name === '' || !emailRegex.test(email) || password === '') {
+                        if (name === '' || !emailRegex.test(email) || password === '' || age.value === '') {
                             document.getElementById('regButton').disabled = true;
                         } else if (!passwordRegex.test(password)) {
                             document.getElementById('regButton').disabled = true;
                         } else {
                             document.getElementById('regButton').disabled = false;
+                            document.getElementById('changingformsToLogin').disabled = true;
                         }
                     }
                 </script>
