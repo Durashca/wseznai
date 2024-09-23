@@ -112,6 +112,13 @@ div.bd-callout.bd-callout-info ol > li{
     --bd-callout-border: #997404;
 }
 
+/*желтая карточка*/
+.bd-callout-violet {
+    --bd-callout-color: #b186ff;
+    --bd-callout-bg: #410d8d;
+    --bd-callout-border: #7d3af5;
+}
+
 
 
 /*применение карточки*/

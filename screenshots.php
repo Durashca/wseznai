@@ -46,7 +46,7 @@ session_start();
                         <button id="btn-task-check" class="btn btn-outline-success">Ответить</button>
                     </div>
                     <div class="bd-callout bd-callout-info">Можете попробовать вставить <b>скриншот</b> в <b>Word</b></div>
-                    <div id="pre_emptive_letter" class="bd-callout bd-callout-warning"></div>
+                    <div id="pre_emptive_letter" class="bd-callout bd-callout-violet"></div>
                 </content>
             </div>
         </div>

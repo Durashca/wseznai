@@ -1,5 +1,4 @@
 <?php
-session_start();
 include 'config.php';
 
 // Подключение к базе данных
@@ -24,6 +23,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (mysqli_num_rows($res) == 1) {
             // Если пользователь найден, сохраняем данные в сессии
             $row = mysqli_fetch_assoc($res);
+            session_destroy(); // Уничтожьте все существующие сессии
+            session_start(); // Начните новую сессию для нового пользователя
             $_SESSION['user_id'] = $row['id'];
             $_SESSION['user_name'] = $row['name'];
             $_SESSION['user_mail'] = $row['login'];

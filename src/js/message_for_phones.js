@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // текст
         let p = document.createElement('p');
-        p.textContent = 'если вы проходите задания с телефона то ссылка на следующую страницу вам открыта';
+        p.textContent = 'Если вы проходите задания с телефона то ссылка на следующую страницу вам открыта';
         pre_emptive_letter.appendChild(p);
         //
 

@@ -76,7 +76,7 @@ function process_comment_takingInTable($id_comment) {
                 $output .= "</div>"; // Закрытие.comment
                 $output .= "</div>"; // Закрытие.container
                 if (isset($_SESSION['user_id']) && $_SESSION['user_id'] == $row['id_user']) {
-                    $output .= "<form id='commentDelete' action='delete_comment.php' method='post'>";
+                    $output .= "<form id='commentDelete' action='delete_comment.php' method='post' >";
                     $output .= "<input type='hidden' name='id_request' value='" . $row['id_request'] . "'>";
                     $output .= "<input type='submit' style=' border-radius: 0 0 0 5px;'   class='btn btn-outline-success delete-button' name='delete' value='Удалить свой коммент'>";
                     $output .= "</form>";
@@ -134,13 +134,56 @@ function process_comment_addInTable($id_comment, $comment, $id_user, $name_user)
 ?>
 
 <div style="text-align: start;">
-    <h4>Комментарии</h4>
-    <form style="" action="process_comment.php" id="commentForm" method="post">
-        <textarea name="comment_text" rows="4" cols="25" placeholder="Текст"></textarea>
+    <h4 style="margin-left: 10px;">Комментарии</h4>
+    <form style="" action="process_comment.php" id="commentForm" method="post" onsubmit="return submitForm(this);" >
+        <textarea name="comment_text" rows="4" cols="25" placeholder="Поделитесь впечатлениями"></textarea>
         <input type="hidden" id="id_comment" name="id_comment" value="<?php echo $id_comment;?>">
         <br>
-        <input id="sending_comment_button" class="btn btn-outline-success" type="submit" value="Добавить комментарий">
+
+            <input id="sending_comment_button" class="btn btn-outline-success" type="submit" value="Добавить комментарий">
+
     </form>
+
+<!--  спуск вниз-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        function submitForm(form) {
+            // Отправляем форму с помощью AJAX
+            $.ajax({
+                type: "POST",
+                url: form.action,
+                data: $(form).serialize(),
+                success: function(response) {
+                    // Обрабатываем ответ сервера
+                    console.log(response);
+
+                    // Добавляем задержку перед прокруткой страницы к форме
+                    setTimeout(function() {
+                        scrollToForm(form);
+
+                    }, 500);
+                    // alert('комментарий добавлен');
+                },
+                error: function(xhr, status, error) {
+                    // Обрабатываем ошибки
+                    console.error(error);
+                }
+            });
+
+            // Предотвращаем стандартное поведение формы
+            return false;
+        }
+
+        function scrollToForm(form) {
+            // Получаем высоту формы
+            var formHeight = $(form).height();
+
+            // Прокручиваем страницу на высоту формы с анимацией
+            $('html, body').animate({
+                scrollTop: $(form).offset().top - formHeight
+            }, 500);
+        }
+    </script>
     <!-- отправляем в value input['id_comment'] имя подключаемого файла  -->
 
     <div id="comments_users">

@@ -4,7 +4,7 @@ include 'config.php';
 $link = mysqli_connect($host, $user, $pass, $dbname);
 mysqli_query($link, "SET NAMES 'utf8'");
 
-session_start(); // Начало сессии
+
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") { // нажатие на кнопку
     if (isset($_POST['reg_name']) && isset($_POST['reg_login']) && isset($_POST['reg_password'])) {
@@ -43,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // нажатие на кнопку
 
         // Регистрация нового пользователя
         // Хеширование пароля
-        $password = password_hash($password, PASSWORD_DEFAULT);
+
 
         $query = "INSERT INTO users (name, login, pass) VALUES (?,?,?)";
         $stmt = mysqli_prepare($link, $query);
@@ -60,6 +60,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // нажатие на кнопку
         mysqli_stmt_execute($stmt);
 
         // Авторизация
+        session_destroy(); // Уничтожьте все существующие сессии
+        session_start(); // Начните новую сессию для нового пользователя
         $_SESSION['user_id'] = $userId;
         $_SESSION['user_name'] = $name;
         $_SESSION['user_mail'] = $login;

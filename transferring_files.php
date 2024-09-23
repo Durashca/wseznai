@@ -182,7 +182,7 @@ session_start();
                             </div>
                         </div>
                     </div>
-                    <div id="pre_emptive_letter" class="bd-callout bd-callout-warning"></div>
+                    <div id="pre_emptive_letter" class="bd-callout bd-callout-violet"></div>
                 </content>
             </div>
         </div>
