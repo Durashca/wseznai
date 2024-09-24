@@ -1,5 +1,10 @@
 img, svg {
     /*max-width: 100%;*/
-    border: 2px solid slategrey;
+
     border-radius: 10px;
+}
+
+.phone {
+    max-height: 800px;
+    max-width: 800px;
 }

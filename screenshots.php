@@ -41,12 +41,12 @@ session_start();
                     <div class="keyboard-shortcut-block dashed">
                         <h4>Сделайте скриншот нажав определенную кнопку и вставьте в поле ниже картинку с помощью <b>Ctrl</b> + <b>V</b> или правой кнопкой мыши, <b>вставить</b>:</h4>
                         <ol>
-                            <div class="keyboard-shortcut-block" contenteditable="true" id="editableDiv"></div>
+                            <div style="border: 1px solid black; background: white;"  class="keyboard-shortcut-block" contenteditable="true" id="editableDiv"></div>
                         </ol>
                         <button id="btn-task-check" class="btn btn-outline-success">Ответить</button>
                     </div>
                     <div class="bd-callout bd-callout-info">Можете попробовать вставить <b>скриншот</b> в <b>Word</b></div>
-                    <div id="pre_emptive_letter" class="bd-callout bd-callout-violet"></div>
+                    <div id="pre_emptive_letter" class="bd-callout bd-callout-orange"></div>
                 </content>
             </div>
         </div>

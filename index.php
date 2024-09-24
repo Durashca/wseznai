@@ -35,7 +35,7 @@ session_start();
                         <li>Прочтите от начала до конца весь материал по теме и только потом приступайте к заданию.</li>
                         <li>Не отчаивайтесь, если что-то не получается.</li>
                         <li>На моем сайте есть карточки, которые показывают состояние текста.
-                            От <span class="bd-callout bd-callout-green mini">зеленого</span>, <span class="bd-callout bd-callout-warning mini">желтого</span>, <span class="bd-callout bd-callout-red mini">красного</span> - степень важных моментов. <span class="bd-callout bd-callout-info mini">Синий</span> - дополнительная информация. <span class="bd-callout bd-callout-violet mini">Фиолетовый</span> - информация о задании для телефонов.</li>
+                            От <span class="bd-callout bd-callout-green mini">зеленого</span>, <span class="bd-callout bd-callout-warning mini">желтого</span>, <span class="bd-callout bd-callout-red mini">красного</span> - степень важных моментов. <span class="bd-callout bd-callout-info mini">Синий</span> - дополнительная информация. <span class="bd-callout bd-callout-orange mini">Фиолетовый</span> - информация о задании для телефонов.</li>
                         <li>В конце урока будут задания, они будут <span>в прерывистых рамочках.</span></li>
                         <li>Вы всегда можете вернуться к уроку. Нажмите на кнопку <b>материал</b>, на верхней панели.</li>
                     </ul>

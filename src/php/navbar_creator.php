@@ -1,16 +1,16 @@
 <script>
     menu = `
 <header id="h-space" class="text-center">
-    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top" style="--bs-navbar-padding-y: 0rem; z-index: 10; box-shadow: 1px 2px 10px grey;">
+    <nav class="navbar navbar-expand-lg  fixed-top" style="--bs-navbar-padding-y: 0rem; z-index: 10; box-shadow: 1px 2px 10px grey; --bs-bg-opacity: 1;">
         <div class="container-xxl theme little-dark" style="min-height: 50px;  text-align: justify">
             <h3  style="font-family: 'Montserrat', sans-serif;font-weight: bold;margin-bottom:0"><span >ВсеЗнай</span></h3>
             <!--тайная кнопка-->
 
             <div>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                <button style="border: 0px;box-shadow: 0 0 0 0;" class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Переключатель навигации">
-                    <span class="navbar-toggler-icon"></span>
+                    <span style="filter: invert(1);  " class="navbar-toggler-icon"></span>
                 </button>
                 <!--профиль-->
 
@@ -20,17 +20,17 @@
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 <!--<div style="border: 1px solid red; display: flex">-->
                     <li class="nav-item">
-                        <a id="btnMain" class="nav-link active" aria-current="page" href="index.php">Главная</a>
+                        <a id="btnMain" class="" aria-current="page" href="index.php">Главная</a>
                     </li>
                     <li class="nav-item">
-                        <a id="btnMaterial" class="nav-link active" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
+                        <a  id="btnMaterial" class="" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
                            aria-controls="offcanvasExample">Материал</a>
                     </li>
                     <!--                       -->
                     <li class="nav-item">
                         <a data-bs-toggle="offcanvas"
                         data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"
-                        class="nav-link active" aria-current="page" href="#">Профиль</a>
+                        class="" aria-current="page" href="#">Профиль</a>
                     </li>
 <!--</div>-->
                     <!---->

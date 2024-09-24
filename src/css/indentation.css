@@ -1,6 +1,6 @@
 
 video {
-    max-width: 900px;
+    /*max-width: 900px;*/
     width: 100%;
     height: auto;
 }
@@ -18,6 +18,10 @@ header {
 
 #h-space {
     height: 50px;
+}
+
+ol {
+    display: grid;
 }
 
 /*заголовок cлайдов (h3)*/
@@ -40,7 +44,7 @@ ol.meterial-block li {
 }
 /*картинки общее*/
 div.keyboard-shortcut-block img {
-    width: 100%;
+    width: 80%;
     margin: 1% auto;
     min-height: 350px;
 
@@ -113,10 +117,10 @@ div.bd-callout.bd-callout-info ol > li{
 }
 
 /*желтая карточка*/
-.bd-callout-violet {
-    --bd-callout-color: #b186ff;
-    --bd-callout-bg: #410d8d;
-    --bd-callout-border: #7d3af5;
+.bd-callout-orange {
+    --bd-callout-color: #ffbc86;
+    --bd-callout-bg: #e66100;
+    --bd-callout-border: #f58a3a;
 }
 
 

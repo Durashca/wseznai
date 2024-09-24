@@ -93,10 +93,14 @@ new_to_PC(10);
 ?>
 
 <script>
-    if (document.getElementById('name').textContent != '' && document.getElementById('mail').textContent != '' && document.getElementById('id').textContent != '' ){
-        func_tg_dis();
-        func_tg_vcr();
+
+    <?php
+    if (isset($_SESSION['user_id'])){
+        echo "func_tg_dis();";
+        echo "func_tg_vcr();";
     }
+    ?>
+
 </script>
 
 </body>

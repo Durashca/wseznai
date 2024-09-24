@@ -78,7 +78,7 @@ session_start();
                         <h4>Поставьте курсор в поле для проверки:</h4>
                         <input style="width: 100%" type="text" id="userChInput" value="Пример текста для проверки курсора">
                     </div>
-                    <div id="pre_emptive_letter" class="bd-callout bd-callout-violet"></div>
+                    <div id="pre_emptive_letter" class="bd-callout bd-callout-orange"></div>
                 </content>
             </div>
         </div>

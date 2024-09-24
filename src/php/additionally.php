@@ -16,7 +16,8 @@ $cssFiles = array(
     'src/css/comment.css',
     'src/css/img.css',
     'src/css/menu.css',
-    'src/css/increase_img.css'
+    'src/css/scrolling.css'
+
 );
 
 foreach ($cssFiles as $cssFile) {
@@ -43,8 +44,9 @@ $jsFiles = array(
     'src/js/transition.js',
     'src/js/footer.js',
     'src/js/loading_the_wheel.js',
-    'src/js/favicon.js',
-    'src/js/increase_img.js'
+    'src/js/favicon.js'
+
+
 
 );
 
