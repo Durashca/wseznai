@@ -29,13 +29,12 @@ session_start();
             <div class="row">
                 <div class="container-material">
                     <h1 class="text-center">Главная</h1>
-                    <p>Добро пожаловать на сайт ВсеЗнай! Здесь вы можете найти кучу полезного и понятного материала по использованию ПК как для новичков, так и для профи.</p>
+                    <p>Добро пожаловать на сайт ВсеЗнай! Здесь вы можете найти много полезного и понятного материала по использованию ПК как для новичков, так и для профи.</p>
                     <ul>
-                        <h4>Рекомендации:</h4>
+                        <li>Рекомендации:</li>
                         <li>Прочтите от начала до конца весь материал по теме и только потом приступайте к заданию.</li>
                         <li>Не отчаивайтесь, если что-то не получается.</li>
-                        <li>На моем сайте есть карточки, которые показывают состояние текста.
-                            От <span class="bd-callout bd-callout-green mini">зеленого</span>, <span class="bd-callout bd-callout-warning mini">желтого</span>, <span class="bd-callout bd-callout-red mini">красного</span> - степень важных моментов. <span class="bd-callout bd-callout-info mini">Синий</span> - дополнительная информация. <span class="bd-callout bd-callout-orange mini">Фиолетовый</span> - информация о задании для телефонов.</li>
+                        <li>На моем сайте есть карточки, которые показывают состояние текста. От <span class="bd-callout bd-callout-green mini">зеленого</span>, <span class="bd-callout bd-callout-warning mini">желтого</span>, <span class="bd-callout bd-callout-red mini">красного</span> - степень важных моментов. <span class="bd-callout bd-callout-info mini">Синий</span> - дополнительная информация. <span class="bd-callout bd-callout-orange mini">Оранжевый</span> - инструкция по выполнению задания для вашего устройства.</li>
                         <li>В конце урока будут задания, они будут <span>в прерывистых рамочках.</span></li>
                         <li>Вы всегда можете вернуться к уроку. Нажмите на кнопку <b>материал</b>, на верхней панели.</li>
                     </ul>

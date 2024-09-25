@@ -10,7 +10,7 @@
                 <button style="border: 0px;box-shadow: 0 0 0 0;" class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Переключатель навигации">
-                    <span style="filter: invert(1);  " class="navbar-toggler-icon"></span>
+                    <span style=" background-image: url('src/images/MenuButton/menuButton.png') " class="navbar-toggler-icon"></span>
                 </button>
                 <!--профиль-->
 

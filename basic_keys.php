@@ -71,14 +71,14 @@ session_start();
                         <ol>
                             <li>Кликните в любую точку сайта, <b>только не на текстовое поле!</b></li>
                             <li>Нажмите 1 раз кнопку <b>End</b>.</li>
-                            <li>Если вы не переместились на верхушку сайта, то у вас включен <b>Num Lk</b>, нажмите на него, чтобы отключить.</li>
+                            <li>Если вы не переместились в самый конец сайта, то у вас включен <b>Num Lk</b>, нажмите на него, чтобы отключить.</li>
                         </ol>
                     </div>
                     <div class="keyboard-shortcut-block dashed">
                         <h4>Поставьте курсор в поле для проверки:</h4>
                         <input style="width: 100%" type="text" id="userChInput" value="Пример текста для проверки курсора">
                     </div>
-                    <div id="pre_emptive_letter" class="bd-callout bd-callout-orange"></div>
+                    <div id="pre_emptive_letter" class="bd-callout"></div>
                 </content>
             </div>
         </div>

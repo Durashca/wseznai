@@ -20,7 +20,8 @@ document.addEventListener("DOMContentLoaded", function () {
         let p = document.createElement('p');
         p.textContent = 'Если вы проходите задания с телефона то ссылка на следующую страницу вам открыта';
         pre_emptive_letter.appendChild(p);
-        //
+        pre_emptive_letter.classList.add('bd-callout-orange');
+        console.log(pre_emptive_letter.classList.contains('bd-callout-orange')); // true, если класс был успешно добавлен
 
     } else {
         // пк
