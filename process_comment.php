@@ -78,7 +78,7 @@ function process_comment_takingInTable($id_comment) {
                 if (isset($_SESSION['user_id']) && $_SESSION['user_id'] == $row['id_user']) {
                     $output .= "<form id='commentDelete' action='delete_comment.php' method='post' >";
                     $output .= "<input type='hidden' name='id_request' value='" . $row['id_request'] . "'>";
-                    $output .= "<input type='submit' style=' border-radius: 0 0 0 5px;'   class='btn btn-outline-success delete-button' name='delete' value='Удалить свой коммент'>";
+                    $output .= "<input type='submit' style=' border-radius: 0 0 0 5px;'   class='btn btn-outline-success delete-button' name='delete' value='Удалить коммент'>";
                     $output .= "</form>";
                 }
                 $output .= "</div>"; // Закрытие.commentsContainer
