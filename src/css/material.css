@@ -4,14 +4,16 @@
 }
 
 .lesson {
-
     border-radius: 7px;
     min-height: 50px;
     display: flex;
     flex: 1;
-    background-color: #F0F0F0;
     padding: 1px 1px;
     margin-bottom: 10px;
+}
+a.number-lesson {
+    color: white;
+    border: 2px solid white;
 }
 
 /*.lesson:hover {*/
@@ -49,8 +51,8 @@
 }
 
 .lesson:hover >.left-part-lesson >.number-lesson {
-    border-color: white;
-    color: white;
+    border-color: rgba(112, 44, 249, 1);
+    color: rgba(112, 44, 249, 1);
 }
 
 .text-lesson {
