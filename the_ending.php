@@ -53,7 +53,7 @@ session_start();
                     <canvas id="canvas"></canvas>
                     <div style="display: flex; width: 100%; justify-content: center;">
                         <form  action="download_help.php" id="commentForm" method="post">
-                            <input style="width: 100%" class="btn btn-outline-success" type="submit" name="downloadCertificateButton" id="downloadCertificateButton"
+                            <input style="width: 100%; min-width: 120px" class="btn btn-outline-success" type="submit" name="downloadCertificateButton" id="downloadCertificateButton"
                                     onclick="downloadCertificate()" value="Скачать">
 
                         </form>
