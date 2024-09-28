@@ -71,7 +71,7 @@ session_start();
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
                             <label class="form-check-label" for="flexRadioDefault3">
-                                Доступный в некоторых приложениях офлайн режим
+                                Некоторые приложения могут работать в офлайн режиме
                             </label>
                         </div>
                         <button id="btn-task-check" class="btn btn-outline-success">Ответить</button>

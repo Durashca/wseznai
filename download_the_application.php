@@ -103,13 +103,8 @@ new_to_PC(70);
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        const screenWidth = window.innerWidth;
 
-        if (screenWidth < 768) {
-            // Действия для экрана меньше 768px
-            func_tg_dis();
-            
-        } else {
+
             const link = document.querySelector('a[href="https://apps.microsoft.com/detail/9nztwsqntd0s?hl=ru-ru&gl=RU"]');
 
             link.addEventListener('click', function(event) {
@@ -121,7 +116,7 @@ new_to_PC(70);
                     window.open(link.getAttribute('href'), '_blank');
                 }, 1300); // Переход через 1.3 секунды (можете изменить задержку по вашему усмотрению)
             });
-        }
+
 
         
     <?php

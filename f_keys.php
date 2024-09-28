@@ -53,26 +53,18 @@ new_to_PC(40);
     window.addEventListener('DOMContentLoaded', function() {
     let inp_fn = document.getElementById('inputFN');
 
-    // Определить тип устройства на основе ширины
-    if (window.innerWidth < 768) {
-        func_tg_dis();
-        func_tg_vcr();
-        inp_fn.value = 'Fn';
-        
-    }else {
-
 
         inp_fn.addEventListener('input', function () {
             let inputValue = inp_fn.value.toUpperCase(); // Преобразование в верхний регистр
 
-            if (inputValue === 'FN') {
+            if (inputValue === 'FN' || inputValue === 'FUNCTION' ) {
                 func_tg_dis();
                 func_tg_vcr();
             } else {
                 func_tg_wrong();
             }
         });
-    }
+
     // авто выполнение
     <?php
     if($_SESSION['user_progress'] > 40){

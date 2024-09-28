@@ -61,7 +61,7 @@ session_start();
                     <div class="keyboard-shortcut-block dashed">
                         <h4>Попробуйте <b>зарегистрироваться</b> на моем сайте, чтобы лучше понять теорию.</h4>
                         <ol>
-                            <li>На главном меню моего сайта, нажмите на значок человечка с восклицательным знаком или <a data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" style="color: #3366cc; text-decoration: none; cursor: pointer; transition: all 0.3s ease;">прейдите по этой ссылке</a>.</li>
+                            <li>На главном меню моего сайта, нажмите на профиль или <a data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" style="color: #3366cc; text-decoration: none; cursor: pointer; transition: all 0.3s ease;">прейдите по этой ссылке</a>.</li>
                             <li>Заполните все данные.</li>
                         </ol>
                     </div>

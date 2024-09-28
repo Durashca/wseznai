@@ -52,9 +52,12 @@ session_start();
                         прошли этот сложный путь.</h4>
                     <canvas id="canvas"></canvas>
                     <div style="display: flex; width: 100%; justify-content: center;">
-                        <button id="downloadCertificateButton" class="btn btn-outline-success"
-                                onclick="downloadCertificate()">Скачать
-                        </button>
+                        <form  action="download_help.php" id="commentForm" method="post">
+                            <input style="width: 100%" class="btn btn-outline-success" type="submit" name="downloadCertificateButton" id="downloadCertificateButton"
+                                    onclick="downloadCertificate()" value="Скачать">
+
+                        </form>
+
 <!--                        <button id="edit_button">Редактировать данные</button>-->
                     </div>
                 </content>
