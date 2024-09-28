@@ -95,7 +95,7 @@ function process_comment_takingInTable($id_comment) {
     return $output;
 }
 
-// добавка комента с сайта
+// добавка коммента с сайта
 function process_comment_addInTable($id_comment, $comment, $id_user, $name_user) {
     include 'config.php';
 
@@ -135,7 +135,7 @@ function process_comment_addInTable($id_comment, $comment, $id_user, $name_user)
 
 <div style="text-align: start;">
     <h4 style="margin-left: 10px;">Комментарии</h4>
-    <form style="" action="process_comment.php" id="commentForm" method="post" onsubmit="return submitForm(this);" >
+    <form action="process_comment.php" id="commentForm" method="post"  >
         <textarea name="comment_text" rows="4" cols="25" placeholder="Поделитесь впечатлениями"></textarea>
         <input type="hidden" id="id_comment" name="id_comment" value="<?php echo $id_comment;?>">
         <br>
@@ -145,45 +145,7 @@ function process_comment_addInTable($id_comment, $comment, $id_user, $name_user)
     </form>
 
 <!--  спуск вниз-->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-        function submitForm(form) {
-            // Отправляем форму с помощью AJAX
-            $.ajax({
-                type: "POST",
-                url: form.action,
-                data: $(form).serialize(),
-                success: function(response) {
-                    // Обрабатываем ответ сервера
-                    console.log(response);
 
-                    // Добавляем задержку перед прокруткой страницы к форме
-                    setTimeout(function() {
-                        scrollToForm(form);
-
-                    }, 500);
-                    // alert('комментарий добавлен');
-                },
-                error: function(xhr, status, error) {
-                    // Обрабатываем ошибки
-                    console.error(error);
-                }
-            });
-
-            // Предотвращаем стандартное поведение формы
-            return false;
-        }
-
-        function scrollToForm(form) {
-            // Получаем высоту формы
-            var formHeight = $(form).height();
-
-            // Прокручиваем страницу на высоту формы с анимацией
-            $('html, body').animate({
-                scrollTop: $(form).offset().top - formHeight
-            }, 500);
-        }
-    </script>
     <!-- отправляем в value input['id_comment'] имя подключаемого файла  -->
 
     <div id="comments_users">

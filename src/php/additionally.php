@@ -44,7 +44,8 @@ $jsFiles = array(
     'src/js/transition.js',
     'src/js/footer.js',
     'src/js/loading_the_wheel.js',
-    'src/js/favicon.js'
+    'src/js/favicon.js',
+    'src/js/scroll_position.js'
 
 
 

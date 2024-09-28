@@ -140,25 +140,27 @@
                     document.getElementById('regPassword').addEventListener('input', validateForm);
 
                     nameInputReg.addEventListener('blur', function () {
+                        // почта по умолчанию
+                        const input = document.getElementById('regInput');
+                        input.value = generateEmail();
 
-                            // почта по умолчанию
-                            const input = document.getElementById('regInput');
-                            input.value = nameInputReg.value + '.' + generateRandomString(10) + (getRandom5050() ? '@yandex.ru' : '@mail.ru');
-
-                            // пароль по умолчанию
-                            document.getElementById('regPassword').value = generateRandomString(10)
-
-
+                        // пароль по умолчанию
+                        document.getElementById('regPassword').value = generateRandomString(10);
                     });
 
                     // генератор 50/50
                     function getRandom5050() {
                         return Math.round(Math.random());
                     }
-                    // генератор 50/50
 
-                    //генератор пароля
+                    // генератор почты
+                    function generateEmail() {
+                        const username = generateRandomString(10);
+                        const domain = getRandom5050() ? '@yandex.ru' : '@mail.ru';
+                        return username + domain;
+                    }
 
+                    // генератор пароля
                     function generateRandomString(length = 16) {
                         const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
                         const randomArray = new Uint8Array(length);
