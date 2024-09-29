@@ -69,6 +69,34 @@
   height: 100%;
     " class="offcanvas-body">
 
+<!--        -->
+        <style>
+            .input-eye {
+                position: relative;
+                display: inline-flex; /* Изменено на inline-flex для выравнивания */
+                align-items: center; /* Центрирование по вертикали */
+            }
+
+            #regPassword {
+                padding-right: 30px; /* Отступ для span */
+                width: 100%; /* Установите ширину на 100% для адаптивности */
+            }
+            #PasswordLogin {
+                padding-right: 30px; /* Отступ для span */
+                width: 100%; /* Установите ширину на 100% для адаптивности */
+            }
+
+            .eye-icon {
+                width: 20px; /* Установите фиксированную ширину */
+                height: 20px; /* Установите фиксированную высоту */
+                background-size: cover; /* Обеспечивает правильное отображение изображения */
+                background-image: url('src/images/svg/view.svg');
+                cursor: pointer; /* Указатель на курсор для кликабельного элемента */
+                margin-left: -30px; /* Отрицательный отступ для перекрытия поля ввода */
+            }
+        </style>
+<!--        -->
+
         <!---->
         <!-- Login form -->
         <div id="divLogin" style="display: none;">
@@ -78,8 +106,27 @@
                         <div >
                             <label for="regName" class="form-label">Введите свою почту</label>
                             <input  name="login" type="email" placeholder="Введите почту" autocomplete="email"  required readonly onfocus="this.removeAttribute('readonly');" id="loginInput">
-                            <label for="regName" class="form-label">Введите свой пароль</label>
-                            <input id="PasswordLogin" name="password" type="password" placeholder="Введите пароль" autocomplete="current-password" required readonly onfocus="this.removeAttribute('readonly');">
+                            <label for="PasswordLogin" class="form-label">Введите свой пароль</label>
+                            <div>
+                                <div style="width: 100%" class="input-eye">
+                                    <input id="PasswordLogin" name="password" type="password" placeholder="Введите пароль" autocomplete="current-password" required readonly onfocus="this.removeAttribute('readonly');">
+                                    <span id="eye_login" class="eye-icon" onclick="togglePasswordVisibility_login('PasswordLogin')"></span>
+                                </div>
+                                <script>
+                                    function togglePasswordVisibility_login(inputId) {
+                                        let eye_login = document.getElementById('eye_login');
+                                        let input = document.getElementById(inputId);
+
+                                        if (input.type === "password") {
+                                            input.type = "text";
+                                            eye_login.style.backgroundImage = "url('src/images/svg/no-view.svg')";
+                                        } else {
+                                            input.type = "password";
+                                            eye_login.style.backgroundImage = "url('src/images/svg/view.svg')";
+                                        }
+                                    }
+                                </script>
+                            </div>
                         </div>
                     </div>
                     <div class="bottom_form col">
@@ -107,7 +154,7 @@
             <form action="registration.php" method="POST">
                 <div style="" class=" inputs container text-left">
                     <div class="col">
-                        <div>
+                        <div class="input-container">
                         <label for="regName" class="form-label">Введите свое имя</label>
                         <input style="" id="regName" name="reg_name" type="text" placeholder=" Введите имя" required readonly onfocus="this.removeAttribute('readonly');">
 
@@ -115,7 +162,29 @@
                         <input  id="regInput" name="reg_login" type="email" placeholder=" Придумайте почту" required readonly onfocus="this.removeAttribute('readonly');">
 
                         <label for="regPassword" class="form-label">Придумайте свой пароль</label>
-                        <input  id="regPassword" name="reg_password" type="password" placeholder="Придумайте пароль" required readonly onfocus="this.removeAttribute('readonly');">
+                            <div>
+
+
+                                <div style="width: 100%" class="input-eye">
+                                    <input  id="regPassword" name="reg_password" type="password" placeholder="Придумайте пароль" required readonly onfocus="this.removeAttribute('readonly');">
+                                    <span id="eye_reg" class="eye-icon" onclick="togglePasswordVisibility_reg('regPassword')"></span>
+                                </div>
+
+                                <script>
+                                    function togglePasswordVisibility_reg(inputId) {
+                                        let eye_reg = document.getElementById('eye_reg');
+                                        let input = document.getElementById(inputId);
+
+                                        if (input.type === "password") {
+                                            input.type = "text";
+                                            eye_reg.style.backgroundImage = "url('src/images/svg/no-view.svg')";
+                                        } else {
+                                            input.type = "password";
+                                            eye_reg.style.backgroundImage = "url('src/images/svg/view.svg')";
+                                        }
+                                    }
+                                </script>
+                            </div>
 
                         <label for="reg_age" class="form-label">Введите свой год рождения</label>
                         <input  type="date" id="reg_age" name="reg_age" min="1903-12-31" max="2020-12-31" >
@@ -155,7 +224,7 @@
 
                     // генератор почты
                     function generateEmail() {
-                        const username = generateRandomString(10);
+                        const username = generateRandomString(16);
                         const domain = getRandom5050() ? '@yandex.ru' : '@mail.ru';
                         return username + domain;
                     }
