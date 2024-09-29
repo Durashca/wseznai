@@ -5,12 +5,18 @@ session_start();
 <html lang="ru">
 <head>
 
-    <title>Первые шаги освоения ПК</title>
-    <meta name="keywords" content="Wseznai, всезнай, все знай, сайт для чайников, как решить те или иные проблемы на пк, wsepropc, регистрация, пароль">
-    <meta name="description"
-          content="Сайт Все Знай отличный помощник для тех кто решил изучить такую сложную технику как ПК.">
+    <title>Сайт ВсеЗнай - поможет сделать первые шаги в освоении ПК</title>
+    <meta name="keywords" content="Wseznai, всезнай, все знай, сайт для чайников, как решить те или иные проблемы на пк, wsepropc">
+    <meta name="description" content="Сайт Все Знай - отличный помощник для тех, кто решил изучить такую сложную технику, как ПК.
+    На этом сайте мы разберем 10 ключевых аспектов работы с ПК. Вконце всех заданий вас ждет сертификат.">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
     <link rel="canonical" href="http://t99662dp.beget.tech/index.php">
+
+    <meta property="og:title" content="Сайт ВсеЗнай - поможет сделать первые шаги в освоении ПК" />
+    <meta property="og:description" content="Сайт Все Знай - ваш помощник в освоении ПК." />
+    <meta property="og:image" content="https://example.com/path/to/your/image.png" /> <!-- Замените на корректный URL изображения -->
+    <meta property="og:url" content="http://t99662dp.beget.tech/index.php" />
+    <meta property="og:type" content="website" />
 <style>
     .mini {
         margin: 0 !important;
