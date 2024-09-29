@@ -115,15 +115,31 @@ new_to_PC(90);
      document.addEventListener('DOMContentLoaded', function() {
     const videoElement = document.createElement('video');
     videoElement.src = 'src/video/video_audio.mp4';
+
     videoElement.controls = true;
+
     videoElement.muted = true; // выключаем звук по умолчанию
+
     let checked = false
+
+    // Запрещаем воспроизведение видео
+    videoElement.addEventListener('play', function() {
+        videoElement.pause();
+        func_tg_wrong();
+    });
+    videoElement.addEventListener('fullscreenchange', (event) => {
+        if (document.fullscreenElement) {
+            document.exitFullscreen(); // Выход из полноэкранного режима
+            func_tg_wrong();
+        }
+    });
+
 
     videoElement.onvolumechange = function() {
         if (!videoElement.muted) {
             func_tg_dis();
             func_tg_vcr();
-            updateProgress(9);
+
             checked = true
         } else {
          if(checked){
