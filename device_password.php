@@ -109,7 +109,7 @@ new_to_PC(100);
 
                 func_tg_dis();
                 func_tg_vcr();
-                localStorage.setItem("userProgress", "100");
+                localStorage.setItem("user_progress", "100");
 
 
 
@@ -127,7 +127,7 @@ new_to_PC(100);
 
 
 
-    if(localStorage.getItem("userProgress") === "100"){
+    if(localStorage.getItem("user_progress") === "100"){
         labels[4].classList.toggle('strikethrough');
         labels.forEach(function(label) {
          label.removeEventListener('click', labelClickHandler);
