@@ -1,4 +1,3 @@
-<!-- В delete_comment.php -->
 <?php
 
 include 'config.php';
@@ -44,4 +43,3 @@ if ($stmt->affected_rows > 0) {
 } else {
     http_response_code(400); // Плохой запрос
 }
-?>

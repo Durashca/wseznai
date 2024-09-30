@@ -33,14 +33,14 @@ session_start();
 <!--  -->
 <div class='Modal' id='Modal'>
     <div class='modalContent'>
-    <h2>Введите имя и фамилию</h2>
-    <form id='form'>
-    <input type='text' id='name' placeholder='Имя'>
-    <input type='text' id='surname' placeholder='Фамилия'>
-    <button class="btn btn-outline-success" id='continue'>Продолжить</button>
-    </form>
+        <h2>Введите имя и фамилию</h2>
+        <form id='form' onsubmit="saveUserData(event)">
+            <input type='text' id='name' placeholder='Имя' required>
+            <input type='text' id='surname' placeholder='Фамилия' required>
+            <button type="submit" class="btn btn-outline-success" id='continue'>Продолжить</button>
+        </form>
     </div>
-    </div>
+</div>
 <!--  -->
 
 <div class="container-xxl">
@@ -48,18 +48,11 @@ session_start();
         <div class="row">
             <div style="margin-bottom: 10%;" class="container-material">
                 <content style="text-align: center; margin: 0 auto">
-                    <h4 class="font-congratulations" style="text-align: center; margin-bottom: 3%">Мои поздравления, вы
-                        прошли этот сложный путь.</h4>
+                    <h4 class="font-congratulations" style="text-align: center; margin-bottom: 3%">Мои поздравления, вы прошли этот сложный путь.</h4>
                     <canvas id="canvas"></canvas>
-                    <div style="display: flex; width: 100%; justify-content: center;">
-                        <form  action="download_help.php" id="commentForm" method="post">
-                            <input style="width: 100%; min-width: 120px" class="btn btn-outline-success" type="submit" name="downloadCertificateButton" id="downloadCertificateButton"
-                                    onclick="downloadCertificate()" value="Скачать">
-
-                        </form>
-
-<!--                        <button id="edit_button">Редактировать данные</button>-->
-                    </div>
+                    <form action="download_help.php" id="commentForm" method="post" onsubmit="downloadCertificate(event)">
+                        <input style="width: 100%; min-width: 120px" class="btn btn-outline-success" type="submit" name="downloadCertificateButton" id="downloadCertificateButton" value="Скачать">
+                    </form>
                 </content>
             </div>
         </div>
@@ -69,6 +62,9 @@ session_start();
 include 'src/php/additionally.php';
 ?>
 
-<script src="src/js/sertificate.js"></script>
+<script src="src/js/sertificate.js">
+
+
+</script>
 </body>
 </html>
