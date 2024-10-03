@@ -85,7 +85,7 @@ function process_comment_takingInTable($id_comment) {
             }
         }
     } else {
-        $output = "Пока нет комментариев. Станьте первым кто выложит комментарий.";
+        $output = "Станьте первым кто выложит комментарий.";
     }
 
     // Закрытие запроса и соединения
@@ -109,7 +109,9 @@ function process_comment_addInTable($id_comment, $comment, $id_user, $name_user)
 
     // Валидация входных данных
     if (empty($id_comment) || empty($comment) || empty($id_user) || empty($name_user)) {
-        die("Ошибка: не заполнены все поля.");
+
+        $referer = $_SERVER['HTTP_REFERER']; // Получаем URL предыдущей страницы
+        echo "<a href='$referer'>вернуться</a>";
     }
 
     // Подготовленный запрос для безопасной вставки данных
@@ -134,13 +136,14 @@ function process_comment_addInTable($id_comment, $comment, $id_user, $name_user)
 ?>
 
 <div style="text-align: start;">
-    <h4 style="margin-left: 10px;">Комментарии</h4>
+    <div><h4 style="margin-left: 10px; text-align: center">Комментарии</h4></div>
+
     <form action="process_comment.php" id="commentForm" method="post"  >
         <textarea name="comment_text" rows="4" cols="25" placeholder="Поделитесь впечатлениями"></textarea>
         <input type="hidden" id="id_comment" name="id_comment" value="<?php echo $id_comment;?>">
         <br>
 
-            <input id="sending_comment_button" class="btn btn-outline-success" type="submit" value="Добавить комментарий">
+            <input style="width: 100%" id="sending_comment_button" class="btn btn-outline-success" type="submit" value="Добавить комментарий">
 
     </form>
 

@@ -60,6 +60,9 @@ $id_user = $_SESSION['user_id'];
         </div>
     </div>
 </div>
+
+<div id="advertisement"></div>
+
 <?php
 include 'src/php/additionally.php';
 ?>

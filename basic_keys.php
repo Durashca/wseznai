@@ -27,7 +27,9 @@ session_start();
                         <h4>Научимся быстро перемещаться в начало строки:</h4>
                         <ol>
                             <li>Кликните, так чтобы курсор был в конце строки</li>
-                            <input type="text" style="width: 100%" value="Hooooooooooooooooooooooooooooooooome">
+                            <li style="list-style-type: none"><b>Пример:</b> "<i id="example">Этот очень длинный текст вы должны
+                                    выделить с помощью мышки, скопировать, и вставить в блокнот</i>"
+                            </li>
                             <li>Найдите кнопку <b>Home</b> (она находится в рядом с <b>Num Lk</b>).</li>
                             <li>Нажмите на нее 1 раз.</li>
                             <li>Если вы поставили семерку, то нажмите на <b>Num Lk</b> и повторите все еще раз.</li>
@@ -38,9 +40,12 @@ session_start();
                     <div class="keyboard-shortcut-block">
                         <h4>Научимся быстро перемещаться в конец строки:</h4>
                         <ol>
-                            <li>Кликните, так чтобы курсор был вначале строки</li>
-                            <input type="text" style="width: 100%" value="Пример текста для проверки курсора">
-                            <li>Найдите кнопку <b>End</b> (она находится ниже с <b>Home</b>).</li>
+                            <li>Создайте блокнот на рабочем столе.</li>
+                            <li>Откройте блокнот и введите этот текст</li>
+                            <li style="list-style-type: none"><b>Пример:</b> "<i id="example">Этот очень длинный текст вы должны
+                                    выделить с помощью мышки, скопировать, и вставить в блокнот</i>"
+                            </li>
+                            <li>Найдите кнопку <b>End</b> (она должна находится ниже <b>Home</b>).</li>
                             <li>Нажмите на нее 1 раз.</li>
                             <li>Если вы не перешли в конец строки курсором, а поставили единичку, то нажмите на <b>Num Lk</b> и повторите все еще раз.</li>
                             <li>Посмотрите, на курсор, если он в конце строки, то у вас получилось.</li>
@@ -60,7 +65,6 @@ session_start();
                         <h4>Изучим как быстро перемещаться в <b>Home</b> (вверх) сайта:</h4>
                         <ol>
                             <li>Кликните в любую точку сайта, <b>только не на текстовое поле!</b></li>
-                            <li><b>Пример текстового поля</b> -> <input></li>
                             <li>Нажмите 1 раз кнопку <b>Home</b>.</li>
                             <li>Если вы не переместились на верхушку сайта, то у вас включен <b>Num Lk</b>, нажмите на него, чтобы отключить.</li>
                         </ol>
@@ -82,14 +86,19 @@ session_start();
                 </content>
             </div>
         </div>
+
+
     </div>
-    <div style="display: flex; justify-content: center; margin: 1% 0;">
+    <div id="transition_warning"  style="display: flex; justify-content: center; margin: 1% 0;">
         <button id="createPageButton" type="button"
                 class="btn btn-outline-success">
             <a class="nav-link active" href="f_keys.php">Сл. страница</a>
         </button>
     </div>
 </div>
+
+<div id="advertisement"></div>
+
 <?php
 include 'src/php/additionally.php';
     include 'progress.php';

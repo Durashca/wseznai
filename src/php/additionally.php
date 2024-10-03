@@ -15,7 +15,8 @@ $cssFiles = array(
     'src/css/material/screenshots/alignment.css',
     'src/css/comment.css',
     'src/css/img.css',
-    'src/css/menu.css'
+    'src/css/menu.css',
+    'src/css/advertisement.css'
 
 
 );
@@ -44,7 +45,9 @@ $jsFiles = array(
     'src/js/transition.js',
     'src/js/footer.js',
     'src/js/loading_the_wheel.js',
-    'src/js/favicon.js'
+    'src/js/favicon.js',
+    'src/js/advertisement.js',
+    'src/js/transition_warning.js'
 
 
 

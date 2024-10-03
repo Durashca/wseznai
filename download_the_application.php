@@ -88,13 +88,16 @@ session_start();
             </div>
         </div>
     </div>
-    <div style="display: flex; justify-content: center; margin: 1% 0;">
+    <div id="transition_warning"  style="display: flex; justify-content: center; margin: 1% 0;">
         <button id="createPageButton" type="button"
                 class="btn btn-outline-success">
             <a class="nav-link active" href="uninstalling_an_application.php">Сл. страница</a>
         </button>
     </div>
 </div>
+
+<div id="advertisement"></div>
+
 <?php
 include 'src/php/additionally.php';
 include 'progress.php';
