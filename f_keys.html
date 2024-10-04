@@ -1,6 +1,4 @@
-<?php
-session_start();
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,10 +27,7 @@ session_start();
                     </div>
                     <div class="bd-callout bd-callout-info">На некоторых клавиатурах четыре стрелочки выполняют те же функции, что и F клавиши. В этом случае вместо F клавиши, нажмите на стрелочку и не забывайте удерживать <b>Fn</b>.</div>
                     <p>Если нажимать F клавиши без <b>Fn</b>, то они будут выполнять стандартные функции, как на ПК. На всякий случай уточню, что на ПК нет клавиши <b>Fn</b>.</p>
-                    <div class="keyboard-shortcut-block dashed">
-                        <label for="inputFN">Напишите клавишу, которая отвечает за специальные функции (начинается на F, а заканчивается на n)</label>
-                        <input style="margin-top: 1%" id="inputFN">
-                    </div>
+
                 </content>
             </div>
         </div>
@@ -46,38 +41,5 @@ session_start();
 
 <div id="advertisement"></div>
 
-<?php
-include 'src/php/additionally.php';
-include 'progress.php';
-new_to_PC(40);
-?>
-<script>
-    window.addEventListener('DOMContentLoaded', function() {
-    let inp_fn = document.getElementById('inputFN');
-
-
-        inp_fn.addEventListener('input', function () {
-            let inputValue = inp_fn.value.toUpperCase(); // Преобразование в верхний регистр
-
-            if (inputValue === 'FN' || inputValue === 'FUNCTION' ) {
-                func_tg_dis();
-                func_tg_vcr();
-            } else {
-                func_tg_wrong();
-            }
-        });
-
-    // авто выполнение
-    <?php
-    if($_SESSION['user_progress'] > 40){
-        echo "inp_fn.value = 'Fn';";
-        echo "inp_fn.disabled = true;";
-        echo "func_tg_dis();";
-        echo "func_tg_vcr();";
-    }
-        
-    ?>
-})
-</script>
 </body>
 </html>

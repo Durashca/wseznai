@@ -1,6 +1,4 @@
-<?php
-session_start();
-?>
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -70,26 +68,15 @@ session_start();
                         </ol>
                     </div>
                     <!--End-->
-                    <div class="keyboard-shortcut-block">
-                        <h4>Научимся делать то же самое, но с <b>End</b> (конец) на сайте:</h4>
-                        <ol>
-                            <li>Кликните в любую точку сайта, <b>только не на текстовое поле!</b></li>
-                            <li>Нажмите 1 раз кнопку <b>End</b>.</li>
-                            <li>Если вы не переместились в самый конец сайта, то у вас включен <b>Num Lk</b>, нажмите на него, чтобы отключить.</li>
-                        </ol>
-                    </div>
-                    <div class="keyboard-shortcut-block dashed">
-                        <h4>Поставьте курсор в поле для проверки:</h4>
-                        <input style="width: 100%" type="text" id="userChInput" value="Пример текста для проверки курсора">
-                    </div>
-                    <div id="pre_emptive_letter" class="bd-callout"></div>
+
+
                 </content>
             </div>
         </div>
 
 
     </div>
-    <div id="transition_warning"  style="display: flex; justify-content: center; margin: 1% 0;">
+    <div   style="display: flex; justify-content: center; margin: 1% 0;">
         <button id="createPageButton" type="button"
                 class="btn btn-outline-success">
             <a class="nav-link active" href="f_keys.php">Сл. страница</a>
@@ -99,64 +86,5 @@ session_start();
 
 <div id="advertisement"></div>
 
-<?php
-include 'src/php/additionally.php';
-    include 'progress.php';
-    new_to_PC(30);
-
-?>
-
-<script>
- window.addEventListener('DOMContentLoaded', function() {
-    const userChInput = document.getElementById('userChInput');
-    // Определить ширину экрана
-    const screenWidth = window.innerWidth;
-    // Определить тип устройства на основе ширины
-    if (screenWidth < 768) {
-        /*телефон*/
-        func_tg_dis();
-        func_tg_vcr();
-        userChInput.disabled = true;
-
-
-    }else{
-        /*пк*/
-        userChInput.addEventListener('keydown', function checkCursor() {
-            userChInput.focus();
-            const cursorPosition = userChInput.selectionStart;
-
-            if (cursorPosition === 0 || cursorPosition === userChInput.value.length) {
-                func_tg_dis();
-                func_tg_vcr();
-
-            } else {
-                func_tg_wrong()
-            }
-        })
-
-    let previousValue = userChInput.value;
-
-    userChInput.addEventListener('input', function(event) {
-        if (userChInput.value.length < previousValue.length) {
-            userChInput.value = previousValue;
-        } else {
-            previousValue = userChInput.value;
-        }
-    });
-
-        // авто выполнение
-        <?php
-        if ($_SESSION['user_progress'] >= 40) {
-            echo "userChInput.disabled = true;";
-            echo "func_tg_dis();";
-            echo "func_tg_vcr();";
-        }
-        ?>
-
-
-    }
-
-});
-</script>
 </body>
 </html>

@@ -1,6 +1,4 @@
-<?php
-session_start();
-?>
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -52,36 +50,13 @@ session_start();
                             <img src="src/images/uninstalling_an_application/img_5.png">
                         </ol>
                     </div>
-                    <div class="keyboard-shortcut-block dashed">
-                        <h4>Какие минусы скачивания приложений:</h4>
 
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                            <label class="form-check-label" for="flexRadioDefault1">
-                                Риск безопасности
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                    id="flexRadioDefault2">
-                            <label class="form-check-label"for="flexRadioDefault2" >
-                                Быстрота и легкость
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
-                            <label class="form-check-label" for="flexRadioDefault3">
-                                Некоторые приложения могут работать в офлайн режиме
-                            </label>
-                        </div>
-                        <button id="btn-task-check" class="btn btn-outline-success">Ответить</button>
-                    </div>
 
                 </content>
             </div>
         </div>
     </div>
-    <div id="transition_warning"  style="display: flex; justify-content: center; margin: 1% 0;">
+    <div  style="display: flex; justify-content: center; margin: 1% 0;">
         <button id="createPageButton" type="button"
                 class="btn btn-outline-success">
             <a class="nav-link active" href="audio_errors.php">Сл. страница</a>
@@ -91,47 +66,6 @@ session_start();
 
 <div id="advertisement"></div>
 
-<?php
-include 'src/php/additionally.php';
-include 'progress.php';
-new_to_PC(80);
 
-?>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-
-
-    let radio = document.getElementById('flexRadioDefault1')
-    btn_task_check.addEventListener('click', function (){
-        if (radio.checked){
-            func_tg_dis()
-            func_tg_vcr()
-
-            for (let elem of radio_arr){
-                elem.classList.add('disabled');
-            }
-        }else {
-            func_tg_wrong()
-        }
-    })
-
-
-
-
-    <?php
-    if($_SESSION['user_progress'] >= 90){
-       echo "func_tg_dis();";
-       echo "func_tg_vcr();";
-       echo "for (let elem of radio_arr){";
-       echo "elem.classList.add('disabled');";
-       echo "};";
-       echo "radio_arr[0].checked = true;";
-
-
-    }    
-    ?>
-});
-</script>
 </body>
 </html>

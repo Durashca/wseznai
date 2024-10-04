@@ -1,6 +1,4 @@
-<?php
-session_start();
-?>
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -165,29 +163,12 @@ session_start();
                         </div>
                         <!---->
                     </div>
-                    <div class="keyboard-shortcut-block dashed">
-                        <h4>Перетащите правильно варианты ответов</h4>
-                        <div class="container_dsh">
-                            <div class="text-row div2">
-                                <p>Этот компьютер:</p> <!--див 2-->
-                                <div id="div1" class="draggable">Pictures/Screenshots</div>
-                            </div>
-                            <div class="text-row div1">
-                                <p>Промежуточные папки:</p> <!--див 1-->
-                                <div id="div2" class="draggable">Внутренняя память</div>
-                            </div>
-                            <div class="text-row div3">
-                                <p>Сам файл:</p> <!--див 3-->
-                                <div id="div3" class="draggable">photo.png</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="pre_emptive_letter" class="bd-callout "></div>
+
                 </content>
             </div>
         </div>
     </div>
-    <div id="transition_warning"  style="display: flex; justify-content: center; margin: 1% 0;" >
+    <div  style="display: flex; justify-content: center; margin: 1% 0;" >
         <button id="createPageButton" type="button"
                 class="btn btn-outline-success" >
             <a class="nav-link active" href="download_the_application.php">Сл. страница</a>
@@ -197,105 +178,7 @@ session_start();
 
 <div id="advertisement"></div>
 
-<?php
-include 'src/php/additionally.php';
-include 'progress.php';
-new_to_PC(60);
-?>
-<!--для перетаскивания дивов-->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
-<script>
-        window.addEventListener('DOMContentLoaded', function() {
-    // Определить ширину экрана
-    const screenWidth = window.innerWidth;
-    // Определить тип устройства на основе ширины
-    if (screenWidth < 768) {
-        /*телефон*/
-        func_tg_dis()
-        func_tg_vcr()
-        
 
-    } else if (screenWidth >= 768) {
-        /*пк*/
-        $(document).ready(function () {
-            $(".draggable").draggable({
-                revert: true,
-                start: function (event, ui) {
-                    $(".draggable").not(ui.helper).css('z-index', 1); // Перемещаем все дивы, кроме перетаскиваемого, на задний план
-                    ui.helper.css('z-index', 2); // Поднимаем перетаскиваемый див на передний план
-                }
-            });
-
-            $("#div1, #div2, #div3").droppable({
-                drop: function (event, ui) {
-                    var dragId = ui.draggable.attr("id");
-                    var dropId = $(this).attr("id");
-
-                    var temp = $("#" + dragId).html();
-                    $("#" + dragId).html($("#" + dropId).html());
-                    $("#" + dropId).html(temp);
-
-                    $(".draggable").css('z-index', 1); // Перемещаем все дивы на задний план после завершения перетаскивания
-
-                    checkDiv2Content(); // Проверяем содержимое div2 после перестановки
-                }
-            });
-        });
-
-        // Функция для проверки наличия текста "Внутренняя память" в div2
-        function checkDiv2Content() {
-            const div1Element = document.querySelector('.text-row.div1');
-            const childDivsWithText = div1Element.querySelectorAll('.draggable');
-
-            let containsPicturesScreenshots = false;
-
-            childDivsWithText.forEach(function (childDiv) {
-                if (childDiv.textContent.includes('Pictures/Screenshots')) {
-                    containsPicturesScreenshots = true;
-                }
-            });
-
-            if (containsPicturesScreenshots) {
-                func_tg_vcr();
-                func_tg_dis();
-               
-                // Выполнить нужные действия здесь
-            } else {
-                func_tg_wrong();
-                // Выполнить другие действия здесь
-            }
-        }
-    }
-
-    // авто выполнение
-    
-    <?php
-
-    if($_SESSION['user_progress'] > 60){
-        // Автоматическое перетаскивание блоков на свои места
-       echo "const div1Content = document.getElementById('div1').innerHTML;";
-       echo "const div2Content = document.getElementById('div2').innerHTML;";
-       echo "const div3Content = document.getElementById('div3').innerHTML;";
-
-        echo "document.getElementById('div1').innerHTML = div2Content;";
-        echo "document.getElementById('div2').innerHTML = div3Content;";
-        echo "document.getElementById('div3').innerHTML = div1Content;";
-
-        // Заблокировать блоки после автоматического перетаскивания
-        echo "document.getElementById('div1').classList.add('disabled');";
-        echo "document.getElementById('div2').classList.add('disabled');";
-        echo "document.getElementById('div3').classList.add('disabled');";
-
-        // Вызов функций для нужного состояния блоков
-        echo "func_tg_dis();";
-        echo "func_tg_vcr();";
-    }
-    ?>
-
-        });
-</script>
 
 </body>
 </html>

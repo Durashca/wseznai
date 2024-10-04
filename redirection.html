@@ -4,14 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Перенаправление</title>
-    <script type="text/javascript">
-        // Функция для перенаправления
-        window.onload = function() {
-            window.location.href = "http://t99662dp.beget.tech/";
-        };
-    </script>
+    <link rel="stylesheet" href="src/css/OflineBootstrapCss.css">
+    <script src="src/js/OflineBootstrapJs.js"></script>
+
+    <link rel="stylesheet" href="src/css/bootstrap.css">
 </head>
 <body>
-<p>Вы будете перенаправлены на другой сайт...</p>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+    Launch static backdrop modal
+</button>
+
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">C чего начнем?</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <div style="display: flex; justify-content: center; margin: 1% 0;">
+                    <button  type="button"
+                             class="btn btn-outline-success">
+                        <a class="nav-link active" href="https://durashca.github.io/wseznai/">С теории</a>
+                    </button>
+                </div>
+
+                <h4 style="text-align: center;">или</h4>
+
+                <div style="display: flex; justify-content: center; margin: 1% 0;">
+                    <button  type="button"
+                             class="btn btn-outline-success">
+                        <a class="nav-link active" href="http://t99662dp.beget.tech/">С теста</a>
+                    </button>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Yandex.RTB R-A-12229329-1 -->
+<div id="yandex_rtb_R-A-12229329-1"></div>
+<script>
+    window.yaContextCb.push(() => {
+        Ya.Context.AdvManager.render({
+            "blockId": "R-A-12229329-1",
+            "renderTo": "yandex_rtb_R-A-12229329-1"
+        })
+    })
+</script>
+
+
 </body>
 </html>
