@@ -1,4 +1,4 @@
-let first = false
+
 let material = (function () {
     let lessonElems = [];
 
@@ -32,12 +32,6 @@ let material = (function () {
         let lesson = createElement("a", "btn btn-primary lesson");
         lesson.innerHTML = lessonCode;
 
-        // блокируем все уроки кроме первого
-         if(first){
-            lesson.classList.add('disabled');
-        }
-        first = true
-        //
 
 
 

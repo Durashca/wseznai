@@ -1,8 +1,8 @@
-
 <!DOCTYPE html>
 <html lang="ru">
-<head>
 
+<head>
+    <meta charset="utf-8">
     <title>Сайт ВсеЗнай - поможет сделать первые шаги в освоении ПК</title>
     <meta name="keywords" content="Wseznai, всезнай, все знай, сайт для чайников, как решить те или иные проблемы на пк, wsepropc">
     <meta name="description" content="Сайт Все Знай - отличный помощник для тех, кто решил изучить такую сложную технику, как ПК.
@@ -61,14 +61,14 @@
             </div>
         </div>
 
-        <div style="display: flex; justify-content: center; margin: 1% 0;">
+        <div style="display: flex; justify-content: center; margin: 1% auto;">
             <button  type="button"
                      class="btn btn-outline-success">
-                <a class="nav-link active" href="the_memo.php">Начнем обучение</a>
+                <a class="nav-link active" href="the_memo.html">Начнем обучение</a>
             </button>
         </div>
 
-
+<script src="src/js/additionally.js"></script>
         <div id="advertisement"></div>
 
 
@@ -83,9 +83,9 @@
 
 </section>
 
-<?php
-include 'src/php/additionally.php';
-?>
+<script>
+    localStorage.setItem('progress', '0');
+</script>
 
 
 </body>
