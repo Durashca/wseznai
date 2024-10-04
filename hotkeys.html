@@ -1,6 +1,4 @@
-<?php
-session_start();
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -92,24 +90,13 @@ session_start();
                             </ol>
                         </div>
                     </div>
-                    <div class="keyboard-shortcut-block dashed">
-                        <h4>Скопируйте весь текст примера <b style="text-decoration: underline">без кавычек</b> и
-                            вставьте его в поле справа (<b>Ctrl</b> + <b>V</b>):</h4>
-                        <p style="margin: 0 auto">Пример:</p>
-                        <i style="display: inline">"Выделите весь этот текст, без кавычек"</i> -> <input maxlength="37"
-                                                                                                         id="ctrlV">
-                    </div>
-
-
-                    <div id="pre_emptive_letter" class="bd-callout bd-callout-orange"></div>
-
                     <!---->
             </div>
         </div>
     </div>
 </div>
-<div id="transition_warning" style="display: flex; justify-content: center; margin: 1% 0;">
-    <button   id="createPageButton" type="button"
+<div   style="display: flex; justify-content: center; margin: 1% 0;">
+    <button type="button"
             class="btn btn-outline-success createPageButton">
         <a class="nav-link active " href="basic_keys.php">Сл. страница</a>
     </button>
@@ -117,91 +104,5 @@ session_start();
 
 <div id="advertisement"></div>
 
-
-<?php
-include 'src/php/additionally.php';
-if ($_SESSION['user_progress'] < 20) {
-    include 'progress.php';
-    new_to_PC(20);
-}
-?>
-<script>
-    window.addEventListener('DOMContentLoaded', function () {
-        // Определить ширину экрана
-        const screenWidth = window.innerWidth;
-        // Определить тип устройства на основе ширины
-        if (screenWidth < 768) {
-            /*телефон*/
-            func_tg_dis();
-            full_execution();
-
-        } else {
-
-            let inpCtrlV = document.querySelector('#ctrlV');
-            let nextButton = document.querySelector('.createPageButton');
-
-            nextButton.disabled = true; // блокируем кнопку
-
-
-            let correctAttempt = false;
-
-            inpCtrlV.addEventListener('keydown', function (e) {
-                if (e.ctrlKey && (e.key === 'v' || e.key === 'м')) {
-                    setTimeout(() => {
-                        if (inpCtrlV.value === 'Выделите весь этот текст, без кавычек') {
-                            inpCtrlV.classList.add('disabled');
-                            inpCtrlV.readOnly = true;
-                            func_tg_vcr();
-                            nextButton.disabled = false;
-                            nextButton.classList.remove('disabled')
-
-                            correctAttempt = true;
-                        } else {
-                            func_tg_wrong();
-                        }
-                    }, 100);
-                }
-            });
-
-            inpCtrlV.addEventListener('blur', function (e) {
-                if (!correctAttempt) {
-                    inpCtrlV.value = '';
-                }
-            });
-
-
-            //делаем все что надо по странице
-            function full_execution() {
-                let nextButton = document.querySelector('.createPageButton');
-                if (nextButton) {
-                    nextButton.disabled = false;
-                    nextButton.classList.remove('disabled')
-                }
-
-
-                func_tg_vcr();
-
-
-                const inpCtrlV = document.getElementById('ctrlV');
-
-                if (inpCtrlV) {
-                    inpCtrlV.value = 'Выделите весь этот текст, без кавычек';
-                    inpCtrlV.classList.add('disabled');
-                    inpCtrlV.readOnly = true;
-
-                }
-
-
-            }
-            <?php
-            if ($_SESSION['user_progress'] >= 30) {
-                echo "full_execution();";
-            }
-            ?>
-
-        }
-
-    });
-</script>
 </body>
 </html>

@@ -1,10 +1,3 @@
-<?php
-session_start();
-
-$id_user = $_SESSION['user_id'];
- ?>
-
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -35,16 +28,45 @@ $id_user = $_SESSION['user_id'];
 </head>
 <body>
 <!--  -->
-<div class='Modal' id='Modal'>
-    <div class='modalContent'>
-        <h2>Введите имя и фамилию</h2>
-        <form id='form' onsubmit="saveUserData(event)">
-            <input type='text' id='name' placeholder='Имя' required>
-            <input type='text' id='surname' placeholder='Фамилия' required>
-            <button type="submit" class="btn btn-outline-success" id='continue'>Продолжить</button>
-        </form>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+    Launch static backdrop modal
+</button>
+
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">C чего начнем?</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <div style="display: flex; justify-content: center; margin: 1% 0;">
+                    <button  type="button"
+                             class="btn btn-outline-success">
+                        <a class="nav-link active" href="https://durashca.github.io/wseznai/">С теории</a>
+                    </button>
+                </div>
+
+                <h4 style="text-align: center;">или</h4>
+
+                <div style="display: flex; justify-content: center; margin: 1% 0;">
+                    <button  type="button"
+                             class="btn btn-outline-success">
+                        <a class="nav-link active" href="http://t99662dp.beget.tech/">С теста</a>
+                    </button>
+                </div>
+
+
+            </div>
+
+        </div>
     </div>
 </div>
+
 <!--  -->
 
 <div class="container-xxl">
@@ -119,17 +141,7 @@ include 'src/php/additionally.php';
         a.download = 'certificate1.png';
         a.click();
 
-        // Отправляем запрос на обновление базы данных
-        fetch('update_certificate.php', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded'
-            },
-            body: 'id_user=' + <?php echo $id_user; ?>
-        })
-            .then(response => response.text())
-            .then(data => console.log(data))
-            .catch(error => console.error('Error:', error));
+
     }
 
 
