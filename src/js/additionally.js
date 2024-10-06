@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // Добавляем favicon
     const faviconLink = document.createElement('link');
     faviconLink.rel = 'icon';
-    faviconLink.href = '/favicon.ico'; // замените на свой favicon
+    faviconLink.href = '/favicon.png'; // замените на свой favicon
     head.appendChild(faviconLink);
 
 // Добавляем CSS-файлы
