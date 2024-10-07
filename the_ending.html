@@ -4,65 +4,50 @@
     <meta charset="utf-8">
     <title>Конец</title>
     <link rel="stylesheet" href="src/css/window_the_ending.css">
-    <script src="src/js/window_the_ending.js"></script>
-<style>
-    /* Styles for certificate image */
-    #canvas {
-        width: 100%;
-        height: auto;
-        display: block;
-        margin: 0 auto 20px;
-    }
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <style>
+        /* Styles for certificate image */
+        #canvas {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto 20px;
+        }
 
-    /* Styles for download button */
-    #downloadCertificateButton {
-        width: 60%;
-        margin: 0 auto;
-    }
+        /* Styles for download button */
+        #downloadCertificateButton {
+            width: 60%;
+            margin: 0 auto;
+        }
 
-    /* Styles for additional content */
-    .additional-content {
-        text-align: center;
-    }
-</style>
+        /* Styles for additional content */
+        .additional-content {
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-<!--  -->
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-    Launch static backdrop modal
-</button>
-
-
 <!-- Modal -->
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="staticBackdropLabel">C чего начнем?</h1>
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Напишите имя и фамилию</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-
-                <div style="display: flex; justify-content: center; margin: 1% 0;">
-                    <button  type="button"
-                             class="btn btn-outline-success">
-                        <a class="nav-link active" href="https://durashca.github.io/wseznai/">С теории</a>
-                    </button>
-                </div>
-
-                <h4 style="text-align: center;">или</h4>
-
-                <div style="display: flex; justify-content: center; margin: 1% 0;">
-                    <button  type="button"
-                             class="btn btn-outline-success">
-                        <a class="nav-link active" href="http://t99662dp.beget.tech/">С теста</a>
-                    </button>
-                </div>
-
-
+                <form>
+                    <div style="display: flex; justify-content: center; margin: 1% 0;">
+                        <input id="name" type="text" placeholder="Имя" required>
+                    </div>
+                    <div style="display: flex; justify-content: center; margin: 1% 0;">
+                        <input id="surname" type="text" placeholder="Фамилия" required>
+                    </div>
+                    <div style="display: flex; justify-content: center; margin: 1% 0;">
+                        <button type="submit" class="btn btn-primary">охранить</button>
+                    </div>
+                </form>
             </div>
-
         </div>
     </div>
 </div>
@@ -77,6 +62,7 @@
                     <h4 class="font-congratulations" style="text-align: center; margin-bottom: 3%">Мои поздравления, вы прошли этот сложный путь.</h4>
                     <canvas id="canvas"></canvas>
                     <input onclick="downloadCertificate(event)" style="width: 100%; min-width: 120px" class="btn btn-outline-success" type="button" name="downloadCertificateButton" id="downloadCertificateButton" value="Скачать">
+                    <button onclick="openModal()" style="margin-top: 20px;" class="btn btn-primary">Изменить данные</button>
                 </content>
             </div>
         </div>
@@ -87,10 +73,66 @@
 <script src="src/js/additionally.js"></script>
 
 <script>
+    // Инициализация модального окна
+    const modal = document.getElementById('staticBackdrop');
+    const modalInstance = new bootstrap.Modal(modal);
+
+    // Добавляем обработчик события на кнопку закрытия модального окна
+    const closeButton = modal.querySelector('.btn-close');
+    closeButton.addEventListener('click', function() {
+        modalInstance.hide();
+    });
+
+    // Добавляем обработчик события на форму
+    const nameInput = document.getElementById('name');
+    const surnameInput = document.getElementById('surname');
+    const form = modal.querySelector('form');
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        // Сохраняем данные в localStorage
+        localStorage.setItem('userName', nameInput.value);
+        localStorage.setItem('userSurname', surnameInput.value);
+
+        // Скрываем модальное окно
+        modalInstance.hide();
+
+        // Обновляем страницу
+        location.reload();
+    });
+
+    // Функция открытия модального окна
+    function openModal() {
+        modalInstance.show();
+    }
+
+    // Добавляем обработчик события на кнопку "Изменить данные"
+    const changeDataButton = document.querySelector('.btn.btn-primary');
+    changeDataButton.addEventListener('click', function() {
+        openModal();
+    });
+
+    // Проверяем, открыто ли модальное окно
+    if (localStorage.getItem('userName')!== null && localStorage.getItem('userSurname')!== null) {
+        modalInstance.hide();
+    } else {
+        // Открываем модальное окно
+        modalInstance.show();
+    }
+
+    // Добавляем обработчик события на загрузку страницы
+    document.addEventListener('DOMContentLoaded', function () {
+        // Проверяем, открыто ли модальное окно
+        if (localStorage.getItem('userName')!== null && localStorage.getItem('userSurname')!== null) {
+            modalInstance.hide();
+        }
+    });
+</script>
+<script>
     // src/js/sertificate.js
     // Увеличение первых букв имени и фамилии
-    const modifiedUserName =    localStorage.getItem('userName').charAt(0).toUpperCase() + localStorage.getItem('userName').slice(1);
-    const modifiedUserSurname = localStorage.getItem('userSurname').charAt(0).toUpperCase() +localStorage.getItem('userSurname').slice(1);
+    const modifiedUserName = localStorage.getItem('userName').charAt(0).toUpperCase() + localStorage.getItem('userName').slice(1);
+    const modifiedUserSurname = localStorage.getItem('userSurname').charAt(0).toUpperCase() + localStorage.getItem('userSurname').slice(1);
 
     const currentDate = new Date();
     const day = String(currentDate.getDate()).padStart(2, '0');
@@ -137,10 +179,7 @@
         a.href = canvas.toDataURL('image/png');
         a.download = 'certificate1.png';
         a.click();
-
-
     }
-
 
     let lesson_arr = document.querySelectorAll('a.btn.btn-primary.lesson');
     window.onload = function () {
@@ -150,11 +189,7 @@
         }
     }
 
-    document.addEventListener('DOMContentLoaded', function() {
-        let userProgress = Array(10).fill(true); // Устанавливаем все уроки как завершенные
-        localStorage.setItem('userProgress', JSON.stringify(userProgress));
 
-    });
 </script>
 </body>
 </html>
