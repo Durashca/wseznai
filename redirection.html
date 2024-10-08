@@ -10,11 +10,6 @@
     <link rel="stylesheet" href="src/css/bootstrap.css">
 </head>
 <body>
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-    Launch static backdrop modal
-</button>
-
 
 <!-- Modal -->
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -22,7 +17,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h1 class="modal-title fs-5" id="staticBackdropLabel">C чего начнем?</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
             </div>
             <div class="modal-body">
 
@@ -49,16 +44,14 @@
     </div>
 </div>
 
-<!-- Yandex.RTB R-A-12229329-1 -->
-<div id="yandex_rtb_R-A-12229329-1"></div>
 <script>
-    window.yaContextCb.push(() => {
-        Ya.Context.AdvManager.render({
-            "blockId": "R-A-12229329-1",
-            "renderTo": "yandex_rtb_R-A-12229329-1"
-        })
+    addEventListener('DOMContentLoaded', function () {
+        var modal = new bootstrap.Modal(document.getElementById('staticBackdrop'));
+        modal.show();
     })
+
 </script>
+
 
 
 </body>
