@@ -1,25 +1,26 @@
+addEventListener('DOMContentLoaded', function () {
 
-let material = (function () {
-    let lessonElems = [];
+    let material = (function () {
+        let lessonElems = [];
 
-    function showLessons() {
-        let materialElem = document.querySelector(".list-lessons");
-        for (let elem of lessonElems) {
-            materialElem.appendChild(elem.lessonButton);
+        function showLessons() {
+            let materialElem = document.querySelector(".list-lessons");
+            for (let elem of lessonElems) {
+                materialElem.appendChild(elem.lessonButton);
+            }
         }
-    }
 
-    function createLessons(lessonsInfo) {
-        let i = 0;
-        for (let lesson of lessonsInfo) {
-            let lessonElem = createLesson(lesson, i++);
-            lessonElems.push(lessonElem);
+        function createLessons(lessonsInfo) {
+            let i = 0;
+            for (let lesson of lessonsInfo) {
+                let lessonElem = createLesson(lesson, i++);
+                lessonElems.push(lessonElem);
+            }
         }
-    }
 
-    function createLesson(lessonInfo, index) {
-        let lessonCode =
-            `
+        function createLesson(lessonInfo, index) {
+            let lessonCode =
+                `
             <div class="left-part-lesson">
                 <a class="number-lesson">Урок ${index + 1}</a>
             </div>
@@ -29,32 +30,34 @@ let material = (function () {
             </div>
         `;
 
-        let lesson = createElement("a", "btn btn-primary lesson");
-        lesson.innerHTML = lessonCode;
+            let lesson = createElement("a", "btn btn-primary lesson");
+            lesson.innerHTML = lessonCode;
 
 
 
 
-        let name = lesson.querySelector(".name-lesson");
-        let description = lesson.querySelector(".description-lesson");
-        let numberLesson = lesson.querySelector(".number-lesson");
+            let name = lesson.querySelector(".name-lesson");
+            let description = lesson.querySelector(".description-lesson");
+            let numberLesson = lesson.querySelector(".number-lesson");
 
-        return new LessonElement(lesson, name, description, numberLesson, lessonInfo.link);
-    }
+            return new LessonElement(lesson, name, description, numberLesson, lessonInfo.link);
+        }
 
-    function createElement(tagName, className, parent = null) {
-        let elem = document.createElement(tagName);
-        elem.className = className;
+        function createElement(tagName, className, parent = null) {
+            let elem = document.createElement(tagName);
+            elem.className = className;
 
-        if (parent !== null)
-            parent.appendChild(elem);
+            if (parent !== null)
+                parent.appendChild(elem);
 
-        return elem;
-    }
+            return elem;
+        }
 
 
-    return {
-        showLessons: showLessons,
-        createLessons: createLessons,
-    };
-})();
+        return {
+            showLessons: showLessons,
+            createLessons: createLessons,
+        };
+    })();
+
+})
