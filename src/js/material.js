@@ -19,7 +19,7 @@ let material = (function () {
 
     function createLesson(lessonInfo, index) {
         let lessonCode =
-        `
+            `
             <div class="left-part-lesson">
                 <a class="number-lesson">Урок ${index + 1}</a>
             </div>
@@ -58,4 +58,3 @@ let material = (function () {
         createLessons: createLessons,
     };
 })();
-

@@ -27,7 +27,7 @@
                            aria-controls="offcanvasExample">Материал</a>
                     </li>
                     <li class="nav-item">
-                        <a id="btnMain" class="" aria-current="page" href="http://t99662dp.beget.tech/">Практика</a>
+                        <a id="btnMain" class="" aria-current="page" href="http://t99662dp.beget.tech/">Перейти к тесту</a>
                     </li>
                     <!--                       -->
 

@@ -16,6 +16,7 @@ function LessonElement(lessonButton, name, description, numberLesson, link) {
 /*добавляем элементы*/
 let lessons = [
 
+
     new LessonInfo("Логин", "Разбираем понятия: авторизация, регистрация, аутентификация и тд.", "the_memo.html"),
     new LessonInfo("Сочетание Ctrl с другими клавишами", "Вставить, копировать, вырезать, отменить последнее действие", "hotkeys.html"),
     new LessonInfo("Функциональные клавиши", "home, end, Num Lock", "basic_keys.html"),
