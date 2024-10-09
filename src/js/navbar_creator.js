@@ -1,4 +1,4 @@
-
+addEventListener('DOMContentLoaded', function () {
     menu = `
 <header id="h-space" class="text-center">
     <nav class="navbar navbar-expand-lg  fixed-top" style="--bs-navbar-padding-y: 0rem; z-index: 10; box-shadow: 1px 2px 10px grey; --bs-bg-opacity: 1;">
@@ -73,6 +73,8 @@
     let btnMaterial =  document.getElementById('btnMaterial');
     let btnMain = document.getElementById('btnMain');
     // console.log(btnMaterial);
+
+})
 
 
 
