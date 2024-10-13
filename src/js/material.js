@@ -86,8 +86,8 @@ addEventListener('DOMContentLoaded', function () {
 
     let lessons = [
         new LessonInfo("Логин", "Разбираем понятия: авторизация, регистрация, аутентификация и тд.", "the_memo.html"),
-        new LessonInfo("Сочетание Ctrl с другими клавишами", "Вставить, копировать, вырезать, менить последнее действие", "hotkeys.html"),
-        new LessonInfo("Функциональные клавиши", "home, end, Num Lock", "basic_keys.html"),
+        new LessonInfo("Сочетание Ctrl с другими клавишами", "Вставить, копировать, вырезать, отменить последнее действие", "hotkeys.html"),
+        new LessonInfo("Numpad или цифровые клавиши", "home, end, Num Lock", "basic_keys.html"),
         new LessonInfo("F клавиши", "Настройка звука, яркости экрана, управление видео", "f_keys.html"),
         new LessonInfo("Скриншоты", "PrtScr", "screenshots.html"),
         new LessonInfo("Перенос файла через USB-подключение", "перенос файлов, документов, изображений", "transferring_files.html"),
