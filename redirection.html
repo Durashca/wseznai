@@ -4,12 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Перенаправление</title>
+
     <link rel="stylesheet" href="src/css/OfflineBootstrapCss.css">
+    <link rel="stylesheet" href="src/css/bootstrap.css">
     <script src="src/js/OfflineBootstrapJs.js"></script>
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
-    <link rel="stylesheet" href="src/css/bootstrap.css">
 
-    <script src="src/js/OfflineBootstrapJs.js" ></script>
+    <link rel="stylesheet" href="src/css/material.css">
+    <link rel="stylesheet" href="src/css/container_material.css">
+    <link rel="stylesheet" href="src/css/material/hotkeys/alignment.css">
+    <link rel="stylesheet" href="src/css/material/screenshots/alignment.css">
+    <link rel="stylesheet" href="src/css/img.css">
+    <link rel="stylesheet" href="src/css/menu.css">
+    <link rel="stylesheet" href="src/css/advertisement.css">
+    <link rel="stylesheet" href="src/css/indentation.css">
+
+
+    <script src="src/js/navbar_creator.js" ></script>
+    <script >
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('footer');
+
+            const footerHTML = `
+<footer style="    position: fixed;
+    bottom: 0;
+    width: 100%;
+" class="bd-footer py-4 mt-5s bg-body-tertiary">
+  <div class="container">
+    <p>ВсеЗнай 2024</p>
+    <p>© <strong>Космылев Владислав Евгеньевич</strong></p>
+  </div>
+</footer>
+`;
+
+            const footerElement = document.createElement('footer');
+            footerElement.innerHTML = footerHTML;
+
+            document.body.appendChild(footerElement);
+        });
+    </script>
+
+
+
 
 </head>
 <body>
@@ -19,26 +55,20 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="staticBackdropLabel">C чего начнем?</h1>
+                <h1 style="margin:  auto" class="modal-title fs-5" id="staticBackdropLabel">Начнем обучение</h1>
 
             </div>
             <div class="modal-body">
 
                 <div style="display: flex; justify-content: center; margin: 1% 0;">
-                    <button  type="button"
+                    <button style="width: 100%"  type="button"
                              class="btn btn-outline-success">
                         <a class="nav-link active" href="https://durashca.github.io/wseznai/">С теории</a>
                     </button>
                 </div>
 
-                <h4 style="text-align: center;">или</h4>
 
-                <div style="display: flex; justify-content: center; margin: 1% 0;">
-                    <button  type="button"
-                             class="btn btn-outline-success">
-                        <a class="nav-link active" href="http://t99662dp.beget.tech/">С теста</a>
-                    </button>
-                </div>
+
 
 
             </div>
