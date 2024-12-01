@@ -1,10 +1,33 @@
-<?php
-session_start();
-?>
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <title>Удаление приложений</title>
+    <meta charset="utf-8">
+    <title>Как удалить приложения: Полный гайд по очистке вашего устройства</title>
+
+    <meta name="description" content="Научитесь правильно удалять приложения с вашего компьютера или ноутбука. Пошаговое руководство по очистке памяти и удалению ненужных файлов. Убедитесь, что ваше устройство работает быстрее!">
+
+    <meta name="keywords" content="удаление приложений, очистка памяти, как удалить приложение, управление приложениями, ПК, ноутбук, удаление файлов, система поиска, корзина">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="src/css/OfflineBootstrapCss.css">
+    <link rel="stylesheet" href="src/css/loading_the_wheel.css">
+    <link rel="stylesheet" href="src/css/indentation.css">
+    <link rel="stylesheet" href="src/css/bootstrap.css">
+    <link rel="stylesheet" href="src/css/material.css">
+    <link rel="stylesheet" href="src/css/container_material.css">
+    <link rel="stylesheet" href="src/css/material/hotkeys/alignment.css">
+    <link rel="stylesheet" href="src/css/material/screenshots/alignment.css">
+    <link rel="stylesheet" href="src/css/img.css">
+    <link rel="stylesheet" href="src/css/menu.css">
+    <link rel="stylesheet" href="src/css/advertisement.css">
+    <script src="src/js/navbar_creator.js" ></script>
+    <script src="src/js/OfflineBootstrapJs.js" ></script>
+    <script src="src/js/material.js" ></script>
+    <script src="src/js/material_settings.js" ></script>
+    <script src="src/js/footer.js" ></script>
 
 </head>
 <body>
@@ -52,86 +75,22 @@ session_start();
                             <img src="src/images/uninstalling_an_application/img_5.png">
                         </ol>
                     </div>
-                    <div class="keyboard-shortcut-block dashed">
-                        <h4>Какие минусы скачивания приложений:</h4>
 
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                            <label class="form-check-label" for="flexRadioDefault1">
-                                Риск безопасности
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                    id="flexRadioDefault2">
-                            <label class="form-check-label"for="flexRadioDefault2" >
-                                Быстрота и легкость
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
-                            <label class="form-check-label" for="flexRadioDefault3">
-                                Некоторые приложения могут работать в офлайн режиме
-                            </label>
-                        </div>
-                        <button id="btn-task-check" class="btn btn-outline-success">Ответить</button>
-                    </div>
 
                 </content>
             </div>
         </div>
     </div>
-    <div id="transition_warning"  style="display: flex; justify-content: center; margin: 1% 0;">
+    <div  style="display: flex; justify-content: center; margin: 1% 0;">
         <button id="createPageButton" type="button"
                 class="btn btn-outline-success">
-            <a class="nav-link active" href="audio_errors.php">Сл. страница</a>
+            <a class="nav-link active" href="audio_errors.html">Сл. страница</a>
         </button>
     </div>
 </div>
 
 <div id="advertisement"></div>
 
-<?php
-include 'src/php/additionally.php';
-include 'progress.php';
-new_to_PC(80);
 
-?>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-
-
-    let radio = document.getElementById('flexRadioDefault1')
-    btn_task_check.addEventListener('click', function (){
-        if (radio.checked){
-            func_tg_dis()
-            func_tg_vcr()
-
-            for (let elem of radio_arr){
-                elem.classList.add('disabled');
-            }
-        }else {
-            func_tg_wrong()
-        }
-    })
-
-
-
-
-    <?php
-    if($_SESSION['user_progress'] >= 90){
-       echo "func_tg_dis();";
-       echo "func_tg_vcr();";
-       echo "for (let elem of radio_arr){";
-       echo "elem.classList.add('disabled');";
-       echo "};";
-       echo "radio_arr[0].checked = true;";
-
-
-    }    
-    ?>
-});
-</script>
 </body>
 </html>

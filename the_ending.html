@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Конец</title>
+    <link rel="stylesheet" href="src/css/window_the_ending.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <style>
+        /* Styles for certificate image */
+        #canvas {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto 20px;
+        }
+
+        /* Styles for download button */
+        #downloadCertificateButton {
+            width: 60%;
+            margin: 0 auto;
+        }
+
+        /* Styles for additional content */
+        .additional-content {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Заполните данные для сертификата</h1>
+                <button style="display:none;" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div style="display: flex; justify-content: center; margin: 1% 0;">
+                        <input id="name" type="text" placeholder="Имя" required>
+                    </div>
+                    <div style="display: flex; justify-content: center; margin: 1% 0;">
+                        <input id="surname" type="text" placeholder="Фамилия" required>
+                    </div>
+                    <div style="display: flex; justify-content: center; margin: 1% 0;">
+                        <button type="submit" class="btn btn-primary">сохранить</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--  -->
+
+<div class="container-xxl">
+    <div class="container text-left text">
+        <div class="row">
+            <div style="margin-bottom: 10%;" class="container-material">
+                <content style="text-align: center; margin: 0 auto">
+                    <h4 class="font-congratulations" style="text-align: center; margin-bottom: 3%">Мои поздравления, вы прошли этот сложный путь.</h4>
+                    <canvas id="canvas"></canvas>
+                    <input onclick="downloadCertificate(event)" style="width: 100%; min-width: 120px" class="btn btn-outline-success" type="button" name="downloadCertificateButton" id="downloadCertificateButton" value="Скачать">
+                    <button onclick="openModal()" style="margin-top: 20px;    width: 100%;" class="btn btn-primary">Изменить данные</button>
+                    <a style="margin-top: 20px;    width: 100%;" class="btn btn-primary" href="http://t99662dp.beget.tech/estimation.php"> оставить отзыв</a>
+                </content>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="advertisement"></div>
+<script src="src/js/additionally.js"></script>
+
+<script>
+    // Инициализация модального окна
+    const modal = document.getElementById('staticBackdrop');
+    const modalInstance = new bootstrap.Modal(modal);
+
+    // Добавляем обработчик события на кнопку закрытия модального окна
+    const closeButton = modal.querySelector('.btn-close');
+    closeButton.addEventListener('click', function() {
+        modalInstance.hide();
+    });
+
+    // Добавляем обработчик события на форму
+    const nameInput = document.getElementById('name');
+    const surnameInput = document.getElementById('surname');
+    const form = modal.querySelector('form');
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        // Сохраняем данные в localStorage
+        localStorage.setItem('userName', nameInput.value);
+        localStorage.setItem('userSurname', surnameInput.value);
+
+        // Скрываем модальное окно
+        modalInstance.hide();
+
+        // Обновляем страницу
+        location.reload();
+    });
+
+    // Функция открытия модального окна
+    function openModal() {
+        modalInstance.show();
+    }
+
+    // Добавляем обработчик события на кнопку "Изменить данные"
+    const changeDataButton = document.querySelector('.btn.btn-primary');
+    changeDataButton.addEventListener('click', function() {
+        openModal();
+    });
+
+    // Проверяем, открыто ли модальное окно
+    if (localStorage.getItem('userName')!== null && localStorage.getItem('userSurname')!== null) {
+        modalInstance.hide();
+    } else {
+        // Открываем модальное окно
+        modalInstance.show();
+    }
+
+    // Добавляем обработчик события на загрузку страницы
+    document.addEventListener('DOMContentLoaded', function () {
+        // Проверяем, открыто ли модальное окно
+        if (localStorage.getItem('userName')!== null && localStorage.getItem('userSurname')!== null) {
+            modalInstance.hide();
+        }
+    });
+</script>
+<script>
+    // src/js/sertificate.js
+    // Увеличение первых букв имени и фамилии
+    const modifiedUserName = localStorage.getItem('userName').charAt(0).toUpperCase() + localStorage.getItem('userName').slice(1);
+    const modifiedUserSurname = localStorage.getItem('userSurname').charAt(0).toUpperCase() + localStorage.getItem('userSurname').slice(1);
+
+    const currentDate = new Date();
+    const day = String(currentDate.getDate()).padStart(2, '0');
+    const month = String(currentDate.getMonth() + 1).padStart(2, '0'); // Добавляем нуль перед месяцем, если он однозначный
+    const year = currentDate.getFullYear();
+    const currentDateString = `${day}.${month}.${year}`;
+
+    window.addEventListener('DOMContentLoaded', function () {
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+
+        const img = new Image();
+        img.onload = function () {
+            canvas.width = img.width;
+            canvas.height = img.height;
+
+            ctx.drawImage(img, 0, 0);
+
+            ctx.font = 'italic 25px Roboto, sans-serif';
+            ctx.fillText(currentDateString, 220, 505); // Рисуем текущую дату на холсте в указанной позиции
+
+            ctx.font = 'italic bold 30px Roboto, sans-serif';
+            ctx.fillStyle = '#000';
+
+            const userText = ` ${modifiedUserSurname} ${modifiedUserName} `;
+            const userTextWidth = ctx.measureText(userText).width;
+            const userTextX = (canvas.width - userTextWidth) / 2; // Центрирование текста на горизонтальной оси
+            const userTextY = 285; // Позиция текста по вертикали
+
+            ctx.fillText(userText, userTextX, userTextY);
+
+            ctx.font = 'italic 25px Roboto, sans-serif';
+
+
+            /*        document.getElementById('certificateContainer').style.display = 'block';*/
+        };
+
+        img.src = 'src/images/garbage/certificate4.png'; // Путь к фоновому изображению
+    });
+
+    function downloadCertificate() {
+        const canvas = document.getElementById('canvas');
+        const a = document.createElement('a');
+        a.href = canvas.toDataURL('image/png');
+        a.download = 'certificate.png';
+        a.click();
+    }
+
+    let lesson_arr = document.querySelectorAll('a.btn.btn-primary.lesson');
+    window.onload = function () {
+        for (let i = 1; i < lesson_arr.length; i++) {
+            lesson_arr[i].classList.remove('disabled')
+            lesson_arr[i].disabled = false;
+        }
+    }
+
+
+</script>
+</body>
+</html>

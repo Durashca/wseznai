@@ -1,10 +1,31 @@
-<?php
-session_start();
-?>
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <title>Ошибки со звуком</title>
+    <meta charset="utf-8">
+    <title>Решение проблем со звуком: Шаг за шагом к восстановлению звукового сопровождения</title>
+    <meta name="keywords" content="ошибки со звуком, проблемы со звуком, подключение динамиков, устранение неполадок со звуком, беспроводные наушники, Bluetooth, исправление звука, инструкция по звуку">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Столкнулись с проблемами со звуком на ПК или ноутбуке? Узнайте, как исправить ошибки со звуком, проверьте подключение динамиков, настройте звук и подключите беспроводные устройства. Практическая инструкция с картинками.">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+
+    <link rel="stylesheet" href="src/css/OfflineBootstrapCss.css">
+    <link rel="stylesheet" href="src/css/loading_the_wheel.css">
+    <link rel="stylesheet" href="src/css/indentation.css">
+    <link rel="stylesheet" href="src/css/bootstrap.css">
+    <link rel="stylesheet" href="src/css/material.css">
+    <link rel="stylesheet" href="src/css/container_material.css">
+    <link rel="stylesheet" href="src/css/material/hotkeys/alignment.css">
+    <link rel="stylesheet" href="src/css/material/screenshots/alignment.css">
+    <link rel="stylesheet" href="src/css/img.css">
+    <link rel="stylesheet" href="src/css/menu.css">
+    <link rel="stylesheet" href="src/css/advertisement.css">
+    <script src="src/js/navbar_creator.js" ></script>
+    <script src="src/js/OfflineBootstrapJs.js" ></script>
+    <script src="src/js/material.js" ></script>
+    <script src="src/js/material_settings.js" ></script>
+    <script src="src/js/footer.js" ></script>
+
 </head>
 <body>
 <div class="container-xxl">
@@ -89,80 +110,21 @@ session_start();
 
                     </div>
 
-                    <div class="keyboard-shortcut-block dashed">
-                        <h4>Попробуйте исправить звук на видео ниже</h4>
 
-                    </div>
                 </content>
             </div>
         </div>
     </div>
-    <div id="transition_warning"  style="display: flex; justify-content: center; margin: 1% 0;">
+    <div  style="display: flex; justify-content: center; margin: 1% 0;">
         <button id="createPageButton" type="button"
                 class="btn btn-outline-success">
-            <a class="nav-link active" href="device_password.php">Сл. страница</a>
+            <a class="nav-link active" href="device_password.html">Сл. страница</a>
         </button>
     </div>
 </div>
 
 <div id="advertisement"></div>
 
-<?php
-include 'src/php/additionally.php';
-include 'progress.php';
-new_to_PC(90);
-?>
 
-<script>
-     document.addEventListener('DOMContentLoaded', function() {
-    const videoElement = document.createElement('video');
-    videoElement.src = 'src/video/video_audio.mp4';
-
-    videoElement.controls = true;
-
-    videoElement.muted = true; // выключаем звук по умолчанию
-
-    let checked = false
-
-    // Запрещаем воспроизведение видео
-    videoElement.addEventListener('play', function() {
-        videoElement.pause();
-        func_tg_wrong();
-    });
-    videoElement.addEventListener('fullscreenchange', (event) => {
-        if (document.fullscreenElement) {
-            document.exitFullscreen(); // Выход из полноэкранного режима
-            func_tg_wrong();
-        }
-    });
-
-
-    videoElement.onvolumechange = function() {
-        if (!videoElement.muted) {
-            func_tg_dis();
-            func_tg_vcr();
-
-            checked = true
-        } else {
-         if(checked){
-             func_tg_wrong();
-         }
-        }
-    };
-
-    const keyboardShortcutBlock = document.querySelector('.keyboard-shortcut-block.dashed');
-    keyboardShortcutBlock.appendChild(videoElement);
-
-
-    <?php
-
-    if($_SESSION['user_progress'] > 90){
-        echo "func_tg_dis();";
-        echo "func_tg_vcr();";
-        echo "videoElement.muted = false;";
-    }    
-    ?>
-     });
-</script>
 </body>
 </html>

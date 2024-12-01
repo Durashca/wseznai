@@ -1,11 +1,34 @@
-<?php
-session_start();
-?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-    <title>F клавиши</title>
+    <meta charset="utf-8">
+    <title>F клавиши: Использование клавиши Fn для специальных функций</title>
+
     <!-- Подключение Bootstrap -->
+    <meta name="description" content="Узнайте о клавише Fn и ее функции в сочетании с F клавишами на ноутбуках. Разберитесь, как использовать F1-F12 для управления специальными функциями, такими как регулировка яркости и другие полезные функции.">
+    <meta name="keywords" content="Fn клавиша, F клавиши, функции клавиш, использование клавиши Fn, ноутбук, настройка клавиатуры, управление яркостью, клавиатура ноутбука, клавиши F1-F12">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="src/css/OfflineBootstrapCss.css">
+    <link rel="stylesheet" href="src/css/loading_the_wheel.css">
+    <link rel="stylesheet" href="src/css/indentation.css">
+    <link rel="stylesheet" href="src/css/bootstrap.css">
+    <link rel="stylesheet" href="src/css/material.css">
+    <link rel="stylesheet" href="src/css/container_material.css">
+    <link rel="stylesheet" href="src/css/material/hotkeys/alignment.css">
+    <link rel="stylesheet" href="src/css/material/screenshots/alignment.css">
+    <link rel="stylesheet" href="src/css/img.css">
+    <link rel="stylesheet" href="src/css/menu.css">
+    <link rel="stylesheet" href="src/css/advertisement.css">
+    <script src="src/js/navbar_creator.js" ></script>
+    <script src="src/js/OfflineBootstrapJs.js" ></script>
+    <script src="src/js/material.js" ></script>
+    <script src="src/js/material_settings.js" ></script>
+    <script src="src/js/footer.js" ></script>
 
 </head>
 <body>
@@ -29,55 +52,20 @@ session_start();
                     </div>
                     <div class="bd-callout bd-callout-info">На некоторых клавиатурах четыре стрелочки выполняют те же функции, что и F клавиши. В этом случае вместо F клавиши, нажмите на стрелочку и не забывайте удерживать <b>Fn</b>.</div>
                     <p>Если нажимать F клавиши без <b>Fn</b>, то они будут выполнять стандартные функции, как на ПК. На всякий случай уточню, что на ПК нет клавиши <b>Fn</b>.</p>
-                    <div class="keyboard-shortcut-block dashed">
-                        <label for="inputFN">Напишите клавишу, которая отвечает за специальные функции (начинается на F, а заканчивается на n)</label>
-                        <input style="margin-top: 1%" id="inputFN">
-                    </div>
+
                 </content>
             </div>
         </div>
     </div>
     <div id="transition_warning"  style="display: flex; justify-content: center; margin: 1% 0;">
         <button id="createPageButton" type="button" class="btn btn-outline-success">
-            <a class="nav-link active" href="screenshots.php">Сл. страница</a>
+            <a class="nav-link active" href="screenshots.html">Сл. страница</a>
         </button>
     </div>
 </div>
 
 <div id="advertisement"></div>
 
-<?php
-include 'src/php/additionally.php';
-include 'progress.php';
-new_to_PC(40);
-?>
-<script>
-    window.addEventListener('DOMContentLoaded', function() {
-    let inp_fn = document.getElementById('inputFN');
 
-
-        inp_fn.addEventListener('input', function () {
-            let inputValue = inp_fn.value.toUpperCase(); // Преобразование в верхний регистр
-
-            if (inputValue === 'FN' || inputValue === 'FUNCTION' ) {
-                func_tg_dis();
-                func_tg_vcr();
-            } else {
-                func_tg_wrong();
-            }
-        });
-
-    // авто выполнение
-    <?php
-    if($_SESSION['user_progress'] > 40){
-        echo "inp_fn.value = 'Fn';";
-        echo "inp_fn.disabled = true;";
-        echo "func_tg_dis();";
-        echo "func_tg_vcr();";
-    }
-        
-    ?>
-})
-</script>
 </body>
 </html>
